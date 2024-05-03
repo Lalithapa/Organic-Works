@@ -11,7 +11,7 @@ build/Release
 
 config.yml
 # Dependency directories
-node_modules/
+node_module/
 jspm_packages/
 
 # Distribution directories
