@@ -1,0 +1,154 @@
+{% assign numDevicesMobile = section.settings['num-slides-sm'] %}
+{% assign numDevicesTab = section.settings['num-slides-md'] %}
+{% assign numDevicesDesktop = section.settings['num-slides-lg'] %}
+
+<div class="container mx-auto w-full flex flex-col justify-center items-center gap-y-[24px] pt-[48px] pb-[32px] scroll-trigger animate--slide-in">
+  <div class="w-full flex justify-center items-center">
+    <p class="text-heading text-[18px] font-medium leading-[24px] uppercase">{{ section.settings.title }}</p>
+  </div>
+  <div class="w-full relative flex justify-center items-center">
+    <button
+      id="insta-feed-prev-{{ section.id }}"
+      type="button"
+      class="carousel-btn prev-btn d-flex-center absolute left-[42px] rounded-full bg-[#f7f7f780]"
+    >
+      {% render 'carousel-prev-btn' %}
+    </button>
+
+    <div
+      id="insta-feed-{{ section.id }}"
+      class="w-full overflow-hidden flex justify-center items-center pl-[12px] md:pl-[0px]"
+    >
+      {% for block in section.blocks %}
+        {% assign image = block.settings.image %}
+
+        <div class="overflow-hidden !aspect-square !flex justify-center items-center rounded-[4px] pr-[12px]">
+          <img
+            class="!aspect-square w-full h-full object-cover rounded-[4px]"
+            width="350px"
+            height="350px"
+            src="{{ image.src | image_url }}"
+          >
+        </div>
+      {% endfor %}
+    </div>
+
+    <button
+      id="insta-feed-next-{{ section.id }}"
+      type="button"
+      class="carousel-btn prev-btn d-flex-center absolute right-[42px] rounded-full bg-[#f7f7f780]"
+    >
+      {% render 'carousel-next-btn' %}
+    </button>
+  </div>
+</div>
+
+<style>
+  #insta-feed-prev-{{ section.id }},
+  #insta-feed-next-{{ section.id }} {
+    display: none;
+  }
+
+  @media only screen and (min-width: 768px) {
+    #insta-feed-prev-{{ section.id }},
+    #insta-feed-next-{{ section.id }} {
+        display: flex;
+    }
+  }
+</style>
+
+<script type="text/javascript" defer>
+  $(document).ready(function readyInstaFeed() {
+    let numDevicesMobile = '{{ numDevicesMobile }}';
+    let numDevicesTab = '{{ numDevicesTab }}';
+    let numDevicesDesktop = '{{ numDevicesDesktop }}';
+
+    numDevicesMobile = roundSlides(numDevicesMobile, 1);
+    numDevicesTab = roundSlides(numDevicesTab, 1);
+    numDevicesDesktop = roundSlides(numDevicesDesktop, 1);
+
+    const $instaFeed = $('#insta-feed-{{ section.id }}');
+    $instaFeed.slick({
+      mobileFirst: true,
+      slidesToShow: numDevicesMobile,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: true,
+      prevArrow: $('#insta-feed-prev-{{ section.id }}'),
+      nextArrow: $('#insta-feed-next-{{ section.id }}'),
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: numDevicesTab,
+          },
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: numDevicesDesktop,
+          },
+        },
+      ],
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Insta Feed",
+  "class": "insta-feed-section",
+  "tag": "section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Follow @organic works"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Instagram Url"
+    },
+    {
+      "type": "text",
+      "id": "num-slides-sm",
+      "label": "Num Slides Mobile",
+      "default": "1.5"
+    },
+    {
+      "type": "text",
+      "id": "num-slides-md",
+      "label": "Num Slides Tab",
+      "default": "3.5"
+    },
+    {
+      "type": "text",
+      "id": "num-slides-lg",
+      "label": "Num Slides Desktop",
+      "default": "4.5"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "insta-image",
+      "name": "Insta Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Insta Image",
+          "info": "Aspect ratio square, 1:1"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Insta Feed"
+    }
+  ]
+}
+{% endschema %}

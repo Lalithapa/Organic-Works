@@ -1,0 +1,189 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+  integrity="sha512-eMxdaSf5XW3ZW1wZCrWItO2jZ7A9FhuZfjVdztr7ZsKNOmt6TUMTQgfpNoVRyfPE5S9BC0A4suXzsGSrAOWcoQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"
+  integrity="sha512-j+F4W//4Pu39at5I8HC8q2l1BNz4OF3ju39HyWeqKQagW6ww3ZF9gFcu8rzUbyTDY7gEo/vqqzGte0UPpo65QQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<div class="tns-slide position-relative">
+  <ul class="controls desktop-screen" id="sliderItem_One">
+    <li class="next d_cent">
+      {% render 'carousel-prev-btn' %}
+    </li>
+    <li class="prev d_cent">
+      {% render 'carousel-next-btn' %}
+    </li>
+  </ul>
+  <div class="hp-hero sldi">
+    {% for block in section.blocks %}
+      {%- if block.settings.image and block.settings.video_enabled == false -%}
+        <div class="hp-hero" style="width:100%">
+          <a href="{{ block.settings.block_link_2 }}" class="slide111--card">
+            <img
+              loading="lazy"
+              src="{{ block.settings.image | image_url }}"
+              class="i-delete-this-on-mobile"
+              height="100%"
+              width="100%"
+              loading="lazy"
+            >
+            <img
+              loading="lazy"
+              src="{{ block.settings.image_mobile | image_url }}"
+              class="i-delete-this-on-desk"
+              height="100%"
+              width="100%"
+              loading="lazy"
+            >
+          </a>
+        </div>
+      {% elsif block.settings.video_enabled %}
+        {%- if forloop.first -%}
+          {%- assign autoplay = 1 -%}
+        {%- else -%}
+          {%- assign autoplay = 0 -%}
+        {%- endif -%}
+        <div class="hp-hero" style="width:100%; height: 100%">
+          <a href="{{ block.settings.block_link_2 }}" class="slide111--card">
+            {{
+              block.settings['desk-vid']
+              | video_tag:
+                width: '100%',
+                height: '100%',
+                class: 'i-delete-this-on-mobile',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false
+            }}
+            {{
+              block.settings['mob-vid']
+              | video_tag:
+                width: '100%',
+                height: '100%',
+                class: 'i-delete-this-on-desk',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false
+            }}
+          </a>
+        </div>
+      {% else %}
+
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% render 'mainslidercss' %}
+{% schema %}
+{
+  "name": "Slideshow",
+  "class": "slideshow dynamic__section section__slideshow",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Desktop image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image"
+        },
+        {
+          "type": "checkbox",
+          "id": "video_enabled",
+          "label": "Show video",
+          "info": "If enabled video will show instead of an image",
+          "default": false
+        },
+        {
+          "type": "video",
+          "id": "desk-vid",
+          "label": "Desktop video"
+        },
+        {
+          "type": "video",
+          "id": "mob-vid",
+          "label": "Mobile video"
+        },
+        {
+          "type": "text",
+          "id": "block_button_2",
+          "label": "Second button label"
+        },
+        {
+          "type": "url",
+          "id": "block_link_2",
+          "label": "Second link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slideshow",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ],
+  "templates": ["index", "page", "article", "product", "blog", "collection", "list-collections", "search", "cart"]
+}
+{% endschema %}
+
+<script>
+  var main_Slider = tns({
+    container: '.sldi',
+    items: 1,
+    gutter: 0,
+    slideBy: 1,
+    center: true,
+    controlsPosition: 'bottom',
+    navPosition: 'bottom',
+    navAsThumbnails: true,
+    nav: false,
+    swipeAngle: false,
+    preventScrollOnTouch: 'auto',
+    controls: true,
+    autoplay: true,
+    autoplayButtonOutput: false,
+    controlsContainer: '#sliderItem_One',
+    responsive: {
+      0: {
+        items: 1,
+        nav: true, // Enable dots navigation for mobile devices
+      },
+      768: {
+        items: 1,
+        nav: true,
+      },
+      1440: {
+        items: 1,
+      },
+    },
+  });
+</script>

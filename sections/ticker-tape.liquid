@@ -1,0 +1,124 @@
+<div class="ticker-wrap">
+  <div class="ticker">
+    {% for i in (1..5) %}
+      {% for block in section.blocks %}
+        {% assign text = block.settings.ticker %}
+        <div class="ticker__item">{{ text }}</div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+<style>
+  .ticker-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    background-color: #fff;
+    /* padding-left: 100%; */
+    box-sizing: content-box;
+
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+  }
+
+  .ticker-wrap .ticker {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    white-space: nowrap;
+    /* padding-right: 100%; */
+    box-sizing: content-box;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: 300s; /* Adjusted duration */
+    animation-duration: 300s; /* Adjusted duration */
+  }
+
+  .ticker-wrap .ticker__item {
+    display: inline-block;
+    padding: 0 12px;
+
+    color: #151515;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .ticker-wrap .ticker__item > strong {
+    font-weight: 600;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .ticker-wrap .ticker {
+      height: 26px;
+      line-height: 26px;
+    }
+
+    .ticker-wrap .ticker__item {
+      padding: 0 24px;
+
+      font-size: 18px;
+      line-height: 26px; /* 144.444% */
+    }
+  }
+
+  @-webkit-keyframes ticker {
+    0% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  @keyframes ticker {
+    0% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Ticker Tape Section",
+  "class": "ticker-tape-section",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "ticker-tape",
+      "name": "Ticker Tape",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "ticker",
+          "default": "<p>100% Vegan</p>",
+          "label": "Add a Ticker Tape"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ticker Tape Section"
+    }
+  ]
+}
+{% endschema %}

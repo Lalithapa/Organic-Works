@@ -1,0 +1,116 @@
+{% comment %} if image {% endcomment %}
+{% if mobileImage and showVideo == false %}
+  {% assign mobileImageSetting = mobileImage %}
+  {% assign desktopImageSetting = desktopIamge %}
+
+  {% if mobileImageSetting.alt %}
+    {% assign imageAlt = mobileImageSetting.alt %}
+  {% else %}
+    {% assign imageAlt = 'organic works concern' %}
+  {% endif %}
+
+  {% if desktopImageSetting %}
+    <img
+      src="{{ mobileImageSetting |  image_url }}"
+      width="100%"
+      height="100%"
+      class="{% if class %}{{ class }}{% endif %} mobile"
+      loading="lazy"
+      alt="{{ imageAlt }}"
+      id="{{ mobileImageSetting.id }}"
+    >
+
+    <img
+      src="{{ desktopImageSetting |  image_url }}"
+      width="100%"
+      height="100%"
+      class="{% if class %}{{ class }}{% endif %} desktop"
+      loading="lazy"
+      alt="{{ imageAlt }}"
+      id="{{ desktopImageSetting.id }}"
+    >
+  {% else %}
+    <img
+      src="{{ mobileImageSetting |  image_url }}"
+      width="100%"
+      height="100%"
+      class="{% if class %}{{ class }}{% endif %}"
+      loading="lazy"
+      alt="{{ imageAlt }}"
+      id="{{ mobileImageSetting.id }}"
+    >
+  {% endif %}
+
+  {% comment %} If Video {% endcomment %}
+{% elsif mobileVideo and showVideo == true %}
+  {%- if index == 1 -%}
+    {%- assign autoplay = 1 -%}
+  {%- else -%}
+    {%- assign autoplay = 0 -%}
+  {%- endif -%}
+
+  {% assign mobileVideoSetting = mobileVideo %}
+  {% assign desktopVideoSetting = desktopVideo %}
+  {% assign posterImage = posterImage %}
+
+  {% comment %} assign poster image {% endcomment %}
+  {% if posterImage != blank %}
+    {% assign posterImage = posterImage | image_url %}
+  {% else %}
+    {% assign posterImage = mobileVideoSetting.preview_image.src | image_url %}
+  {% endif %}
+
+  {% comment %} assign alt {% endcomment %}
+  {% if mobileVideoSetting.alt %}
+    {% assign videoAlt = mobileVideoSetting.alt %}
+  {% else %}
+    {% assign videoAlt = 'organic works concern video' %}
+  {% endif %}
+
+  {% if desktopVideoSetting %}
+    <!-- Display the video tag -->
+    <video
+      alt="{{ videoAlt }}"
+      poster="{{ posterImage }}"
+      autoplay="{{ autoplay }}"
+      muted
+      loop
+      preload="auto"
+      src="{{ mobileVideoSetting.sources[1].url }}"
+      mime-type="{{ mobileVideoSetting.sources[1].mime_type }}"
+      class="{%  if class %}{{ class }}{% endif %} mobile"
+    >
+      <p>Video Tag is not supported by your browser</p>
+    </video>
+
+    <video
+      alt="{{ videoAlt }}"
+
+      poster="{{ posterImage }}"
+      autoplay="{{ autoplay }}"
+      muted
+      loop
+      preload="auto"
+      src="{{ desktopVideoSetting.sources[1].url }}"
+      mime-type="{{ desktopVideoSetting.sources[1].mime_type }}"
+      class="{%  if class %}{{ class }}{% endif %} desktop"
+    >
+      <p>Video Tag is not supported by your browser</p>
+    </video>
+  {% else %}
+    <!-- Display the video tag -->
+    <video
+      alt="{{ videoAlt }}"
+      poster="{{ posterImage }}"
+      autoplay="{{ autoplay }}"
+      muted
+      loop
+      preload="auto"
+      src="{{ mobileVideoSetting.sources[1].url }}"
+      mime-type="{{ mobileVideoSetting.sources[1].mime_type }}"
+      class="{%  if class %}{{ class }}{% endif %}"
+    >
+      <p>Video Tag is not supported by your browser</p>
+    </video>
+  {% endif %}
+{% endif %}

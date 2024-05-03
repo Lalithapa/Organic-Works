@@ -1,0 +1,235 @@
+<div id="award-container">
+  <div class="wrapper shown-on-scroll animated fadeInUp">
+    <div class="homepage-featured-content-wrapper">
+      <div class="large--five-sixths push--large--one-twelfth homepage-featured-rich-text">
+        <div class="sitewide--title-wrapper">
+          <h2 class="homepage-sections--title">The Award Winners</h2>
+        </div>
+        <div class="rte">
+          <p class="text-center">Find out all the awards we have won across all products & the brand.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cards awards-g">
+    {% for award in section.blocks %}
+      <div class="card">
+        <a href="{{ award.settings.product-link }}">
+          <div class="awards-section-blocks">
+            <div class="awards-image-wrapper">
+              <div class="awards-product-image">
+                <div class="lazyload-wrapper">
+                  <img
+                    src="{{ award.settings.awd | image_url }}"
+                    alt="{{ award.settings.awd | escape }}"
+                    data-sizes="auto"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="awards-award-image">
+                  <img
+                    src="{{ award.settings.awdLogo | image_url }}"
+                    alt="{{ award.settings.awdLogo | escape }}"
+                    data-sizes="auto"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="sitewide--title-wrapper header-style--ignore">
+              <h3 class="awards-award-title">
+                {{ award.settings.awdmain }}
+              </h3>
+            </div>
+            <h4 class="awards-product-title">
+              {{ award.settings.awdsubmain }}
+            </h4>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<style>
+  #award-container {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homepage-sections--title {
+    font-size: 29px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 15px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-family: 'Karla';
+  }
+
+  .rte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .homepage-featured-box-btn {
+    font-weight: 400;
+    background: #3e3e3e;
+    color: #fff;
+    transition: all 0.15s ease-in-out 0s;
+    display: inline-block;
+    padding: 10px 35px;
+    text-transform: none;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+
+  .awards-g {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 3rem auto 0;
+  }
+
+  .cards {
+    margin: 3rem 1rem;
+    display: grid;
+    grid-gap: 3rem;
+  }
+
+  .awards-product-image {
+    position: relative;
+  }
+
+  .lazyload-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lazyload-wrapper img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .awards-award-title {
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 0;
+    padding-top: 2rem;
+  }
+
+  .awards-award-image {
+    position: absolute;
+    bottom: -2rem;
+    left: -2.2rem;
+  }
+
+  .awards-award-image img {
+    max-width: 10rem;
+  }
+
+  .awards-product-title {
+    text-align: center;
+    font-size: 14px;
+    line-height: 26px;
+    color: #8c8c8c;
+  }
+
+  @media (min-width: 300px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .awards-award-image img {
+      max-width: 7rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .awards-g {
+      width: 750px;
+    }
+    .awards-award-image img {
+      max-width: 8rem;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .awards-g {
+      width: 970px;
+    }
+    .cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .awards-award-image img {
+      max-width: 10rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .awards-g {
+      width: 1170px;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "owAwards",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "award Image",
+      "settings": [
+        {
+          "type": "url",
+          "id": "product-link",
+          "label": "Product Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "awd",
+          "label": "Main Award Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "awdLogo",
+          "label": "Award Logo"
+        },
+        {
+          "type": "text",
+          "id": "awdmain",
+          "label": "Award Text"
+        },
+        {
+          "type": "text",
+          "id": "awdsubmain",
+          "label": "Award Sub Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "owAwards"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

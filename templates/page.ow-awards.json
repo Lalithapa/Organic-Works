@@ -1,0 +1,244 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "ow_awards_34XAKj": {
+      "type": "ow-awards",
+      "blocks": {
+        "image_hcBAWW": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/glow-cream-cleanser-with-vitamin-c-300ml",
+            "awd": "shopify:\/\/shop_images\/1_600x647_9aff5272-a791-4993-9b0a-23b4ba3f49c8.webp",
+            "awdLogo": "shopify:\/\/shop_images\/Veggie-removebg-preview_3.png",
+            "awdmain": "Finalist, Best Cruelty-Free Skincare 2022",
+            "awdsubmain": "Glow Cream Cleanser 300ml"
+          }
+        },
+        "image_49wHJV": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/bergamot-hand-body-lotion-with-vitamin-c-300ml",
+            "awd": "shopify:\/\/shop_images\/1_300x_1b7bce2d-a6da-4251-ab09-c80f97c24f4b.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/Veggie-removebg-preview.png",
+            "awdmain": "Highly Commended, Best Cruelty-Free Bodycare 2022",
+            "awdsubmain": "Bergamot Hand & Body Lotion with Vitamin C 300ML"
+          }
+        },
+        "image_7BHG3y": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/pro-smoothing-serum-with-hyaluronic-acid-50ml",
+            "awd": "shopify:\/\/shop_images\/1_600x_ac4f67d6-b8ce-49bd-b948-bed7a02964c7.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/NH_Beauty_Awards_22_Finalist_150x_e5f42882-0e7d-4187-98bf-0c1494c72887.png",
+            "awdmain": "Finalist, Best British Product 2022",
+            "awdsubmain": "Pro Smoothing Serum with Hyaluronic Acid 50ML"
+          }
+        },
+        "image_Hq4RKP": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/pro-smoothing-serum-with-hyaluronic-acid-50ml",
+            "awd": "shopify:\/\/shop_images\/1_300x_09f84b1f-6832-4190-9baa-d4f926c5d959.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/HIGHLY_COMMENDED_BADGE_150x_dccabef1-19d0-4368-8105-ebf39efdabf7.png",
+            "awdmain": "Highly Commended, Best New Product 2022",
+            "awdsubmain": "Pro Smoothing Serum with Hyaluronic Acid 50ML"
+          }
+        },
+        "image_b6V3p8": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/cleansing-face-wash-with-vitamin-e-300ml",
+            "awd": "shopify:\/\/shop_images\/2_300x_e2752f52-3e20-43fe-83be-ddba71a7aa38.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/NH_Beauty_Awards_22_Finalist_150x_2.png",
+            "awdmain": "Finalist, Best Soil Association Certified Products 2022",
+            "awdsubmain": "Cleansing Face Wash with Vitamin E 300ML"
+          }
+        },
+        "image_6yfbE8": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/super-intensive-moisturiser",
+            "awd": "shopify:\/\/shop_images\/1_300x_3b00ff37-3fee-4fc6-ae35-8ee7910171d4.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/NH_Beauty_Awards_22_Finalist_150x_3.png",
+            "awdmain": "Finalist, Best Organic Skincare 2022",
+            "awdsubmain": "Super Intensive Moisturiser"
+          }
+        },
+        "image_TEPMcX": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/daily-bliss-moisturiser",
+            "awd": "shopify:\/\/shop_images\/2_300x_1f942234-7493-4249-8c81-35d8f5e82f21.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/NH_Beauty_Awards_22_Finalist_150x_4.png",
+            "awdmain": "Finalist, Best Organic Skincare 2022",
+            "awdsubmain": "Daily Bliss Moisturiser"
+          }
+        },
+        "image_FnAQQw": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/lavender-hand-wash-with-vitamin-e-300ml",
+            "awd": "shopify:\/\/shop_images\/2_300x_f7b16a5f-ea2e-4c2c-bc1c-f6bb12f088c1.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/NH_Beauty_Awards_22_Finalist_150x_5.png",
+            "awdmain": "Finalist, Best Vegan Products 2022",
+            "awdsubmain": "Lavender Hand Wash with Vitamin E 300ML"
+          }
+        },
+        "image_HtNrqV": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/lavender-hand-wash-with-vitamin-e-300ml",
+            "awd": "shopify:\/\/shop_images\/2_f09dc623-7613-4523-9a07-93f90630ecc0_300x_1.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/SILVER_WINNER_BADGE_150x_2b65b579-1193-421a-80c4-4bd2e5e848cd.png",
+            "awdmain": "Silver Winner, Best Hand, Foot and Nail Care Category 2022",
+            "awdsubmain": "Lavender Hand Wash with Vitamin E 300ML"
+          }
+        },
+        "image_qzEcrq": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/lavender-hand-body-lotion-with-vitamin-e-300ml",
+            "awd": "shopify:\/\/shop_images\/2_600x647_ef229bdd-f82d-46f6-88b3-949d242d6930.webp",
+            "awdLogo": "shopify:\/\/shop_images\/NH_Beauty_Awards_22_Finalist_150x_6.png",
+            "awdmain": "Finalist, Best Body Cream 2022",
+            "awdsubmain": "Lavender Hand & Body Lotion with Vitamin E 300ML"
+          }
+        },
+        "image_7XeJRT": {
+          "type": "image",
+          "settings": {
+            "product-link": "https:\/\/theowstore.com\/pages\/organic-works-awards",
+            "awd": "shopify:\/\/shop_images\/Organic_Works_Awards_Page_Logo_Brand_Award_300x_2dc9d2e5-f5cc-4bea-8034-4dab3f855a9b.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/BRONZE_WINNER_150x_aa0c539d-d26c-4cbc-b1b3-07a4212c64c1.png",
+            "awdmain": "Bronze Winner, Best Labelling 2022",
+            "awdsubmain": ""
+          }
+        },
+        "image_CYTgVz": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/super-intensive-moisturiser",
+            "awd": "shopify:\/\/shop_images\/1_300x_1_bcab5e42-3879-43b0-be25-2c8601fd4316.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/Organic_Works_Pure_Beauty_Awards_Best_New_British_Brand_2021_150x_2b68b3b4-0426-4dff-b422-9bf8cbbe06b4.png",
+            "awdmain": "Shortlisted, Best New Natural Face Product 2021",
+            "awdsubmain": "Super Intensive Moisturiser"
+          }
+        },
+        "image_w4Mpfk": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/renewal-night-cream",
+            "awd": "shopify:\/\/shop_images\/1_300x_e3dc9dd5-e920-449f-88a5-6ef1a9b38bec.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/Organic_Works_Global_Makeup_Awards_Gold_2021_150x_c4c692bf-d346-4302-865a-b697d1762097.png",
+            "awdmain": "Gold Winner, Best Night Cream 2021",
+            "awdsubmain": "Renewal Night Cream"
+          }
+        },
+        "image_QtKyVa": {
+          "type": "image",
+          "settings": {
+            "product-link": "https:\/\/theowstore.com\/pages\/organic-works-awards",
+            "awd": "shopify:\/\/shop_images\/Organic_Works_Awards_Page_Logo_Brand_Award_300x_1_04c32403-a54c-41fc-8f8a-69e6eb604bf6.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/Organic_Works_Global_Makeup_Awards_Gold_2021_150x_1_c64b24d2-ad8b-43cc-a6f9-56f036a376fd.png",
+            "awdmain": "Gold Winner, Best Vegan Brand 2021",
+            "awdsubmain": "Gold Winner, Best Vegan Brand 2021"
+          }
+        },
+        "image_d3Jkct": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/lavender-shower-gel-with-vitamin-a-300ml",
+            "awd": "shopify:\/\/shop_images\/1_300x_86c6dfba-75e1-4aa6-a147-37413b3c37d5.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/Organic_Works_Global_Makeup_Awards_Gold_2021_150x_2.png",
+            "awdmain": "Gold Winner, Best Body Product 2021",
+            "awdsubmain": "Lavender Shower Gel with Vitamin A 300ML"
+          }
+        },
+        "image_nrnFTD": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/cleansing-face-wash-with-vitamin-e-300ml",
+            "awd": "shopify:\/\/shop_images\/2_0f61bfe4-866a-422a-852b-787062c60efe_300x_1.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/Organic_Works_Global_Makeup_Awards_Silver_Best_Face_Wash2021_150x_524e2add-b0fa-4c6c-8d68-c115b91242db.png",
+            "awdmain": "Silver Winner, Best Cleanser 2021",
+            "awdsubmain": "Cleansing Face Wash with Vitamin E 300ML"
+          }
+        },
+        "image_8gjq4V": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/cleansing-face-wash-with-vitamin-e-300ml",
+            "awd": "shopify:\/\/shop_images\/2_0f61bfe4-866a-422a-852b-787062c60efe_300x_2.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/Organic_Works_Clean_Beauty_Awards_Best_Face_Wash_2021_150x_ec94b2f7-0be7-4129-87c8-c33475f2d57e.png",
+            "awdmain": "Winner, Best Face Wash 2021",
+            "awdsubmain": "Cleansing Face Wash with Vitamin E 300ML"
+          }
+        },
+        "image_NEFFBF": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/lavender-hand-body-lotion-with-vitamin-e-300ml",
+            "awd": "shopify:\/\/shop_images\/2_300x_b43c4141-b9b1-4825-8b7a-f0cdd7678c57.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/Organic_Works_Clean_Beauty_Awards_Best_Body_Care_2021_150x_e148688d-1163-424f-93fe-b2d0670884dd.png",
+            "awdmain": "Finalist, Best Body Care 2021",
+            "awdsubmain": "Lavender Hand & Body Lotion with Vitamin E 300ML"
+          }
+        },
+        "image_yx8Ybf": {
+          "type": "image",
+          "settings": {
+            "product-link": "shopify:\/\/products\/bergamot-shower-gel-with-vitamin-c-300ml",
+            "awd": "shopify:\/\/shop_images\/1_300x_ee3e8988-2ac4-4506-ad09-0a4cf9300c39.jpg",
+            "awdLogo": "shopify:\/\/shop_images\/Organic_Works_Natural_Health_Beauty_Awards_Highly_Commended_Shower_Gel_2021_150x_db4d3108-207e-4775-a0b5-7b2e85406d92.png",
+            "awdmain": "Highly Commended, Best Shower Gel 2021",
+            "awdsubmain": "Bergamot Shower Gel with Vitamin C 300ML"
+          }
+        },
+        "image_RFyUQ4": {
+          "type": "image",
+          "settings": {
+            "product-link": "https:\/\/theowstore.com\/pages\/organic-works-awards",
+            "awd": "shopify:\/\/shop_images\/1_600x647_5d6ff066-2810-48b1-9cf4-ca3c47f9f78b.webp",
+            "awdLogo": "shopify:\/\/shop_images\/Organic_Works_Pure_Beauty_Best_New_Natural_Product_2020_150x_73930f72-db89-4ef2-a512-29d19426797c.png",
+            "awdmain": "Gold Winner, Best New Natural Product 2020",
+            "awdsubmain": "Bergamot Hand Wash"
+          }
+        }
+      },
+      "block_order": [
+        "image_hcBAWW",
+        "image_49wHJV",
+        "image_7BHG3y",
+        "image_Hq4RKP",
+        "image_b6V3p8",
+        "image_6yfbE8",
+        "image_TEPMcX",
+        "image_FnAQQw",
+        "image_HtNrqV",
+        "image_qzEcrq",
+        "image_7XeJRT",
+        "image_CYTgVz",
+        "image_w4Mpfk",
+        "image_QtKyVa",
+        "image_d3Jkct",
+        "image_nrnFTD",
+        "image_8gjq4V",
+        "image_NEFFBF",
+        "image_yx8Ybf",
+        "image_RFyUQ4"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "ow_awards_34XAKj"
+  ]
+}

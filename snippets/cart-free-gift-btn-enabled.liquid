@@ -1,0 +1,18 @@
+<button
+  data-product-handle="{{ product.handle }}"
+  data-product-id="{{ product.id }}"
+  data-variant-id="{{ variant.id }}"
+  data-quantity="1"
+  type="button"
+  class="quickcart-add-with-ui-update-btn px-[12px] py-[9px] flex justify-center items-center rounded-full border border-secondary-cta border-solid mt-[20px] {% if class %}{{ class }}{% endif %}"
+  style="{% if style %}{{ style }}{% endif %}"
+  aria-label="Open Quickcart"
+  {% if props %}
+    {{- props -}}
+  {% endif %}
+>
+  <p class="text-heading text-center text-[11px] md:text-[12px] font-medium leading-[14px]">ADD FREE -</p>
+  <s class="text-price-cut text-center text-[11px] md:text-[12px] font-normal leading-[14px] ml-1">
+    {{ product.compare_at_price | money_without_trailing_zeros }}
+  </s>
+</button>

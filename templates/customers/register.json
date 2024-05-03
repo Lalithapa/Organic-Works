@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-register",
+      "settings": {
+        "desktopimage": "shopify:\/\/shop_images\/Rectangle_4320_8243c6d5-10a5-47bd-93a8-8a0e91f68340.png",
+        "mobileimage": "shopify:\/\/shop_images\/Rectangle_4320.png",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

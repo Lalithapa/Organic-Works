@@ -1,0 +1,71 @@
+{% if line_item.final_line_price == 0 %}
+  {% assign product = line_item.product %}
+
+  {% assign variant = line_item.variant %}
+
+  <div
+    data-line-key="{{ line_item.key }}"
+    class="quickcart-line-item-wrapper relative border-b border-solid border-[#E4E4E4] w-full flex py-[8px] justify-start items-center gap-x-[4px]"
+  >
+    <button
+      type="button"
+      data-key="{{ line_item.key }}"
+      class="quickcart-remove-line-item w-[22px] aspect-square absolute top-[8px] right-0 flex justify-center items-center"
+    >
+      {% render 'close-icon-black', class: 'w-[6px] aspect-square' %}
+    </button>
+
+    <div class="quickcart-line-item-spinner-wrapper w-full h-full absolute top-0 left-0 hidden shrink justify-center items-center bg-surface">
+      <div class="w-[16px] aspect-square flex shrink justify-center items-center">
+        {% render 'spinner-q', class: 'w-[16px] aspect-square' %}
+      </div>
+    </div>
+
+    <div class="quickcart-line-item-image-wrapper w-[30%] flex justify-center items-center rounded-[4px]">
+      <img
+        class="quickcart-line-item-image w-full h-full asp3-4 rounded-[4px]"
+        width="{{ line_item.image.width }}"
+        height="{{ line_item.image.height }}"
+        src="{{ line_item.image.src |  image_url  }}"
+      >
+    </div>
+
+    <div class="quickcart-line-item-info w-[70%] grow h-ful">
+      <div class="line-item-title-wrapper w-full flex flex-wrap justify-start items-center">
+        <p class="line-item-title text-heading text-[15px] font-normal leading-[24px] tracking-[-0.15px] uppercase">
+          {{ product.title }}
+        </p>
+      </div>
+
+      <div class="line-item-summary-wrapper w-full flex flex-wrap justify-start items-center overflow-hidden">
+        <p class="line-item-summary text-sub-text text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase overflow-hidden whitespace-nowrap text-ellipsis">
+          {{ product.metafields.custom.product_features | remove: '"' | remove: '[' | remove: ']' }}
+        </p>
+      </div>
+
+      <div class="line-item-options-wrapper w-full flex flex-wrap justify-start gap-x-[4px] items-center mt-[10px]">
+        {%- unless product.has_only_default_variant %}
+          {% for option in line_item.options_with_values -%}
+            <div class="line-item-options flex shrink">
+              <p class="text-heading text-[12px] font-medium leading-[18px] tracking-[-0.12px]">{{ option.name }}-</p>
+              <p class="text-secondary-cta text-[12px] font-medium leading-[18px] tracking-[-0.12px]">
+                {{ option.value }}
+              </p>
+            </div>
+          {%- endfor %}
+        {% endunless %}
+      </div>
+
+      <div class="line-item-info-wrapper w-full flex flex-wrap justify-between items-center gap-x-[4px] mt-4">
+        <div class="line-item-price-wrapper flex shrink gap-x-[4px]">
+          <p class="text-[#587A40] text-[15px] font-semibold leading-[20px]">FREE</p>
+          <s>{{ variant.compare_at_price | times: line_item.quantity | money_without_trailing_zeros }}</s>
+        </div>
+
+        <p class="quickcart-free-quantity text-[#393939] text-[15px] font-normal leading-[20px]">
+          Qty: {{ line_item.quantity }}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endif %}

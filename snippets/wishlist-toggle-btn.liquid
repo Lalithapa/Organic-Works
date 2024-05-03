@@ -1,0 +1,21 @@
+<button
+  data-product-id="{{ product.id }}"
+  data-variant-id="{{ variant.id }}"
+  type="button"
+  aria-label="Wishlist product {{ product.title }}"
+  class="wishlist-toggle-btn  d-flex-center"
+>
+  {% render 'wishlist-icon-black',
+    product: product,
+    variant: firstAvailable,
+    sectionId: section.id,
+    class: 'wishlist-img'
+  %}
+
+  {% render 'wishlist-fill-icon-black',
+    product: product,
+    variant: firstAvailable,
+    sectionId: section.id,
+    class: 'wishlist-fill-img d-none'
+  %}
+</button>

@@ -1,0 +1,68 @@
+<div class="container home-header-wrapper d-flex-center">
+  <!-- icons -->
+  <!-- <div class="home-header-left d-flex-center">
+    <a href="javascript:void(0)" class="header-icon-wrapper d-flex-center" id="open-menu">
+      {% render 'hamburger-icon-black' %}
+    </a>
+    <div class="header-icon-wrapper d-flex-center d-none">
+      <a href="{{ routes.account_url }}">{% render 'profile-icon-black' %}</a>
+    </div>
+    <div class="header-icon-wrapper d-flex-center d-none" id="open-search">
+      {% render 'search-icon-black' %}
+    </div>
+    <div class="header-icon-wrapper d-flex-center d-none">
+      <a href="/pages/wishlist">{% render 'wishlist-icon-black' %}</a>
+    </div>
+    <button type="button" class="quickcart-trigger-btn header-icon-wrapper d-flex-center d-none">
+      <div class="quickcart-count">{{ cart.item_count }}</div>
+      {% render 'bag-icon-black' %}
+    </button>
+  </div> -->
+
+  <!-- logo -->
+  <!-- <div class="home-header-center d-flex-center">
+    <div class="home-header-logo-wrapper d-flex-center">
+      <a href="{{ routes.root_url }}">
+        {% render 'ow-logo-small-black', class: 'ow-logo-small' %}
+        {% render 'ow-logo-large-black', class: 'd-none ow-logo-large' %}
+      </a>
+    </div>
+  </div> -->
+
+  <!-- nav -->
+  <div class="home-header-nav d-flex-center">
+    {% for link in section.settings['nav-menu'].links %}
+      {% comment %} | link_to: link.url  {% endcomment %}
+      <div class="home-header-nav-item d-flex-center">{{ link.title | upcase | link_to: link.url }}</div>
+    {% endfor %}
+  </div>
+</div>
+<script>
+  document.getElementById('open-search').addEventListener('click', function () {
+    document.querySelector('.header__icon--search.header__icon--summary').click();
+  });
+  document.getElementById('open-menu').addEventListener('click', function () {
+    document.querySelector('.header__icon--menu.header__icon--summary').click();
+  });
+</script>
+{% schema %}
+{
+  "name": "Home Header",
+  "class": "home-header-section",
+  "tag": "header",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "nav-menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Header"
+    }
+  ]
+}
+{% endschema %}

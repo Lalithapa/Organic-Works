@@ -1,0 +1,134 @@
+<div class="{% if section.settings['use-container'] %}container{% endif %} clean-beauty-media-wrapper d-flex-center scroll-trigger animate--slide-in">
+  {% if section.settings['mobile-image'] and section.settings['show-video'] == false %}
+    {% assign mobileImageSetting = section.settings['mobile-image'] %}
+    {% assign desktopImageSetting = section.settings['desktop-image'] %}
+    {% if mobileImageSetting.alt %}
+      {% assign imageAlt = mobileImageSetting.alt %}
+    {% else %}
+      {% assign imageAlt = 'organic works info image' %}
+    {% endif %}
+
+    <img
+      src="{{ mobileImageSetting | image_url }}"
+      width="100%"
+      height="100%"
+      class="clean-beauty-media {% if desktopImageSetting %}mobile{% endif %}"
+      loading="lazy"
+      alt="{{ imageAlt }}" 
+      id="{{ mobileImageSetting.id }}"
+    >
+
+    <img
+      src="{{ desktopImageSetting | image_url }}"
+      width="100%"
+      height="100%"
+      class="clean-beauty-media desktop"
+      loading="lazy"
+      alt="{{ imageAlt }}"
+      id="{{ desktopImageSetting.id }}"
+    >
+  {% elsif section.settings['show-video'] %}
+    {% assign mobileVideoSettings = section.settings['mobile-video'] %}
+    {% assign posterImage = section.settings['video-poster-image'] %}
+
+    {% if posterImage != blank %}
+      {% assign posterImage = posterImage | image_url %}
+    {% else %}
+      {% assign posterImage = mobileVideoSettings.preview_image.src | image_url %}
+    {% endif %}
+
+    {% if mobileVideoSettings.alt %}
+      {% assign videoAlt = mobileVideoSettings.alt %}
+    {% else %}
+      {% assign videoAlt = 'organic works info video' %}
+    {% endif %}
+
+    <!-- Display the video tag -->
+    {{
+      mobileVideoSettings
+      | video_tag:
+        loop: true,
+        autoplay: true,
+        muted: true,
+        class: 'clean-beauty-media d-flex-center',
+        poster: posterImage,
+        alt: videoAlt
+    }}
+
+    {% assign desktopVideoSettings = section.settings['desktop-video'] %}
+    <!-- Display the video tag -->
+    {{
+      desktopVideoSettings
+      | video_tag:
+        loop: true,
+        autoplay: true,
+        muted: true,
+        class: 'clean-beauty-desktop-media d-flex-center',
+        poster: posterImage,
+        alt: videoAlt
+    }}
+    {% if template == 'product' %}
+      <script>
+        $(document).ready(function(){
+          document.querySelectorAll('.clean-beauty-media-wrapper')[1].style.display = 'none';
+        });
+      </script>
+    {% endif %}
+  {% endif %}
+  <a href="javascript:void(0)" class="media-overlay-link"><wbr></a>
+</div>
+
+{% schema %}
+{
+  "name": "Clean Beauty Media",
+  "class": "clean-beauty-media-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use-container",
+      "default": false,
+      "label": "use width container?"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile-image",
+      "label": "Mobile Image",
+      "info": "Aspect Ratio IPhone 14 430px x 932px. Media is set to cover, might crop from edges"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop-image",
+      "label": "Desktop Image",
+      "info": "Aspect Ratio MacBook Pro 1440px × 900px. Media is set to cover, might crop from edges"
+    },
+    {
+      "type": "checkbox",
+      "id": "show-video",
+      "label": "Show Video"
+    },
+    {
+      "type": "video",
+      "id": "mobile-video",
+      "label": "Mobile Video",
+      "info": "Aspect Ratio IPhone 14 430px x 932px. Media is set to cover, might crop from edges"
+    },
+    {
+      "type": "video",
+      "id": "desktop-video",
+      "label": "Desktop Video",
+      "info": "Aspect Ratio MacBook Pro 1440px × 900px. Media is set to cover, might crop from edges"
+    },
+    {
+      "type": "image_picker",
+      "id": "video-poster-image",
+      "label": "Poster Image for Video (Optional)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Clean Beauty Media"
+    }
+  ]
+}
+{% endschema %}

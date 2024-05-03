@@ -1,0 +1,107 @@
+.footer-block__heading {
+  color: #151515;
+  font-family: Karla;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px; /* 138.889% */
+  letter-spacing: -0.18px;
+}
+.footer-block__heading .list-menu__item {
+  color: #585858;
+  font-family: Karla;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px; /* 146.667% */
+}
+.accor-head{
+  color: #151515;
+  font-family: Karla;
+  /* font-size: 14px; */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.14px;
+  text-transform: capitalize;
+}
+
+.icon-list img{
+  width: 80px;
+  height: 80px;
+}
+.list-menu--right {
+  right: 0;
+}
+
+.list-menu--disclosure {
+  position: absolute;
+  min-width: 100%;
+  width: 20rem;
+  border: 1px solid rgba(var(--color-foreground), 0.2);
+}
+
+.list-menu--disclosure:focus {
+  outline: none;
+}
+
+.list-menu__item--active {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.list-menu__item--active:hover {
+  text-decoration-thickness: 0.2rem;
+}
+
+.list-menu--disclosure.localization-selector {
+  max-height: 18rem;
+  overflow: auto;
+  width: 10rem;
+  padding: 0.5rem;
+}
+.copyright-text{
+  color: #151515;
+  font-family: Karla;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.14px;
+}
+@media screen and (min-width:768px) {
+  .bg-up{
+    border-top: 0.5px solid #E5E5E5;
+  }
+  .bg-down{
+    border-bottom: 0.5px solid #E5E5E5;
+  }
+}
+@media screen and (max-width:768px) {
+  .footer-block__heading .list-menu__item {
+    font-size: 13px !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+ }
+  .icon-list img{
+    width: 64px;
+    height: 64px;
+  }
+  .copyright-text{
+    font-size: 12px;
+    line-height: 14px; /* 116.667% */
+    letter-spacing: -0.12px;
+  }
+  .accor-head{
+    font-size: 14px;
+  }
+  .footer-block__details-content p{
+    font-size: 13px;
+  }
+  .mobile-screen ul.footer-block__details-content{
+    margin: -6px 0 6px;
+  }
+  .mobile-screen ul.footer-block__details-content a{
+    font-size: 13px;
+    line-height: 10px;
+  }
+}

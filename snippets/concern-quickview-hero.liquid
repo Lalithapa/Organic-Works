@@ -1,0 +1,15 @@
+<div class="flex flex-row gap-4 relative">
+  <div class="ingrehero-media aspect-square flex justify-center items-center rounded-[8px]">
+    {% render 'image-video', showVideo: false, mobileImage: image, class: 'w-full h-full object-cover rounded-[8px]' %}
+  </div>
+
+  <div class="hero-media-wrapper grow">
+    <div>
+      <div class="ingrehero-name-wrapper">{{ title }}</div>
+      <div class="ingrehero-handle-summary m-0 read-more-wrapper product__description_text w-5/6">
+        {{ summary }}
+      </div>
+    </div>
+    <button class="read-more-btn">Read more +</button>
+  </div>
+</div>

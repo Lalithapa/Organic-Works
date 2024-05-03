@@ -1,0 +1,179 @@
+<div class="main-collection-banner-wrapper d-flex-center">
+  <div class="collection-banner-media-wrapper d-flex-center">
+    {% if section.settings['show-video'] and section.settings['mobile-video'] or section.settings['desktop-video'] %}
+      {% if section.settings['desktop-video'] %}
+        {% assign desktopVideo = section.settings['desktop-video'] %}
+      {% endif %}
+
+      {% if section.settings['mobile-video'] %}
+        {% assign mobileVideo = section.settings['mobile-video'] %}
+      {% endif %}
+
+      {%- if forloop.first -%}
+        {%- assign autoplay = 1 -%}
+      {%- else -%}
+        {%- assign autoplay = 0 -%}
+      {%- endif -%}
+
+      <!-- Display the video tag -->
+      {% if desktopVideo %}
+        {{
+          desktopVideo
+          | video_tag:
+            loop: true,
+            autoplay: autoplay,
+            muted: true,
+            class: 'collection-banner-media desktop',
+            alt: 'collection banner video'
+        }}
+      {% endif %}
+
+      {% if mobileVideo %}
+        {{
+          mobileVideo
+          | video_tag:
+            loop: true,
+            autoplay: autoplay,
+            muted: true,
+            class: 'collection-banner-media mobile',
+            alt: 'collection banner video'
+        }}
+      {% endif %}
+    {% elsif section.settings['show-video'] == false
+      and section.settings['mobile-image']
+      or section.settings['desktop-image']
+    %}
+      {% if section.settings['mobile-image'] %}
+        {% assign desktopImage = section.settings['mobile-image'] %}
+      {% endif %}
+
+      {% if section.settings['desktop-image'] %}
+        {% assign mobileImage = section.settings['desktop-image'] %}
+      {% endif %}
+
+      {% if desktopImage %}
+        <img
+          src="{{ desktopImage |  image_url }}"
+          width="100%"
+          height="100%"
+          class="collection-banner-media desktop"
+          loading="lazy"
+          alt="collection banner image"
+          id="{{ desktopImage.id }}"
+        >
+      {% endif %}
+
+      {% if mobileImage %}
+        <img
+          src="{{ mobileImage |  image_url }}"
+          width="100%"
+          height="100%"
+          class="collection-banner-media mobile"
+          loading="lazy"
+          alt="collection banner image"
+          id="{{ mobileImage.id }}"
+        >
+      {% endif %}
+    {% endif %}
+  </div>
+
+  <div class="collection-banner-info-wrapper d-flex-center">
+    <div class="collection-banner-info d-flex-center">
+      <div class="collection-banner-title-wrapper d-flex-center">
+        <p class="collection-banner-title">{{ section.settings['col-title'] }}</p>
+      </div>
+      <div class="collection-banner-summary-wrapper d-flex-center">
+        <p class="collection-banner-summary">
+          {{ section.settings['col-summary'] }}
+        </p>
+      </div>
+
+      <div class="collection-banner-icons-wrapper d-flex-center">
+        {% for block in section.blocks %}
+          {% if block.settings['mini-icon'] != blank %}
+            <div class="collection-banner-icon d-flex-center">
+              <img
+                alt="{{ block.settings.mini-icon | escape }}"
+                src="{{ block.settings.mini-icon | image_url }}"
+                width="42"
+                height="42"
+              >
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{{ 'main-collection-banner.css' | asset_url | stylesheet_tag }}
+{% schema %}
+{
+  "name": "t:sections.main-collection-banner.name",
+  "class": "main-collection-banner-section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "col-title",
+      "label": "Title for Banner media",
+      "default": "SKINCARE ESSENTIALS",
+      "info": "If provided will be use as collection title, else collection title will be used"
+    },
+    {
+      "type": "text",
+      "id": "col-summary",
+      "label": "Summary for collection",
+      "default": "99% of plant-based ingredients derived from organic farming and all products contain a minimum of 98% natural ingredients."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile-image",
+      "label": "Mobile Banner Image",
+      "info": "dimensions 16:9, 160px * 90px"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop-image",
+      "label": "Desktop Banner Image",
+      "info": "dimensions 16:5, 160px * 50px, if destop image is not provided fallsback to mobile image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show-video",
+      "default": false,
+      "label": "Use Collection Video as Banner"
+    },
+    {
+      "type": "video",
+      "id": "mobile-video",
+      "label": "Mobile Banner Video",
+      "info": "dimensions 16:9, 160px * 90px"
+    },
+    {
+      "type": "video",
+      "id": "desktop-video",
+      "label": "Desktop Banner Video",
+      "info": "dimensions 16:5, 160px * 50px, if destop video is not provided fallsback to mobile video"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Image",
+      "name": "Collection Icons Blocks",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "mini-icon",
+          "label": "Collection Icons"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,117 @@
+<div
+  id="quickcart-wrapper"
+  class="hide-quickcart w-full h-full max-w-[500px] fixed bottom-0 right-0 flex flex-col justify-center items-center overflow-hidden z-20 bg-surface"
+>
+  <div
+    id="quickcart-spinner-wrapper"
+    class="w-full h-full absolute top-0 left-0 overflow-hidden z-20 flex justify-center items-center bg-surface"
+  >
+    {% render 'spinner' %}
+  </div>
+
+  <div
+    id="quickcart-nav"
+    class="w-full h-[48px] md:h-[64px] mb-auto shadow-[0_2px_15px_-8px_rgba(0,0,0,0.2)] p-[8px] flex justify-between items-center"
+  >
+    <button
+      type="button"
+      aria-label="close cart"
+      id="quickcart-close-btn"
+      class="h-full aspect-square flex justify-center items-center"
+    >
+      <div class="h-[20px] aspect-square flex justify-center items-center">
+        {% render 'close-icon-black', class: 'w-full h-full object-contain' %}
+      </div>
+    </button>
+
+    <p class="text-heading text-[20px] md:text-[26px] font-medium leading-[26px] md:leading-[32px] tracking-[-0.2px] md:tracking-[-0.26px] uppercase">
+      YOUR BAG
+    </p>
+
+    <a
+      href="/pages/wishlist"
+      aria-label="open wishlist"
+      id="wishlist-tigger-btn"
+      class="h-full aspect-square flex justify-center items-center"
+    >
+      <div class="h-[30px] aspect-square flex justify-center items-center">
+        {% render 'wishlist-icon-black', class: 'w-full h-full object-contain' %}
+      </div>
+    </a>
+  </div>
+
+  <div class="quickcart-overflow w-full grow overflow-x-hidden overflow-y-auto">
+    <div id="quickcart-content-wrapper" class="w-full p-[16px]">
+      {% liquid
+        assign recomCollectionHandle = section.settings['recom-collection-handle']
+        assign recomCollection = collections[recomCollectionHandle]
+        assign recomToShow = section.settings['recom-to-show']
+        assign threshold_shipping_limit = all_products[section.settings.threshold_shipping_limit_handle].price
+        assign giftCollectionHandle = section.settings['gift-collection-handle']
+        assign giftCollectionHandle = section.settings['gift-collection-handle']
+        assign giftCollection = collections[giftCollectionHandle]
+        assign giftToShow = section.settings['gift-to-show']
+      %}
+
+      {% if cart.empty? %}
+        {% render 'cart-empty', recomCollection: recomCollection, limit: recomToShow %}
+      {% else %}
+        {% render 'cart-fill',
+          giftCollection: giftCollection,
+          limit: giftToShow,
+          freeShipLimit: threshold_shipping_limit
+        %}
+      {% endif %}
+
+      <p id="quickcart-item-count" class="hidden">{{ cart.item_count }}</p>
+    </div>
+  </div>
+</div>
+
+<style></style>
+
+{% schema %}
+{
+  "name": "Product Quick Cart",
+  "class": "quick-cart-section",
+  "tag": "section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "threshold_shipping_limit_handle",
+      "label": "Shipping Threshold Reference Product Handle",
+      "default": "hand-tlc"
+    },
+    {
+      "type": "text",
+      "id": "recom-collection-handle",
+      "label": "collection handle for recommended products",
+      "default": "all-ow-products"
+    },
+    {
+      "type": "number",
+      "id": "recom-to-show",
+      "label": "Products to show in recommended collection",
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "gift-collection-handle",
+      "label": "collection handle for gift products",
+      "default": "products-collection-for-free-gifts"
+    },
+    {
+      "type": "number",
+      "id": "gift-to-show",
+      "label": "Products to show in gift collection",
+      "default": 3
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Quick Cart"
+    }
+  ]
+}
+{% endschema %}

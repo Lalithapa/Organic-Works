@@ -1,0 +1,409 @@
+<div class="{% if section.settings['use-width-limiter'] %}container mx-auto{% endif %} main-slideshow-wrapper">
+  {% comment %} {% render 'transparent-header' %} {% endcomment %}
+
+  <div class="main-slideshow-carousel-wrapper d-flex-center">
+    {% if section.blocks.size > 1 %}
+      <button id="main-slideshow-prev-{{ section.id }}" type="button" class="carousel-btn prev-btn d-flex-center z-[1]">
+        {% comment %} {% render 'carousel-prev-btn' %} {% endcomment %}
+        <svg class="rotate-180" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <circle opacity="0.8" cx="22" cy="22" r="22" fill="#F7F7F7" fill-opacity="0.08"/>
+        <path d="M17.8075 14.2178L25.5898 22.0001L17.8075 29.7824" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      </button>
+    {% endif %}
+
+    <div id="main-slideshow-carousel-{{ section.id }}" class="main-slideshow-carousel d-flex-center">
+      {% for block in section.blocks %}
+        {% comment %} slide {% endcomment %}
+        <div class="main-slideshow-slide d-flex-center">
+          <a
+            href="{{ block.settings['slideshow-block-explore-url'] }}"
+            style="width: 100%; height: 100%; position: absolute; z-index: 10;">
+            <wbr
+          ></a>
+
+          {% comment %} if image {% endcomment %}
+          {% if block.settings['mobile-image'] and block.settings['show-video'] == false %}
+            {% assign mobileImageSetting = block.settings['mobile-image'] %}
+            {% assign desktopImageSetting = block.settings['desktop-image'] %}
+
+            {% if mobileImageSetting.alt %}
+              {% assign imageAlt = mobileImageSetting.alt %}
+            {% else %}
+              {% assign imageAlt = 'organic works carousel image' %}
+            {% endif %}
+
+            {% if desktopImageSetting %}
+              <img
+                src="{{ mobileImageSetting |  image_url }}"
+                width="100%"
+                height="100%"
+                class="main-slideshow-media mobile"
+                loading="lazy"
+                alt="{{ imageAlt }}"
+                id="{{ mobileImageSetting.id }}"
+              >
+
+              <img
+                src="{{ desktopImageSetting |  image_url }}"
+                width="100%"
+                height="100%"
+                class="main-slideshow-media desktop"
+                loading="lazy"
+                alt="{{ imageAlt }}"
+                id="{{ desktopImageSetting.id }}"
+              >
+            {% else %}
+              <img
+                src="{{ mobileImageSetting |  image_url }}"
+                width="100%"
+                height="100%"
+                class="main-slideshow-media"
+                loading="lazy"
+                alt="{{ imageAlt }}"
+                id="{{ mobileImageSetting.id }}"
+              >
+            {% endif %}
+
+            {% comment %} If Video {% endcomment %}
+          {% elsif block.settings['mobile-video'] and block.settings['show-video'] %}
+            {%- if forloop.first -%}
+              {%- assign autoplay = 1 -%}
+            {%- else -%}
+              {%- assign autoplay = 0 -%}
+            {%- endif -%}
+
+            {% assign mobileVideoSetting = block.settings['mobile-video'] %}
+            {% assign desktopVideoSetting = block.settings['desktop-video'] %}
+            {% assign posterImage = block.settings['video-poster-image'] %}
+
+            {% comment %} assign poster image {% endcomment %}
+            {% if posterImage != blank %}
+              {% assign posterImage = posterImage | image_url %}
+            {% else %}
+              {% assign posterImage = mobileVideoSetting.preview_image.src | image_url %}
+            {% endif %}
+
+            {% comment %} assign alt {% endcomment %}
+            {% if mobileVideoSetting.alt %}
+              {% assign videoAlt = mobileVideoSetting.alt %}
+            {% else %}
+              {% assign videoAlt = 'organic works carousel video' %}
+            {% endif %}
+
+            {% if desktopVideoSetting %}
+              <!-- Display the video tag -->
+              {{
+                mobileVideoSetting
+                | video_tag:
+                  loop: true,
+                  autoplay: autoplay,
+                  muted: true,
+                  class: 'main-slideshow-media mobile',
+                  poster: posterImage,
+                  alt: videoAlt
+              }}
+
+              <!-- Display the video tag -->
+              {{
+                desktopVideoSetting
+                | video_tag:
+                  loop: true,
+                  autoplay: autoplay,
+                  muted: true,
+                  class: 'main-slideshow-media desktop',
+                  poster: posterImage,
+                  alt: videoAlt
+              }}
+            {% else %}
+              <!-- Display the video tag -->
+              {{
+                mobileVideoSetting
+                | video_tag:
+                  loop: true,
+                  autoplay: autoplay,
+                  muted: true,
+                  class: 'main-slideshow-media',
+                  poster: posterImage,
+                  alt: videoAlt
+              }}
+            {% endif %}
+          {% endif %}
+
+          {% if section.settings['use-common-info'] == false and block.settings['use-slide-info'] %}
+          <div class="main-slideshow-detail-wrapper d-flex-center" {% if forloop.index == 2 %}style="bottom:50px;"{% endif %}>
+              <div class="main-slideshow-text d-flex-center">
+                {% if block.settings['slideshow-block-title'] != blank and block.settings['slideshow-block-title-mobile'] != blank %}
+                <div class="main-slideshow-title desktop-screen" style="color: {{ block.settings['slideshow-block-font-color'] }};">
+                  {{ block.settings['slideshow-block-title'] }}
+                </div>
+                <div class="main-slideshow-title mobile-screen" style="color: {{ block.settings['slideshow-block-font-color'] }};">
+                  {{ block.settings['slideshow-block-title-mobile'] }}
+                </div>
+                {% else %}
+                <div class="main-slideshow-title" style="color: {{ block.settings['slideshow-block-font-color'] }};">
+                  {{ block.settings['slideshow-block-title'] }}
+                </div>
+                {% endif %}
+                {% if block.settings['slideshow-block-sub-title'] != blank and block.settings['slideshow-block-sub-title-mobile'] != blank %}
+                 <div class="main-slideshow-subtitle desktop-screen" style="color: {{ block.settings['slideshow-block-font-color'] }};">
+                  {{ block.settings['slideshow-block-sub-title'] }}
+                </div>
+                <div class="main-slideshow-subtitle mobile-screen" style="color: {{ block.settings['slideshow-block-font-color'] }};">
+                  {{ block.settings['slideshow-block-sub-title-mobile'] }}
+                </div>
+                {% else %}
+                <div class="main-slideshow-subtitle" style="color: {{ block.settings['slideshow-block-font-color'] }};">
+                  {{ block.settings['slideshow-block-sub-title'] }}
+                </div>
+              {% endif %}
+              </div>
+              <a
+                href="{{ block.settings['slideshow-block-explore-url'] }}"
+                style="color: {{ block.settings['slideshow-block-font-color'] }}; border-color: {{ block.settings['slideshow-block-font-color'] }};"
+                class="main-slideshow-explore d-flex-center"
+              >
+                {{ block.settings['slideshow-block-explore-url-title'] }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    {% if section.blocks.size > 1 %}
+      <button id="main-slideshow-next-{{ section.id }}" type="button" class="carousel-btn prev-btn d-flex-center">
+        {% comment %} {% render 'carousel-next-btn' %} {% endcomment %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <circle opacity="0.8" cx="22" cy="22" r="22" fill="#F7F7F7" fill-opacity="0.08"/>
+          <path d="M17.8075 14.2178L25.5898 22.0001L17.8075 29.7824" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    {% endif %}
+
+    {% if section.settings['use-common-info'] %}
+    <div class="main-slideshow-detail-wrapper d-flex-center">
+        <div class="main-slideshow-text d-flex-center">
+          <div class="main-slideshow-title">
+            {{ section.settings['slideshow-title'] }}
+          </div>
+          <div class="main-slideshow-subtitle">
+            {{ section.settings['slideshow-sub-title'] }}
+          </div>
+        </div>
+        <a href="{{ section.settings['slideshow-explore-url'] }}" class="main-slideshow-explore d-flex-center">
+          Explore Now
+        </a>
+      </div>
+    {% endif %}
+
+    <div class="main-slideshow-dots-wrapper d-flex-center">
+      {% comment %}
+        {% for block in section.blocks %}
+          {% render 'carousel-progress-dots' %}
+        {% endfor %}
+      {% endcomment %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .main-slideshow-carousel-wrapper .carousel-btn {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    color: black;
+    background-color: rgba(247, 247, 247, 0.08);;
+    display: none !important;
+  }
+
+   #main-slideshow-prev-{{ section.id }} {
+    left: 2.1875vw;
+  }
+
+  #main-slideshow-next-{{ section.id }} {
+    right: 2.1875vw;
+  }
+
+
+  @media only screen and (min-width: 768px) {
+    .main-slideshow-carousel-wrapper:hover button,
+     #main-slideshow-prev-{{ section.id }}:hover,
+     #main-slideshow-next-{{ section.id }}:hover {
+      display: flex !important;
+    }
+  }
+</style>
+
+<script
+  defer
+>
+  $(document).ready(function ready () {
+    const $root = $('#main-slideshow-carousel-{{ section.id }}');
+    $root.slick({
+      mobileFirst: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      speed: 300,
+      lazyLoad: 'ondemand', 
+      autoplay: true,
+      autoplaySpeed: 4000,
+      infinite: true,
+      dots: true,
+      arrows: true,
+      appendDots: $('.main-slideshow-dots-wrapper'),
+      prevArrow: $('#main-slideshow-prev-{{ section.id }}'),
+      nextArrow: $('#main-slideshow-next-{{ section.id }}')
+    });
+
+  });
+
+  {% comment %} $(document).ready(function ready() {
+    const settings = {
+      root: $('#main-slideshow-carousel-{{ section.id }}'),
+      slides: $('#main-slideshow-carousel-{{ section.id }} > .carousel-item'),
+      arrows: false,
+      mouseDragHandlers: true,
+      autoplay: false,
+    };
+    const mainSlideshowCrousel = new Carousel(settings);
+  }); {% endcomment %}
+</script>
+
+{% schema %}
+{
+  "name": "Main Slideshow",
+  "class": "main-slideshow-section",
+  "tag": "section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use-width-limiter",
+      "default": false,
+      "label": "Use Width Limiter??",
+      "info": "Limit The width of the main container?"
+    },
+    {
+      "type": "checkbox",
+      "id": "use-common-info",
+      "default": false,
+      "label": "Use Common Info?",
+      "info": "use common info for all slides"
+    },
+    {
+      "type": "richtext",
+      "id": "slideshow-title",
+      "label": "Slideshow Title",
+      "default": "<p>THE SCIENCE OF <br/> SELF CARE</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "slideshow-sub-title",
+      "label": "Slideshow Title",
+      "default": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS</p>"
+    },
+    {
+      "type": "url",
+      "id": "slideshow-explore-url",
+      "label": "Slideshow Explore Now Url"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slideshow",
+      "name": "slide",
+      "settings": [
+        {
+          "type": "url",
+          "id": "slideshow-block-explore-url",
+          "label": "Slideshow Explore Now Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile-image",
+          "label": "An image slide Mobile",
+          "info": "Aspect Ratio IPhone 14 430px x 932px. Media is set to cover, might crop from edges"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop-image",
+          "label": "An image slide Desktop",
+          "info": "Aspect Ratio MacBook Pro 1440px × 900px. Media is set to cover, might crop from edges"
+        },
+        {
+          "type": "checkbox",
+          "id": "show-video",
+          "label": "If enabled video will show instead of an image"
+        },
+        {
+          "type": "video",
+          "id": "mobile-video",
+          "label": "A video slide Mobile",
+          "info": "Aspect Ratio IPhone 14 430px x 932px. Media is set to cover, might crop from edges"
+        },
+        {
+          "type": "video",
+          "id": "desktop-video",
+          "label": "A video slide desktop",
+          "info": "Aspect Ratio MacBook Pro 1440px × 900px. Media is set to cover, might crop from edges"
+        },
+        {
+          "type": "image_picker",
+          "id": "video-poster-image",
+          "label": "Poster Image of video (optional)"
+        },
+        {
+          "type": "checkbox",
+          "id": "use-slide-info",
+          "default": false,
+          "label": "Use Slide Info?",
+          "info": "Enter Info for slide."
+        },
+        {
+          "type": "richtext",
+          "id": "slideshow-block-title",
+          "label": "Slideshow Title",
+          "default": "<p>THE SCIENCE OF <br/> SELF CARE</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "slideshow-block-title-mobile",
+          "label": "Slideshow Title for Mobile",
+          "default": "<p>THE SCIENCE OF <br/> SELF CARE</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "slideshow-block-sub-title",
+          "label": "Slideshow Title",
+          "default": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "slideshow-block-sub-title-mobile",
+          "label": "Slideshow Title for Mobile",
+          "default": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS</p>"
+        },
+        {
+          "type": "text",
+          "id": "slideshow-block-explore-url-title",
+          "label": "Slideshow Url Title",
+          "default": "Explore Now"
+        },
+        {
+          "type": "text",
+          "id": "slideshow-block-font-color",
+          "label": "Color for slide",
+          "default": "#fff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Slideshow"
+    }
+  ]
+}
+{% endschema %}

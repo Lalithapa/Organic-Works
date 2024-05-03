@@ -1,0 +1,389 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "our_approach_4CELJQ": {
+      "type": "our-approach",
+      "custom_css": [
+        ".our-approach-wrapper.d-flex-center.scroll-trigger {padding: 0 !important;}",
+        ".our-approach-media {aspect-ratio: unset !important; max-height: 600px;}"
+      ],
+      "settings": {
+        "showfullcontainer": false,
+        "title": "<p>INDULGE IN SYMPHONY OF NATURE'S FINEST<\/p>",
+        "minitext": "",
+        "text": "<p>It’s important to be mindful of what we put on our bodies. Our formulas exclusively feature beneficial ingredients, avoiding harmful substances such as drying alcohols, parabens, and sulfates. Explore our distinctive plant-based ingredients below.<\/p>",
+        "url": "",
+        "url-title": "",
+        "media-text": "",
+        "sectionBackground": "#ffffff",
+        "mobile-image": "shopify:\/\/shop_images\/Rectangle_394_2.png",
+        "desktop-image": "shopify:\/\/shop_images\/Rectangle_394.png",
+        "show-video": true,
+        "mobile-video": "shopify:\/\/files\/videos\/9a63-38ae-429b-8f14-895f1d1804b8.mp4",
+        "desktop-video": "shopify:\/\/files\/videos\/5bbf-00ce-4a81-8acb-730fed0aeea6.mp4",
+        "video-poster-image": "shopify:\/\/shop_images\/Rectangle_394_2.png"
+      }
+    },
+    "about_us_cards_Rw8LKL": {
+      "type": "about-us-cards",
+      "blocks": {
+        "image_gEJHqJ": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_4.png",
+            "awdmain": "ALOE VERA",
+            "awdmain_2": "",
+            "awdsubmain": "Aloe Vera maintains hydration and balance. Experience its soothing touch, leaving you refreshed, replenished, and hydrated."
+          }
+        },
+        "image_rVq4N3": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_5.png",
+            "awdmain": "ROSE GERANIUM",
+            "awdmain_2": "",
+            "awdsubmain": "A potent antioxidant, nurtures and defends, enhancing vitality. Experience renewed radiance & protection against daily stressors."
+          }
+        },
+        "image_7cRJwP": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_6.png",
+            "awdmain": "Aragon oil",
+            "awdmain_2": "",
+            "awdsubmain": "A luxurious elixir, deeply hydrates and nourishes, promoting healthy hair and skin with its rejuvenating properties naturally."
+          }
+        },
+        "image_YMFyjm": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_7.png",
+            "awdmain": "Bamboo Leaf Extract",
+            "awdmain_2": "",
+            "awdsubmain": "Rich in silica, this natural extract strengthens & adds luster to hair, promoting growth, making it an essential component for healthy haircare."
+          }
+        },
+        "image_DViA8K": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_8.png",
+            "awdmain": "BAOBAB",
+            "awdmain_2": "",
+            "awdsubmain": "Rich in nutrients, this natural ingredient swiftly firms, plumps, and hydrates, offering instant nourishment and rejuvenation for skin."
+          }
+        },
+        "image_WVpzyG": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_9.png",
+            "awdmain": "BERGAMOT",
+            "awdmain_2": "",
+            "awdsubmain": "Famous for its natural antibacterial qualities, purifies, washing away impurities, leaving skin delicately fragrant and refreshed."
+          }
+        },
+        "image_rDwfzz": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_10.png",
+            "awdmain": "BERGAMOT",
+            "awdmain_2": "",
+            "awdsubmain": "Renowned for its calming & hydrating properties, soothes & revitalizes skin, promoting a refreshed, radiant complexion."
+          }
+        },
+        "image_wAaa7t": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_11.png",
+            "awdmain": "DAMASK ROSE",
+            "awdmain_2": "",
+            "awdsubmain": "Its soothing aroma and skin-nourishing properties, rejuvenates and revitalizes, leaving skin refreshed and radiant."
+          }
+        },
+        "image_VaGemq": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_12.png",
+            "awdmain": "SWEET ORANGE",
+            "awdmain_2": "",
+            "awdsubmain": "Sweet Orange Oil, with its uplifting aroma, refreshes and cleanses the skin, providing a revitalizing, aromatic experience."
+          }
+        },
+        "image_FwXD6d": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_18.png",
+            "awdmain": "GRAPE SEED",
+            "awdmain_2": "",
+            "awdsubmain": "Abundant in antioxidants, hydrates and nourishes, effectively combating signs of aging for rejuvenated and radiant skin."
+          }
+        },
+        "image_p4pzBe": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_13.png",
+            "awdmain": "shea butter",
+            "awdmain_2": "",
+            "awdsubmain": "Shea Butter delivers intense hydration and nourishment, leaving skin soft and supple, enhancing its natural radiance and vitality."
+          }
+        },
+        "image_HTnMcg": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_14.png",
+            "awdmain": "ROSEMARY",
+            "awdmain_2": "",
+            "awdsubmain": "Renowned for its hair benefits, strengthens, boosts circulation, and fosters healthy hair growth, for strong, luscious locks."
+          }
+        },
+        "image_LjPpqg": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_15.png",
+            "awdmain": "COCOA BUTTER",
+            "awdmain_2": "",
+            "awdsubmain": "Creates a protective barrier, preventing moisture loss, & boosts elasticity, promoting a youthful radiance for healthier-looking skin."
+          }
+        },
+        "image_NcaahC": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_16.png",
+            "awdmain": "COCONUT",
+            "awdmain_2": "",
+            "awdsubmain": "Rich in proteins & minerals, deeply nourishes, smoothing and improving moisture retention for rejuvenated, healthy hair and skin."
+          }
+        },
+        "image_XcGGMy": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_17.png",
+            "awdmain": "GOTU KOLA",
+            "awdmain_2": "",
+            "awdsubmain": "Stimulates cell renewal, unveiling a brighter, rejuvenated complexion, promoting a radiant & youthful appearance."
+          }
+        }
+      },
+      "block_order": [
+        "image_gEJHqJ",
+        "image_rVq4N3",
+        "image_7cRJwP",
+        "image_YMFyjm",
+        "image_DViA8K",
+        "image_WVpzyG",
+        "image_rDwfzz",
+        "image_wAaa7t",
+        "image_VaGemq",
+        "image_FwXD6d",
+        "image_p4pzBe",
+        "image_HTnMcg",
+        "image_LjPpqg",
+        "image_NcaahC",
+        "image_XcGGMy"
+      ],
+      "settings": {
+        "makeSlider": true
+      }
+    },
+    "image_with_text_e8mVhi": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_reiCAF": {
+          "type": "heading",
+          "settings": {
+            "heading": "HERITAGE LEGACY OF SCOTTISH TRADITIONS",
+            "heading_size": "h1"
+          }
+        },
+        "text_7kjKeP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Scottish culture intertwines with wellness through a deep-rooted connection to natural ingredients. Their wellness ethos emphasizes the importance of connecting with nature and embracing simplicity for overall health and vitality. <\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_reiCAF",
+        "text_7kjKeP"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/I2_2.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_GkThXt": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_aC8H3p": {
+          "type": "heading",
+          "settings": {
+            "heading": "100% CLEAN & 100% GREEN",
+            "heading_size": "h1"
+          }
+        },
+        "text_Bapgg6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our complete product range is crafted with ethical practices, environmental consciousness, and unwavering dedication to quality and effectiveness, promising a pure and uncompromising beauty journey. With at least 99% of plant-based ingredients sourced from organic farming, and a minimum of 98% natural ingredients in all our formulations, our product portfolio stands as a testament to cleanliness, sustainability, and cruelty-free beauty.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_aC8H3p",
+        "text_Bapgg6"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/I2_3.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "ticker_tape_9Djntd": {
+      "type": "ticker-tape",
+      "blocks": {
+        "ticker_tape_RBnEPp": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p><strong>Organic <\/strong>Ingredients<\/p>"
+          }
+        },
+        "ticker_tape_R3UHcW": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p><strong>Award Winning<\/strong><\/p>"
+          }
+        },
+        "ticker_tape_jmxknr": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p><strong>100%<\/strong> Clinically Tested<\/p>"
+          }
+        },
+        "ticker_tape_z3afWw": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p>Suitable For <strong>All Skin Types<\/strong><\/p>"
+          }
+        },
+        "ticker_tape_8pGtW6": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p><strong>100% <\/strong>Cruelty Free<\/p>"
+          }
+        },
+        "ticker_tape_hBnbqT": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p><strong>100%<\/strong> Vegan<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "ticker_tape_RBnEPp",
+        "ticker_tape_R3UHcW",
+        "ticker_tape_jmxknr",
+        "ticker_tape_z3afWw",
+        "ticker_tape_8pGtW6",
+        "ticker_tape_hBnbqT"
+      ],
+      "settings": {
+      }
+    },
+    "clean_beauty_media_rbRpnB": {
+      "type": "clean-beauty-media",
+      "custom_css": [
+        ".clean-beauty-media-wrapper {margin-top: 72px;}",
+        "@media screen and (max-width: 768px) {.clean-beauty-media-wrapper {margin-top: 48px; }}"
+      ],
+      "settings": {
+        "use-container": false,
+        "show-video": true,
+        "mobile-video": "shopify:\/\/files\/videos\/4502-9060-479a-acb2-6f0ae36c9220.mp4",
+        "desktop-video": "shopify:\/\/files\/videos\/6836-a5b5-4e59-950b-7ca496bb9189.mp4"
+      }
+    },
+    "clean_beauty_info_jc9pUc": {
+      "type": "clean-beauty-info",
+      "blocks": {
+        "icon_jpUMRG": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/1_1.png"
+          }
+        },
+        "icon_JdxraE": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/2_1.png"
+          }
+        },
+        "icon_WVmWLM": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/4_3b048e4f-9bc0-45fa-84c4-988473b2208a.png"
+          }
+        },
+        "icon_qCTpEc": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/3_db7e6346-650a-408f-9e56-5ca9e47b62e8.png"
+          }
+        }
+      },
+      "block_order": [
+        "icon_jpUMRG",
+        "icon_JdxraE",
+        "icon_WVmWLM",
+        "icon_qCTpEc"
+      ],
+      "custom_css": [
+        ".our-approach-wrapper {padding: 0 !important;}"
+      ],
+      "settings": {
+        "showfullcontainer": false,
+        "title": "<p>CLEAN BEAUTY, WITHOUT COMPROMISE<\/p>",
+        "sectionBackground": "#fffbf6",
+        "text": "Our entire product range is formulated ethically, environmentally conscious, and unwavering in quality and effectiveness, ensuring a pure and uncompromising beauty experience."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "our_approach_4CELJQ",
+    "about_us_cards_Rw8LKL",
+    "image_with_text_e8mVhi",
+    "image_with_text_GkThXt",
+    "ticker_tape_9Djntd",
+    "clean_beauty_media_rbRpnB",
+    "clean_beauty_info_jc9pUc"
+  ]
+}

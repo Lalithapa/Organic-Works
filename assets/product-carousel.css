@@ -1,0 +1,167 @@
+.carousel-wrapper-outer {
+  width: 100%;
+  height: 100%;
+
+  column-gap: 12px;
+  /* overflow: hidden; */
+
+  padding-left: 16px;
+}
+
+.carousel-inner {
+  width: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  row-gap: 42px;
+}
+
+.carousel {
+  scroll-snap-type: x mandatory;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-item {
+  scroll-snap-align: start;
+}
+
+.carousel::-webkit-scrollbar {
+  /* display: none; */
+}
+
+.carousel-section-wrapper {
+  width: 100%;
+  height: 100%;
+
+  flex-direction: column;
+  row-gap: 8px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 56px 0;
+}
+
+.carousel-section-title-wrapper {
+  width: 100%;
+  height: auto;
+
+  flex-direction: column;
+}
+
+.carousel-section-title {
+  color: #151515;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 114.286% */
+  text-transform: uppercase;
+}
+
+.carousel.slick-initialized .slick-slide {
+  display: flex !important;
+}
+
+.carousel-slide {
+  flex: 1 0 calc(100% / 3);
+  padding-right: 16px;
+}
+
+/* .carousel-visible {
+  background-color: aqua !important;
+}
+
+.carousel-active {
+  background-color: green !important;
+} */
+
+.carousel-btn {
+  height: 42px;
+  aspect-ratio: 1;
+  flex-shrink: 1;
+  z-index: 0;
+
+  display: none !important;
+}
+
+.carousel-btn img {
+  width: 28px;
+  aspect-ratio: 1;
+
+  object-fit: contain;
+}
+
+.carousel-btn[aria-disabled="true"] {
+  opacity: 0.5;
+}
+
+.product-carousel-dots-wrapper {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: auto !important;
+
+  ul {
+    position: relative !important;
+    top: 0;
+    left: 0;
+
+    width: 100% !important;
+    height: auto;
+
+    display: flex !important;
+    /* column-gap: 5px; */
+    justify-content: flex-start !important;
+    align-items: center !important;
+
+    li {
+      position: relative;
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+      height: 3px !important;
+
+      button {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 4px !important;
+
+        background-color: #f2f2f2 !important;
+        color: transparent !important;
+        font-size: 0 !important;
+
+        * {
+          display: none;
+        }
+      }
+      &.slick-active {
+        button {
+          background-color: #585858 !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-section-wrapper {
+    row-gap: 12px;
+  }
+
+  .carousel-section-title {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0);
+    font-size: 26px;
+    line-height: 32px; /* 123.077% */
+  }
+
+  .carousel-wrapper-outer {
+    padding-left: 0;
+  }
+
+  .carousel-btn {
+    display: flex !important;
+  }
+}

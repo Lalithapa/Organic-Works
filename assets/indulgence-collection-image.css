@@ -1,0 +1,34 @@
+.indulgence-col-image {
+  width: 100%;
+
+  aspect-ratio: 9/16;
+  object-fit: cover;
+}
+
+.indulgence-col-text-on-image {
+  width: 80%;
+  max-width: var(--width-limit);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  color: #cecece;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px; /* 150% */
+}
+
+@media only screen and (min-width: 768px) {
+  .indulgence-col-image.desktop {
+    aspect-ratio: 16/5;
+  }
+
+  .indulgence-col-text-on-image {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,77 @@
+.clean-beauty-info-wrapper,
+.clean-beauty-detail {
+  position: relative;
+  width: 100%;
+
+  flex-direction: column;
+}
+
+.clean-beauty-info-wrapper {
+  padding: 40px 12px;
+}
+
+.clean-beauty-title-wrapper {
+  width: 100%;
+  flex-direction: column;
+  column-gap: 8px;
+}
+
+.clean-beauty-title-wrapper > p {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.clean-beauty-title-wrapper em {
+  font-size: 16px;
+  line-height: 16px;
+  height: 16px;
+  vertical-align: text-top;
+}
+
+.clean-beauty-desctiption-wrapper {
+  width: 100%;
+}
+
+.clean-beauty-detail {
+  max-width: var(--width-limit);
+  row-gap: 24px;
+}
+
+.clean-beauty-icons-wrapper {
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  width: auto;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.clean-beauty-icon {
+  height: 58px;
+  aspect-ratio: 1;
+}
+
+.clean-beauty-icon-img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+@media only screen and (min-width: 768px) {
+  .clean-beauty-title-wrapper {
+    flex-direction: row;
+  }
+
+  .clean-beauty-icon {
+    height: 84px;
+  }
+  .clean-beauty-info-wrapper {
+    padding:56px 72px;
+  }
+
+  .clean-beauty-icons-wrapper {
+    gap: 20px;
+  }
+}

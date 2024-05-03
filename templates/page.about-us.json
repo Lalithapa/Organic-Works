@@ -1,0 +1,141 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "our_approach_4CELJQ": {
+      "type": "our-approach",
+      "custom_css": [
+        ".our-approach-wrapper.d-flex-center.scroll-trigger {padding: 0 !important;}",
+        ".our-approach-media {aspect-ratio: unset !important; max-height: 600px;}",
+        "@media only screen and (min-width: 768px) {.our-approach-title {font-size: 35px !important; }}"
+      ],
+      "settings": {
+        "showfullcontainer": false,
+        "title": "<p>ORIGIN OF SCOTLAND<\/p>",
+        "minitext": "Founded 2012",
+        "text": "<p>Elevate your senses with the purity of our secret ingredients, lovingly nurtured by the Scottish landscape. Our commitment to authenticity goes beyond the surface – it's a dedication to preserving the very essence of the land, ensuring that each fragrance, feel and texture orchestrated into the Organic works range, is a genuine connection to the heart of Scotland.<\/p>",
+        "url": "",
+        "url-title": "",
+        "media-text": "",
+        "sectionBackground": "#ffffff",
+        "show-video": true,
+        "mobile-video": "shopify:\/\/files\/videos\/858a-0d5b-4049-b3b2-e07e1c9e4e02.mp4",
+        "desktop-video": "shopify:\/\/files\/videos\/3e4f-d3bd-4393-861d-747e5d2f97af.mp4",
+        "video-poster-image": "shopify:\/\/shop_images\/I2_2.png"
+      }
+    },
+    "about_us_cards_Rw8LKL": {
+      "type": "about-us-cards",
+      "blocks": {
+        "image_gEJHqJ": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_1.png",
+            "awdmain": "98% Natural ingredients",
+            "awdmain_2": "",
+            "awdsubmain": "Our entire product portfolio is clean, green, and cruelty-free. At least 99% of plant-based ingredients are derived from organic farming, and all products contain a minimum of 98% natural ingredients."
+          }
+        },
+        "image_rVq4N3": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_2.png",
+            "awdmain": "clinically tested for",
+            "awdmain_2": "for all skin types",
+            "awdsubmain": "Our products are rigorously tested for suitability, ensuring confidence for even the most sensitive skin and welcoming the whole family to use OW."
+          }
+        },
+        "image_7cRJwP": {
+          "type": "image",
+          "settings": {
+            "awd-card": "shopify:\/\/shop_images\/Rectangle_4313_3.png",
+            "awdmain": "AWARD WINNING,",
+            "awdmain_2": "ORGANIC Beauty",
+            "awdsubmain": "We've earned special recognitions and acclaimed awards for our effective natural formulas, recognized for their exceptional quality and purity."
+          }
+        }
+      },
+      "block_order": [
+        "image_gEJHqJ",
+        "image_rVq4N3",
+        "image_7cRJwP"
+      ],
+      "settings": {
+        "makeSlider": false
+      }
+    },
+    "clean_beauty_media_rbRpnB": {
+      "type": "clean-beauty-media",
+      "custom_css": [
+        ".clean-beauty-media-wrapper {margin-top: 72px;}",
+        "@media screen and (max-width: 768px) {.clean-beauty-media-wrapper {margin-top: 48px; }}"
+      ],
+      "settings": {
+        "use-container": false,
+        "show-video": true,
+        "mobile-video": "shopify:\/\/files\/videos\/4502-9060-479a-acb2-6f0ae36c9220.mp4",
+        "desktop-video": "shopify:\/\/files\/videos\/6836-a5b5-4e59-950b-7ca496bb9189.mp4"
+      }
+    },
+    "clean_beauty_info_jc9pUc": {
+      "type": "clean-beauty-info",
+      "blocks": {
+        "icon_jpUMRG": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/1_1.png"
+          }
+        },
+        "icon_JdxraE": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/2_1.png"
+          }
+        },
+        "icon_WVmWLM": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/4_3b048e4f-9bc0-45fa-84c4-988473b2208a.png"
+          }
+        },
+        "icon_qCTpEc": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/3_db7e6346-650a-408f-9e56-5ca9e47b62e8.png"
+          }
+        }
+      },
+      "block_order": [
+        "icon_jpUMRG",
+        "icon_JdxraE",
+        "icon_WVmWLM",
+        "icon_qCTpEc"
+      ],
+      "custom_css": [
+        ".our-approach-wrapper {padding: 0 !important;}",
+        ".clean-beauty-info-wrapper {margin-bottom: 72px;}",
+        "@media screen and (max-width: 768px) {.clean-beauty-info-wrapper {margin-bottom: 48px; }}",
+        "@media only screen and (min-width: 768px) {.clean-beauty-title-wrapper {font-size: 30px; }}"
+      ],
+      "settings": {
+        "showfullcontainer": false,
+        "title": "<p>CLEAN BEAUTY, WITHOUT COMPROMISE<\/p>",
+        "sectionBackground": "#fffbf6",
+        "text": "Our entire product range is formulated ethically, environmentally conscious, and unwavering in quality and effectiveness, ensuring a pure and uncompromising beauty experience."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "our_approach_4CELJQ",
+    "about_us_cards_Rw8LKL",
+    "clean_beauty_media_rbRpnB",
+    "clean_beauty_info_jc9pUc"
+  ]
+}

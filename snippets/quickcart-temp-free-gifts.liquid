@@ -1,0 +1,361 @@
+{% comment %} this snippet is not used anywhere {% endcomment %}
+{% comment %} this is a backup code {% endcomment %}
+{% comment %} todo - code and logic check {% endcomment %}
+
+{% if localization.country.currency.iso_code == 'GBP' %}
+  <div class="quickcart-free-gift-wrapper w-full flex flex-col justify-start items-center bg-[#F9F9F9] mt-[16px]">
+    <button
+      id="quickcart-free-gift-btn"
+      data-dropdown-toggle="dropdown"
+      class="rounded-[8px] w-full h-[48px] px-[16px] py-[12px] flex justify-start items-center gap-x-[8px]"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
+        <path d="M1.36757 4.36428C0.525468 4.36428 0 4.91514 0 5.78846V7.59189C0 8.34337 0.366999 8.85851 1.0365 8.98737V13.4388C1.0365 14.7916 1.77787 15.5 3.13838 15.5H10.8616C12.2221 15.5 12.9635 14.7916 12.9635 13.4388V8.98767C13.6401 8.85881 14 8.34368 14 7.5922V5.78877C14 4.91545 13.5178 4.36458 12.6324 4.36458H11.1061C11.5093 3.97068 11.7467 3.45554 11.7467 2.87597C11.7467 1.48752 10.6454 0.5 9.24898 0.5C8.21985 0.5 7.37744 1.06521 7.00338 2.07442C6.6287 1.06521 5.77954 0.5 4.75041 0.5C3.36103 0.5 2.25267 1.48752 2.25267 2.87567C2.25267 3.45585 2.483 3.97098 2.88593 4.36458L1.36757 4.36428ZM5.29031 4.36428C4.10271 4.36428 3.47651 3.6699 3.47651 2.92575C3.47651 2.15289 4.05234 1.69486 4.82258 1.69486C5.70798 1.69486 6.40605 2.37458 6.40605 3.51264V4.36428H5.29031ZM8.70938 4.36428H7.59365V3.51234C7.59365 2.37458 8.29202 1.69486 9.17742 1.69486C9.94766 1.69486 10.5306 2.15289 10.5306 2.92544C10.5306 3.6699 9.88255 4.36428 8.70938 4.36428ZM1.6627 5.44493H6.36305V7.93542H1.6624C1.30246 7.93542 1.15873 7.78518 1.15873 7.42731V5.94572C1.15873 5.58815 1.30246 5.44493 1.6624 5.44493M12.3441 5.44493C12.704 5.44493 12.8407 5.58815 12.8407 5.94572V7.42731C12.8407 7.78518 12.704 7.93542 12.3441 7.93542H7.63695V5.44493H12.3441ZM3.1307 14.4267C2.5263 14.4267 2.19524 14.0902 2.19524 13.4963V9.01607H6.36274V14.4267H3.1307ZM11.8048 13.4963C11.8048 14.0902 11.4734 14.4267 10.8761 14.4267H7.63695V9.01607H11.8045L11.8048 13.4963Z" fill="#151515"/>
+      </svg>
+
+      <p class="shrink grow-0 text-heading text-[15px] md:text-[16px] font-medium leading-[24px] tracking-[-0.15px] md:tracking-[-0.16px] uppercase">
+        CHOOSE A FREE GIFT
+      </p>
+
+      <svg
+        id="quickcart-free-gift-plus-icon"
+        class=" transition-transform h-full rotate-plus ml-auto"
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 14 14"
+        fill="none"
+      >
+        <path d="M7 3.5L7 10.5" stroke="#151515" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M10.5 7L3.5 7" stroke="#151515" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Dropdown menu -->
+    <div
+      id="quickcart-free-gift-dropdown"
+      class="w-full flex flex-col justify-center items-center"
+    >
+      {% assign cartValue = cart.total_price | times: 1 %}
+      {% assign level1 = 3000 %}
+      {% assign level2 = 4000 %}
+      {% assign level3 = 5000 %}
+
+      {% assign product1 = giftCollection.products[1] %}
+      {% assign product2 = giftCollection.products[2] %}
+      {% assign product3 = giftCollection.products[3] %}
+
+      {{ product1.title }}
+      {{ product2.title }}
+      {{ product3.title }}
+
+      {% if cartValue >= level3 %}
+        <div
+          id="quickcart-gift-carousel-{{ section.id }}"
+          class="quickcart-gift-carousel w-full !flex pl-[8px]"
+        >
+          {% comment %} card 1 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-4px">
+              <img
+                width="{{ product1.featured_image.width }}"
+                height="{{ product1.featured_image.height }}"
+                src="{{ product1.featured_image.src | image_url }}"
+                alt="get free {{ product1.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-4px"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product1.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-en-dis',
+                product: product1,
+                variant: product1.selected_or_first_available_variant
+              %}
+            </div>
+          </div>
+
+          {% comment %} card 2 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-4px">
+              <img
+                width="{{ product2.featured_image.width }}"
+                height="{{ product2.featured_image.height }}"
+                src="{{ product2.featured_image.src | image_url }}"
+                alt="get free {{ product2.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-4px"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product2.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-en-dis',
+                product: product2,
+                variant: product2.selected_or_first_available_variant
+              %}
+            </div>
+          </div>
+
+          {% comment %} card 3 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-4px">
+              <img
+                width="{{ product3.featured_image.width }}"
+                height="{{ product3.featured_image.height }}"
+                src="{{ product3.featured_image.src | image_url }}"
+                alt="get free {{ product3.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-4px"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product3.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-enabled',
+                product: product3,
+                variant: product3.selected_or_first_available_variant
+              %}
+            </div>
+          </div>
+        </div>
+
+      {% elsif cartValue >= level2 %}
+        <div
+          id="quickcart-gift-carousel-{{ section.id }}"
+          class="quickcart-gift-carousel w-full !flex pl-2"
+        >
+          {% comment %} card 1 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-4px">
+              <img
+                width="{{ product1.featured_image.width }}"
+                height="{{ product1.featured_image.height }}"
+                src="{{ product1.featured_image.src | image_url }}"
+                alt="get free {{ product1.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-4px"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product1.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-en-dis',
+                product: product1,
+                variant: product1.selected_or_first_available_variant
+              %}
+            </div>
+          </div>
+
+          {% comment %} card 2 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-4px">
+              <img
+                width="{{ product2.featured_image.width }}"
+                height="{{ product2.featured_image.height }}"
+                src="{{ product2.featured_image.src | image_url }}"
+                alt="get free {{ product2.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-4px"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product2.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-enabled',
+                product: product2,
+                variant: product2.selected_or_first_available_variant
+              %}
+            </div>
+          </div>
+
+          {% comment %} card 3 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-4px">
+              <img
+                width="{{ product3.featured_image.width }}"
+                height="{{ product3.featured_image.height }}"
+                src="{{ product3.featured_image.src | image_url }}"
+                alt="get free {{ product3.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-4px"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product3.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-disabled', level: level3, cartValue: cartValue %}
+            </div>
+          </div>
+        </div>
+      {% elsif cartValue >= level1 %}
+        <div
+          id="quickcart-gift-carousel-{{ section.id }}"
+          class="quickcart-gift-carousel w-full !flex pl-2"
+        >
+          {% comment %} card 1 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-4px">
+              <img
+                width="{{ product1.featured_image.width }}"
+                height="{{ product1.featured_image.height }}"
+                src="{{ product1.featured_image.src | image_url }}"
+                alt="get free {{ product1.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-4px"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product1.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-enabled',
+                product: product1,
+                variant: product1.selected_or_first_available_variant
+              %}
+            </div>
+          </div>
+
+          {% comment %} card 2 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-4px">
+              <img
+                width="{{ product2.featured_image.width }}"
+                height="{{ product2.featured_image.height }}"
+                src="{{ product2.featured_image.src | image_url }}"
+                alt="get free {{ product2.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-4px"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product2.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-disabled', level: level2, cartValue: cartValue %}
+            </div>
+          </div>
+
+          {% comment %} card 3 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-[4px]">
+              <img
+                width="{{ product3.featured_image.width }}"
+                height="{{ product3.featured_image.height }}"
+                src="{{ product3.featured_image.src | image_url }}"
+                alt="get free {{ product3.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-[4px]"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product3.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-disabled', level: level3, cartValue: cartValue %}
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div
+          id="quickcart-gift-carousel-{{ section.id }}"
+          class="quickcart-gift-carousel w-full !flex pl-2"
+        >
+          {% comment %} card 1 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-4px">
+              <img
+                width="{{ product1.featured_image.width }}"
+                height="{{ product1.featured_image.height }}"
+                src="{{ product1.featured_image.src | image_url }}"
+                alt="get free {{ product1.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-[4px]"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product1.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-disabled', level: level1, cartValue: cartValue %}
+            </div>
+          </div>
+
+          {% comment %} card 2 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-[4px]">
+              <img
+                width="{{ product2.featured_image.width }}"
+                height="{{ product2.featured_image.height }}"
+                src="{{ product2.featured_image.src | image_url }}"
+                alt="get free {{ product2.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-[4px]"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product2.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-disabled', level: level2, cartValue: cartValue %}
+            </div>
+          </div>
+
+          {% comment %} card 3 {% endcomment %}
+          <div class="cart-gift-card-wrapper w-full !flex justify-center items-center pr-[8px]">
+            <div class="cart-gift-card-img-wrapper w-[30%] h-full flex justify-center items-center rounded-[4px]">
+              <img
+                width="{{ product3.featured_image.width }}"
+                height="{{ product3.featured_image.height }}"
+                src="{{ product3.featured_image.src | image_url }}"
+                alt="get free {{ product3.title }}"
+                class="w-full h-full asp3-4 object-contain rounded-[4px]"
+              >
+            </div>
+
+            <div class="cart-gift-card-info-wrapper w-[70%] h-full flex flex-col justify-center items-start ml-[12px]">
+              <p class="text-heading text-[13px] md:text-[14px] font-normal leading-[20px] tracking-[-0.13px] md:tracking-[-0.14px] uppercase">
+                {{ product3.title }}
+              </p>
+              <p class="text-[#8e8e8e] text-[12px] font-medium leading-[18px] tracking-[-0.12px] uppercase">50ml</p>
+
+              {% render 'cart-free-gift-btn-disabled', level: level3, cartValue: cartValue %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="quickcart-gift-carousel-dots"></div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,105 @@
+<div class="{% if section.settings['use-container'] %}container{% endif %} awards-wrapper d-flex-center ">
+  <div class="awards-media-wrapper d-flex-center">
+    {% assign imageSetting = section.settings.image %}
+    {% if imageSetting.alt %}
+      {% assign imageAlt = imageSetting.alt %}
+    {% else %}
+      {% assign imageAlt = 'organic works shop product' %}
+    {% endif %}
+
+    <img
+      src="{{ imageSetting |  image_url }}"
+      width="100%"
+      height="100%"
+      class="awards-media d-flex-center"
+      loading="lazy"
+      alt="{{ imageAlt }}"
+      id="{{ imageSetting.id }}"
+    >
+  </div>
+  <div class="awards-info-wrapper d-flex-center scroll-trigger animate--slide-in">
+    <div class="awards-info d-flex-center">
+      <div class="awards-title-wrapper d-flex-center">
+        <p class="awards-title">{{ section.settings.title }}</p>
+      </div>
+
+      <div class="awards-desc-wrapper d-flex-center">
+        <p class="awards-desc home-summary">{{ section.settings.desc }}</p>
+      </div>
+
+      <div class="awards-icon-wrapper d-flex-center">
+        {% for block in section.blocks %}
+          {% assign iconSetting = block.settings.icon %}
+          {% if iconSetting.alt %}
+            {% assign imageAlt = iconSetting.alt %}
+          {% else %}
+            {% assign imageAlt = 'organic works award image' %}
+          {% endif %}
+
+          <div class="awards-icon d-flex-center">
+            <img
+              src="{{ iconSetting |  image_url }}"
+              width="100%"
+              height="100%"
+              class="awards-icom-image d-flex-center"
+              loading="lazy"
+              alt="{{ imageAlt }}"
+              id="{{ iconSetting.id }}"
+            >
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Awards",
+  "class": "awards-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use-container",
+      "default": false,
+      "label": "use width container?"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "AWARD WINNING ORGANIC BEAUTY FROM SCOTLAND"
+    },
+    {
+      "type": "textarea",
+      "id": "desc",
+      "label": "Description",
+      "default": "Awards from judges, industry experts, clean beauty certifiers, the public & everything in between."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "award-icon",
+      "name": "Award Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Award Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Awards"
+    }
+  ]
+}
+{% endschema %}

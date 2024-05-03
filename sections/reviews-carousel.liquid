@@ -1,0 +1,131 @@
+<div class="mx-auto w-full flex flex-col justify-center items-center gap-y-[24px] md:gap-y-[40px] py-[56px] bg-[#FBFBFB] mt-[40px] scroll-trigger animate--slide-in">
+  <div class="w-full flex justify-center items-center">
+    <p class="home-title-sm">{{ section.settings.title }}</p>
+  </div>
+
+  <div class="w-full md:w-[700px] flex flex-col justify-center items-center px-[8px]">
+    <div class="w-full flex justify-center items-center gap-x-[12px]">
+      <button
+        type="button"
+        id="reviews-prev-btn-{{ section.id }}"
+        class="w-[20px] aspect-square flex justify-center items-center "
+      >
+        {% render 'carousel-prev-btn', width: 20, height: 20, class: 'w-full h-full object-contain' %}
+      </button>
+      <svg
+        class="w-[27px] h-[15px] object-contain mb-auto"
+        xmlns="http://www.w3.org/2000/svg"
+        width="27"
+        height="15"
+        viewBox="0 0 27 15"
+        fill="none"
+      >
+        <g opacity="0.5" clip-path="url(#clip0_2327_8506)">
+          <path d="M16.8445 13.7285C18.1945 13.7285 19.4945 12.5785 19.4945 11.0785C19.4945 9.77852 18.2445 8.57852 16.9945 8.42852C17.0445 7.02852 17.9445 4.12852 21.2945 1.77852L20.6445 0.728516C15.7445 3.17852 13.8945 7.42852 13.8945 10.1285C13.8945 12.4785 15.2445 13.7285 16.8445 13.7285ZM8.09453 13.7285C9.44453 13.7285 10.7445 12.5785 10.7445 11.0785C10.7445 9.77852 9.49453 8.57852 8.24453 8.42852C8.29453 7.02852 9.19453 4.12852 12.5445 1.77852L11.8945 0.728516C6.99453 3.17852 5.14453 7.42852 5.14453 10.1285C5.14453 12.4785 6.49453 13.7285 8.09453 13.7285Z" fill="black"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_2327_8506">
+            <rect width="26" height="14" fill="white" transform="translate(0.25 0.378906)"/>
+          </clipPath>
+        </defs>
+      </svg>
+
+      <div id="reviews-carousel-{{ section.id }}" class="w-[calc(100%-142px)] overflow-hidden">
+        {% for block in section.blocks %}
+          <div class="w-full text-wrap overflow-hidden !flex flex-col justify-center items-center gap-y-[20px]">
+            <p class="text-[#171717] text-center text-[16px] font-normal leading-[23px] md:leading-[26px] [text-shadow:_1px_1px_1px_rgb(0_0_0_/_00%)]">
+              {{ block.settings.review }}
+            </p>
+            <p class="text-[#171717] text-center text-[15px] md:text-[16px] font-normal leading-[16.5px] md:leading-[24px] tracking-[0.375px] [text-shadow:_1px_1px_1px_rgb(0_0_0_/_00%)]">
+              {{ block.settings['review-uername'] }}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+
+      <svg
+        class="w-[27px] h-[15px] object-contain mb-auto"
+        xmlns="http://www.w3.org/2000/svg"
+        width="27"
+        height="15"
+        viewBox="0 0 27 15"
+        fill="none"
+      >
+        <g opacity="0.5" clip-path="url(#clip0_2327_8508)">
+          <path d="M10.1551 1.0293C8.80507 1.0293 7.50507 2.1793 7.50507 3.6793C7.50507 4.9793 8.75507 6.1793 10.0051 6.3293C9.95507 7.7293 9.05507 10.6293 5.70508 12.9793L6.35507 14.0293C11.2551 11.5793 13.1051 7.3293 13.1051 4.6293C13.1051 2.2793 11.7551 1.0293 10.1551 1.0293ZM18.9051 1.0293C17.5551 1.0293 16.2551 2.1793 16.2551 3.6793C16.2551 4.9793 17.5051 6.1793 18.7551 6.3293C18.7051 7.7293 17.8051 10.6293 14.4551 12.9793L15.1051 14.0293C20.0051 11.5793 21.8551 7.3293 21.8551 4.6293C21.8551 2.2793 20.5051 1.0293 18.9051 1.0293Z" fill="black"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_2327_8508">
+            <rect width="26" height="14" fill="white" transform="translate(0.75 0.378906)"/>
+          </clipPath>
+        </defs>
+      </svg>
+
+      <button
+        type="button"
+        id="reviews-next-btn-{{ section.id }}"
+        class="w-[20px] aspect-square flex justify-center items-center"
+      >
+        {% render 'carousel-next-btn', width: 20, height: 20, class: 'w-full h-full object-contain' %}
+      </button>
+    </div>
+    <div class="rewiew-carousel-dots"><wbr></div>
+  </div>
+</div>
+
+<script type="text/javascript" defer>
+  $(document).ready(function ready() {
+    const $reviewsCarousel = $('#reviews-carousel-{{ section.id }}');
+    $reviewsCarousel.slick({
+      mobileFirst: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: true,
+      prevArrow: $('#reviews-prev-btn-{{ section.id }}'),
+      nextArrow: $('#reviews-next-btn-{{ section.id }}'),
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Reviews Section",
+  "class": "reviews-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "WHAT THEY SAY"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "review",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "review",
+          "label": "Add a review"
+        },
+        {
+          "type": "textarea",
+          "id": "review-uername",
+          "label": "Add a review username"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews Section"
+    }
+  ]
+}
+{% endschema %}

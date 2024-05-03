@@ -1,0 +1,388 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "rating_7QU9qG": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "subscriptions_app_block_V8FeMq": {
+          "type": "shopify:\/\/apps\/subscriptions\/blocks\/app-block\/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "settings": {
+            "color_text_title": "#151515",
+            "color_text_body": "#151515",
+            "dividers_color": "#8f8d8d",
+            "bacgkround_color": "#ffffff",
+            "border_thickness": 0,
+            "border_radius": 0,
+            "supporting_text_title": "",
+            "subscription_policy_url": "",
+            "product": "{{product}}"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "testimonials_CVDjUi": {
+          "type": "testimonials",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "rating_7QU9qG",
+        "price",
+        "subscriptions_app_block_V8FeMq",
+        "variant_picker",
+        "buy_buttons",
+        "description",
+        "quantity_selector",
+        "testimonials_CVDjUi"
+      ],
+      "custom_css": [
+        ".grid {padding-bottom: 0;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "additional_product_data_PxCjjE": {
+      "type": "Additional-product-data",
+      "blocks": {
+        "heading_xiNqa8": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ product.metafields.custom.additional_header_text_section_.value }}",
+            "heading_size": "h1"
+          }
+        },
+        "text_GWDLUe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.additional_sub_text_text_section | metafield_tag }}<\/p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xiNqa8",
+        "text_GWDLUe"
+      ],
+      "custom_css": [
+        ".grid {padding-bottom: 0 !important;}",
+        "img,video {border-radius: 8px;}",
+        "@media screen and (min-width: 768px) {.product_Display_Image {height: 95% !important; width: 95% !important; }}"
+      ],
+      "settings": {
+        "image": "{{ product.metafields.custom.additional_image_text_section.value }}",
+        "showHeroIngredients": false,
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    },
+    "additional_product_data_HMYeBK": {
+      "type": "Additional-product-data",
+      "custom_css": [
+        "img,video {border-radius: 8px;}",
+        "@media screen and (max-width: 768px) {.grid--gapless {padding: 0; } .ingrehero-title {width: calc(100% - 40px); margin: auto; }}",
+        "@media screen and(min-width:996px) {.product_Display_Image {height: 95% !important; width: 95% !important; }}"
+      ],
+      "settings": {
+        "image": "{{ product.metafields.custom.additional_image_hero_ingredients_section.value }}",
+        "showHeroIngredients": true,
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    },
+    "clean_beauty_media_zn69pW": {
+      "type": "clean-beauty-media",
+      "custom_css": [
+        ".clean-beauty-media-wrapper {padding: 0 20px;}",
+        "img,video {border-radius: 8px;}"
+      ],
+      "settings": {
+        "use-container": false,
+        "show-video": true,
+        "mobile-video": "{{ product.metafields.custom.a_video_image_3_mobile.value }}",
+        "desktop-video": "{{ product.metafields.custom.product_video.value }}",
+        "video-poster-image": "{{ product.metafields.custom.product_video.value }}"
+      }
+    },
+    "clean_beauty_media_49PFmj": {
+      "type": "clean-beauty-media",
+      "custom_css": [
+        ".clean-beauty-media-wrapper {padding: 0 20px;}",
+        "img,video {border-radius: 8px;}"
+      ],
+      "settings": {
+        "use-container": false,
+        "mobile-image": "{{ product.metafields.custom.a_video_image_3_mobile.value }}",
+        "desktop-image": "{{ product.metafields.custom.product_video.value }}",
+        "show-video": false
+      }
+    },
+    "reccommended_cztYYG": {
+      "type": "reccommended",
+      "settings": {
+        "carousel-title": "PAIRS WELL WITH",
+        "slides-limit": 7,
+        "num-slides-sm": "1.5",
+        "num-slides-md": "3",
+        "num-slides-lg": "4",
+        "num-slides-xl": "4",
+        "num-slides-2xl": "4"
+      }
+    },
+    "product_carousel_c9Gxye": {
+      "type": "product-carousel",
+      "disabled": true,
+      "settings": {
+        "carousel-title": "PAIRS WELL WITH",
+        "carousel-collection": "all-ow-products",
+        "slides-limit": 7,
+        "num-slides-sm": "1.5",
+        "num-slides-md": "3",
+        "num-slides-lg": "4",
+        "num-slides-xl": "3",
+        "num-slides-2xl": "3.5"
+      }
+    },
+    "our_approach_K9LmWc": {
+      "type": "our-approach",
+      "custom_css": [
+        ".our-approach-wrapper {padding-top: 28px;}",
+        "img,video {border-radius: 8px;}",
+        "@media screen and (max-width: 768px) {.our-approach-media {aspect-ratio: unset !important; } .our-approach-wrapper {margin-top: 0; } .our-approach-info-wrapper {padding: 48px 0; }}"
+      ],
+      "settings": {
+        "showfullcontainer": false,
+        "title": "<h6>HERITAGE LEGACY<\/h6><p> FOUNDED, 2012<\/p>",
+        "text": "<p>Organic Works reveres Scottish heritage by sourcing local ingredients and crafting products that embody its essence. Each item offers a journey through the nation's landscapes, traditions, and centuries-old skincare secrets cherished for generations. Experience the richness of Scotland in every Organic Works product.<br\/><\/p>",
+        "url": "",
+        "url-title": "",
+        "media-text": "",
+        "sectionBackground": "#f6f6f6",
+        "mobile-image": "shopify:\/\/shop_images\/PP-Constant-images1-_mobile.jpg",
+        "desktop-image": "shopify:\/\/shop_images\/Rectangle_4313.png",
+        "show-video": false
+      }
+    },
+    "product_heritage_info_FUq7TK": {
+      "type": "product-heritage-info",
+      "blocks": {
+        "icon_8Km8Hj": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/1_1.png"
+          }
+        },
+        "icon_43f3hb": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/2_1.png"
+          }
+        },
+        "icon_GwmWaB": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/3_db7e6346-650a-408f-9e56-5ca9e47b62e8.png"
+          }
+        },
+        "icon_bLhC46": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/5_5faa8e51-00e4-4efe-8a0c-7e93f22e1973.png"
+          }
+        },
+        "icon_ERQDWp": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/6_76e77582-4469-4aaf-9ca1-c63684f9b56f.png"
+          }
+        },
+        "icon_pQVzgf": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/4_3b048e4f-9bc0-45fa-84c4-988473b2208a.png"
+          }
+        }
+      },
+      "block_order": [
+        "icon_8Km8Hj",
+        "icon_43f3hb",
+        "icon_GwmWaB",
+        "icon_bLhC46",
+        "icon_ERQDWp",
+        "icon_pQVzgf"
+      ],
+      "custom_css": [
+        "img,video {border-radius: 8px;}",
+        ".clean-beauty-info-wrapper {padding: 0 20px 28px !important;}",
+        ".our-approach-media {aspect-ratio: unset !important;}"
+      ],
+      "settings": {
+        "showfullcontainer": false,
+        "aboutImage1": "shopify:\/\/files\/videos\/3a69-f139-446a-bf27-89ca9c14c3c5.mp4",
+        "aboutImage1-mob": "shopify:\/\/files\/videos\/97a5-3f28-47b9-b660-f57c435bb184.mp4",
+        "aboutImage2": "shopify:\/\/shop_images\/Rectangle_4314.png",
+        "aboutImage2-mob": "shopify:\/\/shop_images\/PP-Constant-images2_mobile.jpg",
+        "title": "CLEAN BEAUTY, WITHOUT COMPROMISE",
+        "sectionBackground": "#f6f6f6",
+        "text": "Our entire product range is formulated ethically, environmentally conscious, and unwavering in quality and effectiveness, ensuring a pure and uncompromising beauty experience."
+      }
+    },
+    "17102226321f14c1cd": {
+      "type": "apps",
+      "blocks": {
+        "product_reviews_reviews_HMffXy": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "product_reviews_reviews_HMffXy"
+      ],
+      "custom_css": [
+        ".spr-container {padding: 24px 0 !important; border: none !important;}",
+        ".carousel-section-wrapper {padding: 0px 0 38px;}",
+        ".spr-icon {font-size: 90% !important;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "complementary_tWhKig": {
+      "type": "complementary",
+      "settings": {
+        "carousel-title": "Save With Sets",
+        "slides-limit": 7,
+        "num-slides-sm": "1.5",
+        "num-slides-md": "3",
+        "num-slides-lg": "4",
+        "num-slides-xl": "4",
+        "num-slides-2xl": "4"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "custom_css": [
+        ".container {padding-left: 0; padding-right: 0;}",
+        ".grid {padding-bottom: 23px !important;}"
+      ],
+      "settings": {
+        "heading": "Save With Sets",
+        "heading_size": "h2",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "columns_mobile": "1-5",
+        "padding_top": 36,
+        "padding_bottom": 76
+      }
+    },
+    "quick_cart_Ve3GeK": {
+      "type": "quick-cart",
+      "settings": {
+        "threshold_shipping_limit_handle": "hand-tlc",
+        "recom-collection-handle": "all-ow-products",
+        "recom-to-show": 10,
+        "gift-collection-handle": "products-collection-for-free-gifts",
+        "gift-to-show": 3
+      }
+    }
+  },
+  "order": [
+    "main",
+    "additional_product_data_PxCjjE",
+    "additional_product_data_HMYeBK",
+    "clean_beauty_media_zn69pW",
+    "clean_beauty_media_49PFmj",
+    "reccommended_cztYYG",
+    "product_carousel_c9Gxye",
+    "our_approach_K9LmWc",
+    "product_heritage_info_FUq7TK",
+    "17102226321f14c1cd",
+    "complementary_tWhKig",
+    "related-products",
+    "quick_cart_Ve3GeK"
+  ]
+}

@@ -1,0 +1,14 @@
+<p class="{% if priceClass %}{{ priceClass }}{% endif %}">{{- price | money_without_trailing_zeros -}}</p>
+
+{% if comparePrice > price %}
+  {% assign discount = comparePrice | minus: price %}
+  {% assign discountPercentage = discount | times: 100.0 | divided_by: comparePrice %}
+
+  <s class="{% if comparePriceClass %}{{ comparePriceClass }}{% endif %}">
+    {{- comparePrice | money_without_trailing_zeros -}}
+  </s>
+  <p class="{% if discountClass %}{{ discountClass }}{% endif %}">
+    {{- discountPercentage | round -}}
+    %
+  </p>
+{% endif %}

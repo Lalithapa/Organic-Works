@@ -1,0 +1,123 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "newsletter_9U8U7q": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_4GG9Wh": {
+          "type": "heading",
+          "settings": {
+            "heading": "STAY UP TO DATE!!",
+            "heading_size": "h2"
+          }
+        },
+        "email_form_EPrekG": {
+          "type": "email_form",
+          "settings": {}
+        },
+        "paragraph_VbJ7ri": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>*By joining, you agree to receive email marketing . Unsubscribe at any time. View Privacy Policy & Terms of Service.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4GG9Wh",
+        "email_form_EPrekG",
+        "paragraph_VbJ7ri"
+      ],
+      "settings": {
+        "desktopBanner": "shopify:\/\/shop_images\/Desktop_10912e82-8680-42d0-b56e-da6dbfdd8e4c.jpg",
+        "mobileBanner": "shopify:\/\/shop_images\/Mobile_133352ff-1408-4c4a-b864-4948d9dabf4d.jpg",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "new_footer_RkcKHj": {
+      "type": "New-Footer",
+      "blocks": {
+        "link_list_CEHeni": {
+          "type": "link_list",
+          "settings": {
+            "heading": "THE OW STORE",
+            "menu": "the-ow-store"
+          }
+        },
+        "link_list_aq7hWb": {
+          "type": "link_list",
+          "settings": {
+            "heading": "SHOP",
+            "menu": "shop"
+          }
+        },
+        "link_list_9PAXWa": {
+          "type": "link_list",
+          "settings": {
+            "heading": "SUPPORT",
+            "menu": "support"
+          }
+        },
+        "link_list_TaM39j": {
+          "type": "link_list",
+          "settings": {
+            "heading": "USEFUL LINKS",
+            "menu": "useful-links-1"
+          }
+        },
+        "text_VJbnga": {
+          "type": "text",
+          "settings": {
+            "heading": "CUSTOMER CARE",
+            "subtext": "<p><strong>Email<\/strong>: hello@theOWstore.com<\/p><p><strong>Mon-Sat 10 AM to 7 PM<\/strong><\/p><p><strong>Call<\/strong>: +44(0) 1955 603 110<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_CEHeni",
+        "link_list_aq7hWb",
+        "link_list_9PAXWa",
+        "link_list_TaM39j",
+        "text_VJbnga"
+      ],
+      "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_bAgQ4z": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_bAgQ4z"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "newsletter_9U8U7q",
+    "new_footer_RkcKHj",
+    "footer"
+  ]
+}

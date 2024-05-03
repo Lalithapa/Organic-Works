@@ -1,0 +1,28 @@
+<img
+  loading="eager"
+  width="{% if width %}{{ width }}{% else %}{{ 28 }}{% endif %}"
+  height="{% if height %}{{ height }}{% else %}{{ 28 }}{% endif %}"
+  style="{% if style %}{{ style }}{% endif %}"
+  class="{% if class %}{{ class }}{% endif %}"
+  src="{{ 'carousel-prev-btn.svg' |  asset_url }}"
+>
+
+{% comment %}
+  <div
+    class="{% if class %}{{class}}{% endif %}"
+    style="{% if style %}{{style}}{% endif %}"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="{% if width %}width{% else %}26{% endif %}"
+      width="{% if width %}width{% else %}26{% endif %}"
+      viewBox="0 0 26 26"
+      fill="none"
+    >
+      <g opacity="1">
+          <path d="M17.1886 5.21753L9.40625 12.9998L17.1886 20.7822" stroke="#585858" stroke-width="2"
+              stroke-linecap="round" />
+      </g>
+    </svg>
+  </div>
+{% endcomment %}

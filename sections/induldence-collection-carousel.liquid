@@ -1,0 +1,532 @@
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{% assign numDevicesMobile = section.settings['num-slides-sm'] %}
+{% assign numDevicesTab = section.settings['num-slides-md'] %}
+{% assign numDevicesDesktop = section.settings['num-slides-lg'] %}
+
+<div class="container indulgence-col-info-wrapper d-flex-center scroll-trigger animate--slide-in">
+  <div class="indulgence-col-d-flex-center">
+    <p class="indulgence-col-title home-title-sm">{{ section.settings.title }}</p>
+  </div>
+
+  <div class="carousel-wrapper-outer d-flex-center">
+    <button
+      id="indulgence-col-prev-{{ section.id }}"
+      type="button"
+      class="carousel-btn prev-btn d-flex-center"
+    >
+      {% render 'carousel-prev-btn' %}
+    </button>
+    <div id="indulgence-col-{{ section.id }}" class="carousel">
+      {% for block in section.blocks %}
+        <div class="carousel-slide indulgence-col-slide d-flex-center">
+          {% assign colImageSetting = block.settings['slide-image'] %}
+
+          <img
+            src="{{ colImageSetting |  image_url }}"
+            width="100%"
+            height="100%"
+            class="indulgence-col-slide-image d-flex-center"
+            loading="lazy"
+            alt="Ow Collection Image"
+            id="{{ colImageSetting.id }}"
+          >
+          {% if section.settings['enable-concern-quickview'] %}
+            <button
+              data-concern-index="{{ forloop.index }}"
+              type="button"
+              class="concern-quickview-trigger-btn indulgence-col-slide-info d-flex-center"
+            >
+              <div class="indulgence-col-slide-title d-flex-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                  <path d="M4.08446 1.3541L7.08262 1.64406M7.08262 1.64406L6.79267 4.64222M7.08262 1.64406L0.917414 6.72195" stroke="#151515" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div>{{ block.settings['slide-title'] }}</div>
+              </div>
+              <div class="indulgence-col-slide-summary d-flex-center">
+                <p>{{ block.settings['slide-summary'] }}</p>
+              </div>
+            </button>
+          {% else %}
+            <!-- <a href="{{ block.settings['slide-url'] }}">{{ block.settings['slide-title'] }}</a> -->
+            <div class="indulgence-col-slide-info d-flex-center">
+              <div class="indulgence-col-slide-title d-flex-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                  <path d="M4.08446 1.3541L7.08262 1.64406M7.08262 1.64406L6.79267 4.64222M7.08262 1.64406L0.917414 6.72195" stroke="#151515" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div>{{ block.settings['slide-title'] }}</div>
+              </div>
+              <div class="indulgence-col-slide-summary d-flex-center">
+                <p>{{ block.settings['slide-summary'] }}</p>
+              </div>
+            </div>
+            <a href="{{ block.settings['slide-url'] }}"><wbr></a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <button
+      id="indulgence-col-next-{{ section.id }}"
+      type="button"
+      class="carousel-btn next-btn d-flex-center"
+    >
+      {% render 'carousel-next-btn' %}
+    </button>
+  </div>
+</div>
+
+{% if section.settings['enable-concern-quickview'] %}
+  {% for block in section.blocks %}
+    <div
+      data-concern-index="{{ forloop.index }}"
+      class="concern-quickview-wrapper hide-concern-quickview w-full h-full max-h-[95%] max-w-[500px] rounded-tl-[8px] rounded-tr-[8px] fixed bottom-0 right-0 flex flex-col justify-center items-center overflow-hidden z-20 bg-white"
+    >
+      <button
+        data-concern-index="{{ forloop.index }}"
+        type="button"
+        aria-label="close quickview"
+        id="concern-quickview-close-btn"
+        class="h-[28px] aspect-square flex justify-center items-center absolute top-[12px] right-[12px] z-[1]"
+      >
+        <div class="h-[16px] aspect-square flex justify-center items-center">
+          {% render 'close-icon-black', class: 'w-full h-full object-contain' %}
+        </div>
+      </button>
+
+      <div class="w-full h-full overflow-x-hidden overflow-y-auto p-[20px] pt-[40px] flex flex-col gap-y-[52px] pb-[100px]">
+        {% if block.settings['show-video-1'] == true and block.settings['video-1'] %}
+          <div class="concern-media-wrapper w-full !aspect-square relative rounded-[8px]">
+            {% render 'image-video',
+              showVideo: block.settings['show-video-1'],
+              mobileVideo: block.settings['video-1'],
+              index: 1,
+              class: 'concern-media rounded-[8px] w-full h-full object-cover !aspect-square'
+            %}
+          </div>
+        {% elsif block.settings['show-video-1'] == false and block.settings['image-1'] %}
+          <div class="concern-media-wrapper w-full !aspect-square relative rounded-[8px]">
+            {% render 'image-video',
+              showVideo: block.settings['show-video-1'],
+              mobileImage: block.settings['image-1'],
+              index: 1,
+              class: 'concern-media rounded-[8px] w-full h-full object-cover !aspect-square'
+            %}
+          </div>
+        {% endif %}
+
+        {% if block.settings['title-1'] != blank and block.settings['summary-1'] != blank %}
+          <div class="w-full flex flex-col justify-center items-center gap-y-[24px]">
+            <div class="w-full flex justify-center items-center text-heading text-center text-[24px] font-medium leading-[32px]">
+              {{ block.settings['title-1'] }}
+            </div>
+            <div class="w-full flex justify-center items-center text-heading text-center text-[14px] font-normal leading-[24px]">
+              {{ block.settings['summary-1'] }}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if block.settings['show-video-2'] == true and block.settings['video-2'] %}
+          <div class="concern-media-wrapper w-full !aspect-square relative rounded-[8px]">
+            {% render 'image-video',
+              showVideo: block.settings['show-video-2'],
+              mobileVideo: block.settings['video-2'],
+              index: 1,
+              class: 'concern-media rounded-[8px] w-full h-full object-cover !aspect-square'
+            %}
+          </div>
+        {% elsif block.settings['show-video-2'] == false and block.settings['image-2'] %}
+          <div class="concern-media-wrapper w-full !aspect-square relative rounded-[8px]">
+            {% render 'image-video',
+              showVideo: block.settings['show-video-2'],
+              mobileImage: block.settings['image-2'],
+              index: 1,
+              class: 'concern-media rounded-[8px] w-full h-full object-cover !aspect-square'
+            %}
+          </div>
+        {% endif %}
+
+        {% if block.settings['title-2'] != blank and block.settings['summary-2'] != blank %}
+          <div class="w-full flex flex-col justify-center items-center gap-y-[24px]">
+            <div class="w-full flex justify-center items-center text-heading text-center text-[24px] font-medium leading-[32px]">
+              {{ block.settings['title-2'] }}
+            </div>
+            <div class="w-full flex justify-center items-center text-heading text-center text-[14px] font-normal leading-[24px]">
+              {{ block.settings['summary-2'] }}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if block.settings['show-video-3'] == true and block.settings['video-3'] %}
+          <div class="concern-media-wrapper w-full !aspect-square relative rounded-[8px]">
+            {% render 'image-video',
+              showVideo: block.settings['show-video-3'],
+              mobileVideo: block.settings['video-3'],
+              index: 1,
+              class: 'concern-media rounded-[8px] w-full h-full object-cover !aspect-square'
+            %}
+          </div>
+        {% elsif block.settings['show-video-3'] == false and block.settings['image-3'] %}
+          <div class="concern-media-wrapper w-full !aspect-square relative rounded-[8px]">
+            {% render 'image-video',
+              showVideo: block.settings['show-video-3'],
+              mobileImage: block.settings['image-3'],
+              index: 1,
+              class: 'concern-media rounded-[8px] w-full h-full object-cover !aspect-square'
+            %}
+          </div>
+        {% endif %}
+
+        {% if block.settings.showHeroIngredients == false
+          and block.settings['title-3'] != blank
+          and block.settings['summary-3'] != blank
+        %}
+          <div class="w-full flex flex-col justify-center items-center gap-y-[24px]">
+            <div class="w-full flex justify-center items-center text-heading text-center text-[24px] font-medium leading-[32px]">
+              {{ block.settings['title-3'] }}
+            </div>
+            <div class="w-full flex justify-center items-center text-heading text-center text-[14px] font-normal leading-[24px]">
+              {{ block.settings['summary-3'] }}
+            </div>
+          </div>
+        {% else %}
+          <div class="w-full flex flex-col justify-center items-center gap-y-[52px]">
+            <div class="w-full flex justify-center items-center text-heading text-center text-[24px] font-medium leading-[32px]">
+              {{ block.settings['title-3'] }}
+            </div>
+            <div class="w-full flex flex-col gap-y-[20px] md:gap-y-[40px]">
+              {% if block.settings['concern-img-1']
+                and block.settings['concern-title-1'] != blank
+                and block.settings['concern-summary-1'] != blank
+              %}
+                {% render 'concern-quickview-hero',
+                  image: block.settings['concern-img-1'],
+                  title: block.settings['concern-title-1'],
+                  summary: block.settings['concern-summary-1']
+                %}
+              {% endif %}
+
+              {% if block.settings['concern-img-2']
+                and block.settings['concern-title-2'] != blank
+                and block.settings['concern-summary-2'] != blank
+              %}
+                {% render 'concern-quickview-hero',
+                  image: block.settings['concern-img-2'],
+                  title: block.settings['concern-title-2'],
+                  summary: block.settings['concern-summary-2']
+                %}
+              {% endif %}
+
+              {% if block.settings['concern-img-3']
+                and block.settings['concern-title-3'] != blank
+                and block.settings['concern-summary-3'] != blank
+              %}
+                {% render 'concern-quickview-hero',
+                  image: block.settings['concern-img-3'],
+                  title: block.settings['concern-title-3'],
+                  summary: block.settings['concern-summary-3']
+                %}
+              {% endif %}
+
+              {% if block.settings['concern-img-4']
+                and block.settings['concern-title-4'] != blank
+                and block.settings['concern-summary-4'] != blank
+              %}
+                {% render 'concern-quickview-hero',
+                  image: block.settings['concern-img-4'],
+                  title: block.settings['concern-title-4'],
+                  summary: block.settings['concern-summary-4']
+                %}
+              {% endif %}
+            </div>
+          </div>
+          {% comment %} <div class="ingrehero-wrapper border-none flex justify-start flex-col gap-4 "></div> {% endcomment %}
+        {% endif %}
+      </div>
+
+      <div class="w-full h-[70px] absolute bottom-0 left-0 flex justify-center items-center bg-white shadow-[0_-2px_15px_-8px_rgba(0,0,0,0.2)]">
+        <a
+          class="w-[90%] py-[10px] border border-heading border-solid rounded-[50px] flex justify-center items-center text-heading text-[14px] font-semibold leading-[20px]"
+          href="{{ block.settings['slide-url'] }}"
+        >
+          {{- block.settings['quickview-url-title'] -}}
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+
+<script defer>
+  $(document).ready(function ready() {
+    let numDevicesMobile = '{{ numDevicesMobile }}';
+    let numDevicesTab = '{{ numDevicesTab }}';
+    let numDevicesDesktop = '{{ numDevicesDesktop }}';
+
+    numDevicesMobile = roundSlides(numDevicesMobile, 1);
+    numDevicesTab = roundSlides(numDevicesTab, 1);
+    numDevicesDesktop = roundSlides(numDevicesDesktop, 1);
+
+    console.log(numDevicesMobile, numDevicesTab, numDevicesTab);
+
+    const $root = $('#indulgence-col-{{ section.id }}');
+    $root.slick({
+      mobileFirst: true,
+      slidesToShow: numDevicesMobile,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: true,
+      prevArrow: $('#indulgence-col-prev-{{ section.id }}'),
+      nextArrow: $('#indulgence-col-next-{{ section.id }}'),
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: numDevicesTab,
+            slidesToScroll: 1,
+          },
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: numDevicesDesktop,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Indulgence Col Carousel",
+  "class": "indulgence-col-carousel-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "default": false,
+      "id": "enable-concern-quickview",
+      "label": "Enable Concern Quickview?",
+      "info": "If enabled, each slide will open quickview on click, else will redirect to url linked to a particular slide"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "NATURE'S PURE INDULGENCE"
+    },
+    {
+      "type": "text",
+      "id": "num-slides-sm",
+      "label": "Num Slides on Moblie Devices",
+      "default": "1",
+      "info": "Rounded to one decimal point. Breakpoint none"
+    },
+    {
+      "type": "text",
+      "id": "num-slides-md",
+      "label": "Num Slides on Tablet Devices",
+      "default": "3",
+      "info": "Rounded to one decimal point. Breakpoint 768px"
+    },
+    {
+      "type": "text",
+      "id": "num-slides-lg",
+      "label": "Num Slides on Laptops Devices",
+      "default": "4",
+      "info": "Rounded to one decimal point. Breakpoint 1024px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image-with-url",
+      "name": "Image With Url",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slide-image",
+          "label": "Collection Image"
+        },
+        {
+          "type": "url",
+          "id": "slide-url",
+          "label": "Link To Collection"
+        },
+        {
+          "type": "text",
+          "id": "slide-title",
+          "label": "Slide Title",
+          "default": "Explore Collection"
+        },
+        {
+          "type": "text",
+          "id": "slide-summary",
+          "label": "Slide Summary",
+          "default": "with healing Lavender"
+        },
+        {
+          "type": "image_picker",
+          "id": "image-1",
+          "label": "Image 1"
+        },
+        {
+          "type": "checkbox",
+          "id": "show-video-1",
+          "default": true,
+          "label": "Show video 1?"
+        },
+        {
+          "type": "video",
+          "id": "video-1",
+          "label": "Video 1"
+        },
+        {
+          "type": "richtext",
+          "id": "title-1",
+          "label": "Title 1",
+          "default": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN</p>"
+        },
+        {
+          "type": "textarea",
+          "id": "summary-1",
+          "label": "Summary 1",
+          "default": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image-2",
+          "label": "Image 2"
+        },
+        {
+          "type": "checkbox",
+          "id": "show-video-2",
+          "default": true,
+          "label": "Show video 2?"
+        },
+        {
+          "type": "video",
+          "id": "video-2",
+          "label": "Video 2"
+        },
+        {
+          "type": "richtext",
+          "id": "title-2",
+          "label": "Title 2",
+          "default": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN</p>"
+        },
+        {
+          "type": "textarea",
+          "id": "summary-2",
+          "label": "Summary 2",
+          "default": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.</p>"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "image-3",
+          "label": "Image 3"
+        },
+        {
+          "type": "checkbox",
+          "id": "show-video-3",
+          "default": true,
+          "label": "Show video 3?"
+        },
+        {
+          "type": "video",
+          "id": "video-3",
+          "label": "Video 3"
+        },
+        {
+          "type": "checkbox",
+          "id": "showHeroIngredients",
+          "label": "Show Hero Ingredients?",
+          "default": false
+        },
+        {
+          "type": "richtext",
+          "id": "title-3",
+          "label": "Title 3",
+          "default": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN</p>"
+        },
+        {
+          "type": "textarea",
+          "id": "summary-3",
+          "label": "Summary 3",
+          "default": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.</p>"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "concern-img-1",
+          "label": "Concern Image 1"
+        },
+        {
+          "type": "richtext",
+          "id": "concern-title-1",
+          "label": "Concern Title 1"
+        },
+        {
+          "type": "richtext",
+          "id": "concern-summary-1",
+          "label": "Concern Summary 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "concern-img-2",
+          "label": "Concern Image 2"
+        },
+        {
+          "type": "richtext",
+          "id": "concern-title-2",
+          "label": "Concern Title 2"
+        },
+        {
+          "type": "richtext",
+          "id": "concern-summary-2",
+          "label": "Concern Summary 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "concern-img-3",
+          "label": "Concern Image 3"
+        },
+        {
+          "type": "richtext",
+          "id": "concern-title-3",
+          "label": "Concern Title 3"
+        },
+        {
+          "type": "richtext",
+          "id": "concern-summary-3",
+          "label": "Concern Summary 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "concern-img-4",
+          "label": "Concern Image 4"
+        },
+        {
+          "type": "richtext",
+          "id": "concern-title-4",
+          "label": "Concern Title 4"
+        },
+        {
+          "type": "richtext",
+          "id": "concern-summary-4",
+          "label": "Concern Summary 4"
+        },
+        {
+          "type": "text",
+          "label": "Concern Url Title",
+          "id": "quickview-url-title",
+          "default": "Explore Now"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Indulgence Col Carousel"
+    }
+  ]
+}
+{% endschema %}

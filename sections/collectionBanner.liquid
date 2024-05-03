@@ -1,0 +1,67 @@
+<div id="collection-banner">
+  {% for block in section.blocks %}
+    {% if block.settings['coll-desk-banner'] != blank and block.settings['coll-mob-banner'] != blank %}
+      <div class="collection-banner-icon">
+        <div class="our-approach-media-text">{{ collection.title | upcase }}</div>
+        <div class="desktop-screen">
+          <img
+            alt="{{ block.settings.coll-desk-banner | escape }}"
+            src="{{ block.settings.coll-desk-banner | image_url }}"
+            width="100%"
+            height="auto"
+          >
+        </div>
+        <div class="mobile-screen">
+          <img
+            alt="{{ block.settings.coll-mob-banner | escape }}"
+            src="{{ block.settings.coll-mob-banner | image_url }}"
+            width="100%"
+            height="auto"
+          >
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#collection-banner').slick({
+      dots: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Collection Slider",
+  "class": "Collection Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "Image",
+      "name": "Collection Icons Blocks",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "coll-desk-banner",
+          "label": "Collection Desktop Banner"
+        },
+        {
+          "type": "image_picker",
+          "id": "coll-mob-banner",
+          "label": "Collection Mobile Banner"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Slider"
+    }
+  ]
+}
+{% endschema %}

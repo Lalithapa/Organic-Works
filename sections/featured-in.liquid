@@ -1,0 +1,78 @@
+<div class="container mx-auto flex flex-col justify-center items-center gap-y-[24px] md:gap-x-[32px] py-[56px] md:py-[64px] scroll-trigger animate--slide-in">
+  <div class="w-full flex justify-center items-center">
+    <p class="home-title-sm">{{ section.settings.title }}</p>
+  </div>
+
+  <div id="brand-carousel-{{ section.id }}" class="marquee w-full flex justify-center items-center overflow-hidden">
+    {% for block in section.blocks %}
+      <div class="!flex justify-center items-center overflow-hidden">
+        {% assign image = block.settings.image %}
+        <img
+          width="200px"
+          height="60px"
+          class="w-auto h-[60px] object-contain"
+          src="{{ image.src | image_url }}"
+        >
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  $(document).ready(function ready() {
+    const $carousel = $('#brand-carousel-{{ section.id }}');
+    $carousel.slick({
+      mobileFirst: true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 6,
+          },
+        },
+      ],
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Featured In Section",
+  "class": "featured-in-carousel-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "FEATURED IN"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand-image",
+      "name": "brand image",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Add a Brand Image",
+          "info": "Aspect ratio 200W:60H"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured In Section"
+    }
+  ]
+}
+{% endschema %}

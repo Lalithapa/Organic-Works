@@ -1,0 +1,218 @@
+<div
+  class="{% if section.settings.showfullcontainer %}container{% elsif template != 'index' %}px-[20px] lg:pb-[24px]{% endif %} our-approach-wrapper d-flex-center scroll-trigger animate--slide-in"
+  style="background:{{ section.settings.sectionBackground }};padding-bottom:0"
+>
+  {% if template == 'product' %}
+    <div class="our-approach-title-wrapper desktop-screen pt-[28px] pb-[24px]">
+      <div class="home-title home-title-lg">{{ section.settings.title }}</div>
+    </div>
+  {% endif %}
+  <div class="our-approach-media-wrapper d-flex-center">
+    {% comment %} if image {% endcomment %}
+    {% if section.settings['mobile-image'] and section.settings['show-video'] == false %}
+      {% assign mobileImageSetting = section.settings['mobile-image'] %}
+      {% assign desktopImageSetting = section.settings['desktop-image'] %}
+
+      {% if mobileImageSetting.alt %}
+        {% assign imageAlt = mobileImageSetting.alt %}
+      {% else %}
+        {% assign imageAlt = 'organic works info image' %}
+      {% endif %} 
+
+      <img
+        src="{{ mobileImageSetting |  image_url }}"
+        width="100%"
+        height="100%"
+        class="our-approach-media {% if desktopImageSetting %}mobile{% endif %}"
+        loading="lazy"
+        alt="{{ imageAlt }}"
+        id="{{ mobileImageSetting.id }}"
+      >
+
+      <img
+        src="{{ desktopImageSetting |  image_url }}"
+        width="100%"
+        height="100%"
+        class="our-approach-media desktop"
+        loading="lazy"
+        alt="{{ imageAlt }}"
+        id="{{ desktopImageSetting.id }}"
+      >
+
+    {% elsif section.settings['mobile-video'] and section.settings['show-video'] %}
+      {% assign mobileVideoSetting = section.settings['mobile-video'] %}
+      {% assign desktopVideoSetting = section.settings['desktop-video'] %}
+
+      {% assign posterImage = section.settings['video-poster-image'] %}
+
+      {% if posterImage != blank %}
+        {% assign posterImage = posterImage | image_url %}
+      {% else %}
+        {% assign posterImage = mobileVideoSetting.preview_image.src | image_url %}
+      {% endif %}
+
+      {% if mobileVideoSetting.alt %}
+        {% assign videoAlt = mobileVideoSetting.alt %}
+      {% else %}
+        {% assign videoAlt = 'organic works info video' %}
+      {% endif %}
+
+      <!-- Display the video tag -->
+      {{
+        mobileVideoSetting
+        | video_tag:
+          loop: true,
+          autoplay: true,
+          muted: true,
+          class: 'our-approach-media mobile',
+          poster: posterImage,
+          alt: videoAlt
+      }}
+
+      {{
+        desktopVideoSetting
+        | video_tag:
+          loop: true,
+          autoplay: true,
+          muted: true,
+          class: 'our-approach-media desktop',
+          poster: posterImage,
+          alt: videoAlt
+      }}
+    {% endif %}
+    <p class="our-approach-media-text">{{ section.settings['media-text'] }}</p>
+    <a href="javascript:void(0)" class="media-overlay-link"><wbr></a>
+  </div>
+
+  <div class="our-approach-info-wrapper d-flex-center" style="background:{{ section.settings.sectionBackground }}">
+    <div class="our-approach-info d-flex-center">
+      <div class="our-approach-title-wrapper {% if template == "product" %} mobile-screen{% endif %}">
+        <div class="our-approach-title">{{ section.settings.title }}</div>
+      {% if section.settings.minitext != blank %}<div class="our-approach-subtitle">{{ section.settings.minitext }}</div>{% endif %}
+      </div>
+      <div class="our-approach-description-wrapper d-flex-center">
+        <div class="home-description home-summary">{{ section.settings.text }}</div>
+      </div>
+      {% if section.settings.url %}
+        <div class="our-approach-url-wrapper d-flex-center">
+          <a class="our-approach-url home-summary" href="{{ section.settings['url'] }}">
+            {{- section.settings['url-title'] -}}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% if template == 'product' %}
+<style>
+  @media screen and (max-width:768px) {
+    .our-approach-title h6{
+      color: #151515;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px; /* 133.333% */
+    }
+    .our-approach-title p{
+      font-size: 14px;
+      font-weight: 500; 
+      line-height: 28px;
+    }
+  }
+</style>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Our Approach Section",
+  "class": "our-approach-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "showfullcontainer",
+      "label": "Show Container",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>CLINICALLY APPROVED CLEAN BEAUTY</p>"
+    },
+    {
+      "type": "text",
+      "id": "minitext",
+      "label": "Mini Text (Optional)"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Organic Works is a multi-award-winning beauty brand that promises clean beauty without compromise. Driven by a passion to make natural & organic products that are genuinely effective, kind to skin and manufactured sustainably.</p>"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Url"
+    },
+    {
+      "type": "text",
+      "id": "url-title",
+      "label": "Url Title",
+      "default": "Learn More"
+    },
+    {
+      "type": "text",
+      "id": "media-text",
+      "label": "Text",
+      "default": "OUR APPROACH"
+    },
+    {
+      "type": "color",
+      "id": "sectionBackground",
+      "label": "Add Background Color",
+      "default": "#f3ffec"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile-image",
+      "label": "Mobile Image",
+      "info": "Aspect ratio mobile: 16/9, desktop: 16:4"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop-image",
+      "label": "Desktop Image",
+      "info": "Aspect ratio mobile: 16/9, desktop: 16:4"
+    },
+    {
+      "type": "checkbox",
+      "id": "show-video",
+      "label": "Show Video"
+    },
+    {
+      "type": "video",
+      "id": "mobile-video",
+      "label": "Mobile Video",
+      "info": "Aspect ratio mobile: 16/9, desktop: 16:4"
+    },
+    {
+      "type": "video",
+      "id": "desktop-video",
+      "label": "Desktop Video",
+      "info": "Aspect ratio mobile: 16/9, desktop: 16:4"
+    },
+    {
+      "type": "image_picker",
+      "id": "video-poster-image",
+      "label": "Poster Image for Video (Optional)",
+      "info": "Aspect ratio mobile: 16/9, desktop: 16:4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Approach Section"
+    }
+  ]
+}
+{% endschema %}

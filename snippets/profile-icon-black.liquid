@@ -1,0 +1,9 @@
+<img
+  alt="Open Profile"
+  width="{% if height %}{{width}}{% else %}19{% endif %}"
+  height="{% if height %}{{height}}{% else %}19{% endif %}"
+  class="{% if class %}{{class}}{% endif %}"
+  style="{% if style %}{{style}}{% endif %}"
+  loading="eager"
+  src="{{ 'profile-icon-black.svg' |  asset_url }}"
+>

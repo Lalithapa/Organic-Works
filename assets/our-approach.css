@@ -1,0 +1,118 @@
+.our-approach-wrapper {
+  /* margin-top: 56px; */
+}
+
+.our-approach-wrapper,
+.our-approach-info-wrapper,
+.our-approach-info {
+  width: 100%;
+  height: auto;
+
+  flex-direction: column;
+}
+
+.our-approach-info-wrapper {
+  padding: 48px 20px;
+  background: var(--bg-green);
+}
+
+.our-approach-info {
+  width: 100%;
+  row-gap: 16px;
+  max-width: var(--width-limit);
+}
+
+.our-approach-media-wrapper,
+.our-approach-title-wrapper,
+.our-approach-description-wrapper,
+.our-approach-url-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+  .our-approach-title {
+    color: #151515;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 123.81% */
+  }
+  .our-approach-subtitle{
+    color: #151515;
+    font-family: Karla;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .our-approach-media-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    text-transform: uppercase;
+  }
+
+.our-approach-media {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+.our-approach-url {
+  color: var(--color-heading);
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+
+  border-bottom: 1px solid black;
+}
+
+@media only screen and (min-width: 768px) {
+  .our-approach-info {
+    row-gap: 24px !important;
+  }
+  .our-approach-info-wrapper{
+    padding: 64px 20px 88px;
+  }
+  .our-approach-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    text-align: center; 
+    font-size: 24px !important;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 44px; /* 133.333% */
+  }
+  .our-approach-subtitle{
+    font-size: 20px !important;
+  }
+  .our-approach-media {
+    aspect-ratio: 16/4 !important;
+  }
+
+  .our-approach-media-text {
+    font-size: 32px;
+    line-height: 45px; /* 140.625% */
+  }
+}

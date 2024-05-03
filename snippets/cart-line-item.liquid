@@ -1,0 +1,149 @@
+{% assign product = line_item.product %}
+
+{% assign variant = line_item.variant %}
+
+<div
+  data-line-key="{{ line_item.key }}"
+  class="quickcart-line-item-wrapper relative border-b border-solid border-[#E4E4E4] w-full flex py-[8px] justify-start items-center gap-x-[4px]"
+>
+  <button
+    type="button"
+    data-key="{{ line_item.key }}"
+    class="quickcart-line-item-close w-[22px] aspect-square absolute top-[8px] right-0 flex justify-center items-center"
+  >
+    {% render 'close-icon-black', class: 'w-[6px] aspect-square' %}
+  </button>
+
+  <div class="quickcart-line-item-image-wrapper w-[30%] flex justify-center items-center rounded-[4px]">
+    <img
+      class="quickcart-line-item-image w-full h-full asp3-4 rounded-[4px]"
+      width="{{ line_item.image.width }}"
+      height="{{ line_item.image.height }}"
+      src="{{ line_item.image.src |  image_url  }}"
+    >
+  </div>
+
+  <div class="quickcart-line-item-info w-[70%] grow h-ful">
+    <div class="line-item-title-wrapper w-full flex flex-wrap justify-start items-center">
+      <p class="line-item-title text-heading text-[15px] md:text-[16px] font-normal md:font-medium leading-[24px] tracking-[-0.15px] md:tracking-[-0.16px] uppercase">
+        {{ product.title }}
+      </p>
+    </div>
+
+    <div class="line-item-summary-wrapper w-full flex flex-wrap justify-start items-center overflow-hidden">
+      <p class="line-item-summary text-sub-text text-[12px] md:text-[13px] font-medium leading-[18px] md:leading-[20px] tracking-[-0.12px] md:tracking-[-0.13px] capitalize truncate">
+        {{ product.metafields.custom.product_features | remove: '"' | remove: '[' | remove: ']' }}
+      </p>
+    </div>
+
+    <div class="line-item-options-wrapper w-full flex flex-wrap justify-start gap-x-[4px] items-center mt-[10px] md:mt-[12px]">
+      {%- unless product.has_only_default_variant %}
+        {% for option in line_item.options_with_values %}
+          <div class="line-item-options flex shrink">
+            <p class="text-heading text-[12px] md:text-[13px] font-medium leading-[18px] md:leading-[20px]20px]20px]20px]20px] tracking-[-0.12px] md:tracking-[-0.13px]">
+              {{ option.name }}-
+            </p>
+            <p class="text-secondary-cta text-[12px] md:text-[13px] font-medium leading-[18px] md:leading-[20px] tracking-[-0.12px] md:tracking-[-0.13px]">
+              {{ option.value }}
+            </p>
+          </div>
+        {%- endfor %}
+      {% endunless %}
+
+      {%- if line_item.selling_plan_allocation != null -%}
+        {% assign textArray = line_item.selling_plan_allocation.selling_plan.name
+          | replace: 'Delivery', 'Ship'
+          | split: ','
+        %}
+        <p class="line-item-selling-plan-info ml-auto text-secondary-cta text-[12px] md:text-[13px] font-medium leading-[18px] md:leading-[20px] tracking-[-0.12px] md:tracking-[-0.13px]">
+          {{ textArray[0] }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <div class="quickcart-line-item-details-wrapper w-full flex flex-wrap justify-between items-center gap-x-[4px] mt-4 md:mt-[12px]">
+      <div class="quickcart-line-item-details w-full flex justify-between items-center">
+        <div class="quickcart-line-item-quantity-selector-wrapper flex shrink justify-center items-center rounded-full border border-solid border-[#B8B8B8]">
+          <button
+            type="button"
+            class="quickcart-line-item-quantity-minus w-[30px] md:w-[32px] aspect-square flex justify-center items-center"
+            data-direction="minus"
+            data-key="{{ line_item.id }}"
+            data-curr-quantity="{{ line_item.quantity }}"
+          >
+            {% if line_item.quantity > 1 %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" viewBox="0 0 10 2" fill="none">
+                <path d="M8.5 1L1.5 0.999999" stroke="#151515" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            {% else %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" viewBox="0 0 10 2" fill="none">
+                <path d="M8.5 1L1.5 0.999999" stroke="#CDCDCD" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            {% endif %}
+          </button>
+
+          <p class="quickcart-line-item-quantity w-[16px] aspect-square text-heading text-center text-[13px] font-medium leading-[20px] flex shrink justify-center items-center">
+            {{ line_item.quantity }}
+          </p>
+
+          <div class="quickcart-line-item-quantity-spinner-wrapper w-[16px] aspect-square hidden shrink justify-center items-center">
+            {% render 'spinner-q' %}
+          </div>
+
+          <button
+            type="button"
+            class="quickcart-line-item-quantity-plus w-[30px] md:w-[32px] aspect-square flex justify-center items-center"
+            data-direction="plus"
+            data-key="{{ line_item.id }}"
+            data-curr-quantity="{{ line_item.quantity }}"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M7 3.5L7 10.5" stroke="#151515" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M10.5 7L3.5 7" stroke="#151515" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="line-item-price-wrapper flex shrink gap-x-[4px]">
+          <p class="text-heading text-[15px] font-normal leading-[16px]">
+            {{ line_item.final_line_price | money_without_trailing_zeros }}
+          </p>
+          <s class="text-price-cut text-[15px] font-normal leading-[16px]">
+            {{- variant.compare_at_price | times: line_item.quantity | money_without_trailing_zeros -}}
+          </s>
+        </div>
+      </div>
+
+      <div class="quickcart-line-item-remove-wrapper hidden justify-start items-center gap-x-[8px]">
+        <button
+          type="button"
+          data-key="{{ line_item.key }}"
+          class="quickcart-line-item-remove h-[30px] md:h-[34px] px-[12px] rounded-full border border-solid border-[#B8B8B8] text-heading text-center text-[12px] font-medium leading-[14px]"
+        >
+          REMOVE
+        </button>
+
+        <div class="quickcart-line-item-spinner-wrapper w-full h-full absolute top-0 left-0 hidden shrink justify-center items-center bg-surface">
+          <div class="w-[16px] aspect-square flex shrink justify-center items-center">
+            {% render 'spinner-q', class: 'w-[16px] aspect-square' %}
+          </div>
+        </div>
+
+        <button
+          data-product-id="{{ product.id }}"
+          data-variant-id="{{ variant.id }}"
+          type="button"
+          class="quickcart-line-item-wishlist wishlist-toggle-btn flex justify-start items-center gap-x-[8px] h-[30px] md:h-[34px] px-[12px] rounded-full border border-solid border-[#B8B8B8] text-heading text-center text-[12px] font-medium leading-[14px]"
+        >
+          <div class="w-[20px] aspect-square wishlist-img flex justify-center items-center">
+            {% render 'wishlist-icon-black', class: 'w-full h-full object-contain' %}
+          </div>
+          <div class="w-[20px] aspect-square wishlist-fill-img d-none flex justify-center items-center">
+            {% render 'wishlist-fill-icon-black', class: 'w-full h-full object-contain' %}
+          </div>
+          WISHLIST
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

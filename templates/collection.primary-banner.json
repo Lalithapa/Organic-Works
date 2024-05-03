@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "blocks": {
+        "image_iQwaGM": {
+          "type": "Image",
+          "settings": {
+            "mini-icon": "{{ collection.metafields.custom.collection_icon1.value }}"
+          }
+        },
+        "image_QqyqQT": {
+          "type": "Image",
+          "settings": {
+            "mini-icon": "{{ collection.metafields.custom.collection_icon2.value }}"
+          }
+        },
+        "image_eDGKkJ": {
+          "type": "Image",
+          "settings": {
+            "mini-icon": "{{ collection.metafields.custom.collection_icon3.value }}"
+          }
+        },
+        "image_U7PWpn": {
+          "type": "Image",
+          "settings": {
+            "mini-icon": "{{ collection.metafields.custom.collection_icon4.value }}"
+          }
+        },
+        "image_cbKkC3": {
+          "type": "Image",
+          "settings": {
+            "mini-icon": "{{ collection.metafields.custom.collection_icon5.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "image_iQwaGM",
+        "image_QqyqQT",
+        "image_eDGKkJ",
+        "image_U7PWpn",
+        "image_cbKkC3"
+      ],
+      "custom_css": [
+        ".collection-banner-media.mobile {aspect-ratio: unset;}"
+      ],
+      "settings": {
+        "col-title": "{{ collection.metafields.custom.collection_custom_data.value.collection_header_text.value }}",
+        "col-summary": "{{ collection.metafields.custom.collection_custom_data.value.collection_header_sub_text.value }}",
+        "show-video": true,
+        "mobile-video": "{{ collection.metafields.custom.collection_custom_data.value.collection_banner_video_mobile.value }}",
+        "desktop-video": "{{ collection.metafields.custom.collection_custom_data.value.collection_banner_video_desktop.value }}"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

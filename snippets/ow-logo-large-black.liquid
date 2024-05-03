@@ -1,0 +1,9 @@
+<img
+  alt="Ow Logo"
+  width="{% if height %}{{width}}{% else %}62{% endif %}"
+  height="{% if height %}{{height}}{% else %}48{% endif %}"
+  class="{% if class %}{{class}}{% endif %}"
+  style="{% if style %}{{style}}{% endif %}"
+  loading="eager"
+  src="{{ 'ow-logo-large-black.svg' |  asset_url }}"
+>

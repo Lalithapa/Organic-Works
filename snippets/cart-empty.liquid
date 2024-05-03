@@ -1,0 +1,40 @@
+<div class="quickcart-empty-content w-full flex flex-col justify-between items-center">
+  <div class="quickcart-empty-info w-full pt-[28px] flex flex-col gap-y-[12px]">
+    <p class="text-heading text-center text-[18px] font-medium leading-[24px] tracking-[-0.18px] uppercase">
+      YOUR BAG IS EMPTY
+    </p>
+    <p class="text-price-cut text-center text-[14px] font-medium leading-[20px]">
+      Whoops... Nothing in here! Explore around to add items.
+    </p>
+    <a
+      href="/"
+      type="button"
+      class="h-[40px] px-[80px] py-[10px] text-white bg-text border border-solid border-text rounded-full flex justify-center items-center uppercase"
+    >
+      START SHOPING
+    </a>
+    <a
+      href="/pages/wishlist"
+      type="button"
+      class="h-[40px] px-[80px] py-[10px] text-heading border border-solid border-text rounded-full flex justify-center items-center uppercase"
+    >
+      ADD FROM WISHLIST
+    </a>
+  </div>
+
+  <div class="quickcart-empty-recom-wrapper w-full flex flex-col gap-y-[8px] mt-[48px]">
+    <div class="w-full flex justify-center items-center">
+      <p class="text-heading text-[18px] font-medium leading-[24px] tracking-[-0.18px] uppercase">DON'T MISS OUT!!</p>
+    </div>
+
+    <div id="quickcart-recom-carousel-{{ section.id }}" class="quickcart-recom-carousel w-full flex gap-x-[8px] pb-[24px]">
+      {% for product in recomCollection.products limit: limit %}
+        <div class="quickcart-recom-slide pr-[8px] grow shrink-0 basis-1/2">
+          {% render 'product-card', product: product, cardVariant: 'sm' %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="quickcart-recom-carousel-dots"></div>
+  </div>
+</div>

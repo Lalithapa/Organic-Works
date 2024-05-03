@@ -1,0 +1,38 @@
+.clean-beauty-media-section {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.clean-beauty-media-wrapper {
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.clean-beauty-media,
+.clean-beauty-desktop-media {
+  min-height: 100% !important;
+  height: 100% !important;
+  width: 100% !important;
+  -webkit-overflow-scrolling: touch;
+  object-fit: cover;
+}
+
+.clean-beauty-desktop-media {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .clean-beauty-media {
+    display: none;
+  }
+
+  .clean-beauty-desktop-media {
+    display: block;
+  }
+}

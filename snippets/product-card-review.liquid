@@ -1,0 +1,24 @@
+{% comment %}
+  {% for i in (1..4) %}
+    <div class="product-card-rating d-flex-center">
+      {% render 'review-star-icon-black' %}
+    </div>
+  {% endfor %}
+  <div class="product-card-rating d-flex-center">
+    {% render 'review-star-icon-gray' %}
+  </div>
+  <p class="product-card-review-count">(9)</p>
+{% endcomment %}
+
+{%- if product.metafields.reviews.rating.value != blank -%}
+  {% assign rating = product.metafields.reviews.rating.value.rating %}
+  {% assign ratingRounded = rating | round: 1 %}
+
+  <div
+    class="star-rating {%  if class %}{{ class }}{% endif %}"
+    style="--rating:{{ ratingRounded }} {%  if style %}{{style}}{% endif %}"
+    aria-label="Rating of this product is {{ product.metafields.reviews.rating.value }} out of 5."
+  >
+    <wbr>
+  </div>
+{%- endif -%}

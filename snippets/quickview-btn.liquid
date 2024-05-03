@@ -1,0 +1,14 @@
+<button
+  data-product-handle="{{ product.handle }}"
+  data-first-variant-id="{{ variant.id }}"
+  type="button"
+  class="{% if class %}{{ class }}{% endif %} quickview-trigger-btn"
+  style="{% if style %}{{ style }}{% endif %}"
+  aria-label="Open Quickview"
+>
+  {% if text %}
+    {{ text }}
+  {% else %}
+    {% render 'search-icon-black' %}
+  {% endif %}
+</button>

@@ -1,0 +1,179 @@
+{%  liquid 
+  assign numSlidesSm = section.settings['num-slides-sm'] 
+  assign numSlidesMd = section.settings['num-slides-md'] 
+  assign numSlidesLg = section.settings['num-slides-lg'] 
+  assign numSlidesXl = section.settings['num-slides-xl'] 
+  assign numSlides2xl = section.settings['num-slides-2xl'] 
+%}
+
+<div class="container carousel-section-wrapper d-flex-center {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="complementary_products"  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=10&intent=complementary">
+  <div class="carousel-section-title-wrapper d-flex-center">
+    <p class="carousel-section-title">{{- section.settings['carousel-title'] -}}</p>
+  </div>
+  <div class="carousel-wrapper-outer d-flex-center">
+    <button id="prev-complementary" type="button"  class="carousel-btn prev-btn d-flex-center">
+      {% render 'carousel-prev-btn' %} 
+    </button>
+    {%- if recommendations.performed? and recommendations.products_count > 0 -%} 
+    <div class="carousel-inner d-flex-center">
+      <div id="carousel-complementary" class="carousel d-flex-center">
+        {% for product in recommendations.products %}
+          <div class="carousel-slide">
+            {% render 'product-card', product: product, sectionId: section.id, index: forloop.index0 ,showTags:true ,showQuickViewBtn:true , showRemoveWishlistBtn:true %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div
+        id="product-dots-wrapper-complementary"
+        class="product-carousel-dots-wrapper"
+      ></div>
+    </div>
+    {% endif %}
+    <button id="carousel-next-complementary" type="button" class="carousel-btn prev-btn d-flex-center">
+      {% render 'carousel-next-btn' %}
+    </button>
+  </div>
+</div>
+<script type="text/javascript" defer>
+  $(document).ready(function ready() {
+    let numSlidesSm = '{{ numSlidesSm }}';
+    let numSlidesMd = '{{ numSlidesMd }}';
+    let numSlidesLg = '{{ numSlidesLg }}';
+    let numSlidesXl = '{{ numSlidesXl }}';
+    let numSlides2xl = '{{ numSlides2xl }}';
+    numSlidesSm = parseFloat(numSlidesSm,10); 
+    numSlidesMd = parseFloat(numSlidesMd,10);
+    numSlidesLg = parseFloat(numSlidesLg,10);
+    numSlidesXl = parseFloat(numSlidesXl,10);
+    numSlides2xl = parseFloat(numSlides2xl,10);
+
+    const handleRecIntersection = async(entries, observer) => {
+    if (!entries[0].isIntersecting) return;
+    
+    observer.unobserve(productcomplementarySection);
+    
+    const url = productcomplementarySection.dataset.url;
+    
+    await fetch(url)
+    .then(response => response.text())
+    .then(text => {
+    const html = document.createElement('div');
+    html.innerHTML = text;
+    const complementary = html.querySelector('#complementary_products');
+    if (complementary && complementary.innerHTML.trim().length) {
+    productcomplementarySection.innerHTML = complementary.innerHTML;
+    const $root = $('#carousel-complementary');
+    $root.slick({
+      mobileFirst: true,
+      slidesToShow: numSlidesSm,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: true,
+      prevArrow: $('#prev-complementary'),
+      nextArrow: $('#carousel-next-complementary'), 
+      dots: true,
+      appendDots: $('#product-dots-wrapper-complementary'),
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: numSlidesMd, 
+          },
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: numSlidesLg,
+          },
+        },
+        {
+          breakpoint: 1280,
+          settings: {
+            slidesToShow: numSlidesXl,
+          },
+        },
+        {
+          breakpoint: 1536,
+          settings: {
+            slidesToShow: numSlides2xl,
+          },
+        },
+      ],
+    });
+  
+    };
+    })
+    .catch(e => {
+    console.error(e);
+    });
+    };
+    
+    const productcomplementarySection = document.querySelector('#complementary_products');
+    const observer = new IntersectionObserver(handleRecIntersection, {rootMargin: '1000px 0px 0px 0px'});
+    
+    observer.observe(productcomplementarySection);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Save Sets Products",
+  "class": "product-carousel-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "carousel-title",
+      "label": "Carousel Title",
+      "default": "Best Selling"
+    },
+    {
+      "type": "number",
+      "id": "slides-limit",
+      "label": "Total Num of Slides",
+      "default": 7
+    },
+    {
+      "type": "text",
+      "id": "num-slides-sm",
+      "label": "Num Slides on sm Devices",
+      "default": "1",
+      "info": "Rounded to one decimal point. Breakpoint none"
+    },
+    {
+      "type": "text",
+      "id": "num-slides-md",
+      "label": "Num Slides on md Devices",
+      "default": "3",
+      "info": "Rounded to one decimal point. Breakpoint 768px"
+    },
+    {
+      "type": "text",
+      "id": "num-slides-lg",
+      "label": "Num Slides on lg Devices",
+      "default": "3",
+      "info": "Rounded to one decimal point. Breakpoint 1024px"
+    },
+    {
+      "type": "text",
+      "id": "num-slides-xl",
+      "label": "Num Slides on xl Devices",
+      "default": "3",
+      "info": "Rounded to one decimal point. Breakpoint 1280px" 
+    },
+    {
+      "type": "text",
+      "id": "num-slides-2xl",
+      "label": "Num Slides on 2xl Devices",
+      "default": "3.5",
+      "info": "Rounded to one decimal point. Breakpoint 1536px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Complementary Products"
+    }
+  ]
+}
+{% endschema %}

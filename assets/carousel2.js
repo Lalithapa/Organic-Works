@@ -1,0 +1,5 @@
+const Carousel = {
+    init (settings) {
+        
+    }
+}

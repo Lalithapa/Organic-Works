@@ -1,0 +1,18 @@
+<button
+  {% unless isAvailable %}
+    disabled="disabled"
+  {% endunless %}
+  data-product-handle="{{ product.handle }}"
+  data-product-id="{{ product.id }}"
+  data-variant-id="{{ variant.id }}"
+  data-quantity="1"
+  type="button"
+  class="quickcart-add-btn {% if class %}{{ class }}{% endif %} {% unless isAvailable %}m-disabled{% endunless %}"
+  style="{% if style %}{{ style }}{% endif %}"
+  aria-label="Open Quickcart"
+  {% if props %}
+    {{- props -}}
+  {% endif %}
+>
+  {% if text and isAvailable %}{{ text }} {% else %}Sold Out{% endif %}
+</button>

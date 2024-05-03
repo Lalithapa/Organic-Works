@@ -1,0 +1,65 @@
+<div class="quickcart-fill-content w-full flex flex-col justify-start items-center mb-[102px]">
+  {% if freeShipLimit != blank %}
+    <div class="quickcart-progress-wrapper w-full pt-[28px] pb-[8px] flex flex-col gap-y-[12px]">
+      <div class="quickcart-progress-text-wrapper w-full flex justify-center items-center">
+        <p class="quickcart-progress-text text-heading text-[15px] md:text-[16px] font-normal leading-[24px]">
+          {% if cart.total_price >= freeShipLimit %}
+            Free Shipping !!
+          {% else %}
+            {% assign limit = freeShipLimit | minus: cart.total_price %}
+            Only
+            <b class="font-medium">{{ limit | abs | money_without_trailing_zeros }}</b>
+            away from free shipping!!
+          {% endif %}
+        </p>
+      </div>
+      <div class="quickcart-progress w-full rounded-full flex justify-start items-center bg-[#F4F4F4]">
+        <div
+          style="width:{{ cart.total_price | times: 100 | divided_by:freeShipLimit }}%"
+          class="quickcart-progressbar h-[3px] bg-heading rounded-full"
+        >
+          <wbr>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="quickcart-line-items-wrapper w-full flex flex-col justify-start items-center">
+    {% for line_item in cart.items %}
+      {% if line_item.final_line_price == 0 %}
+        {% render 'cart-line-item-free', line_item: line_item %}
+      {% else %}
+        {% render 'cart-line-item', line_item: line_item %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% comment %} for free gifts {% render 'quickcart-temp-free-gifts' %} {% endcomment %}
+
+  {% if cart.total_price > 0 %}
+    <div class="quickcart-checkout-wrapper z-20 px-[16px] pt-[20px] pb-[12px] bg-surface shadow-[0_-2px_15px_-8px_rgba(0,0,0,0.2)] w-full absolute bottom-0 left-0 flex flex-col justify-center items-center gap-y-[8px]">
+      <form action="/cart" method="post" class="w-full h-full">
+        <button
+          class="flex justify-center items-center w-full py-[10px] rounded-full bg-heading border border-heading border-solid text-white font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] uppercase"
+          type="submit"
+          name="checkout"
+          value="CHECKOUT - {{ cart.total_price | money_without_trailing_zeros }}"
+        >
+          CHECKOUT - {{ cart.total_price | money_without_trailing_zeros }}
+        </button>
+      </form>
+      <p class="text-sub-text text-[13px] font-normal leading-[20px] tracking-[-0.13px]">
+        Tax Included. <u>Shipping</u> calculated at Checkout.
+      </p>
+    </div>
+  {% endif %}
+
+  <!-- automatic discounts and upsells app -->
+  <div style="display:none;" data-tbnadfield="PROMOTION_LIST" data-tbnadhide="NO_QUESTS"></div>
+</div>
+
+<style>
+  .rotate-plus {
+    rotate: 45deg;
+  }
+</style>

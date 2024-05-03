@@ -1,0 +1,22 @@
+<button
+  data-product-handle="{{ product.handle }}"
+  data-product-id="{{ product.id }}"
+  data-variant-id="{{ variant.id }}"
+  data-quantity="1"
+  type="button"
+  disabled
+  aria-disabled="true"
+  class="px-[12px] py-[9px] flex justify-center items-center rounded-full border border-[#E0E0E0] border-solid mt-[20px] {% if class %}{{ class }}{% endif %}"
+  style="{% if style %}{{ style }}{% endif %}"
+
+  aria-label="Add To Bag"
+  {% if props %}
+    {{- props -}}
+  {% endif %}
+>
+  <p class="text-secondary-cta text-center text-[11px] font-medium leading-[14px]">
+    ADD
+    {{ level | minus: cartValue | money_without_trailing_zeros }}
+    to unlock
+  </p>
+</button>

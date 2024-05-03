@@ -1,0 +1,152 @@
+{% assign firstAvailable = product.selected_or_first_available_variant %}
+
+{% if firstAvailable.featured_image %}
+  {% assign featuredImage = firstAvailable.featured_image %}
+{% elsif firstAvailable.featured_media %}
+  {% assign featuredMedia = firstAvailable.featured_media %}
+{% elsif product.featured_image %}
+  {% assign featuredImage = product.featured_image %}
+{% elsif product.featured_media %}
+  {% assign featuredMedia = product.featured_media %}
+{% endif %}
+
+{% if cardVariant == 'sm' %}
+  {% assign titleClass = 'product-card-title-sm' %}
+  {% assign priceClass = 'product-card-price-sm' %}
+  {% assign comparePriceClass = 'product-card-compare-price-sm' %}
+  {% assign discountClass = 'product-card-discount-sm' %}
+{% elsif cardVariant == 'md' %}
+  {% assign titleClass = 'product-card-title-md' %}
+  {% assign priceClass = 'product-card-price-md' %}
+  {% assign comparePriceClass = 'product-card-compare-price-md' %}
+  {% assign discountClass = 'product-card-discount-md' %}
+{% else %}
+  {% assign titleClass = 'product-card-title-lg' %}
+  {% assign priceClass = 'product-card-price-lg' %}
+  {% assign comparePriceClass = 'product-card-compare-price-lg' %}
+  {% assign discountClass = 'product-card-discount-lg' %}
+{% endif %}
+
+<div class="product-card-wrapper d-flex-center">
+  {% comment %} href="{{ product.url | append: '?variant=' | append: firstAvailable.id }}" {% endcomment %}
+  <div
+    class="product-card-media-wrapper d-flex-center asp3-4 showfistImage"
+  >
+    {% if featuredImage -%}
+      <img
+        class="product-card-media asp3-4"
+        alt="{{ product.title }}"
+        id="{{ product.id }}"
+        loading="lazy"
+        width="{{ featuredImage.width }}"
+        height="{{ featuredImage.height }}"
+        src="{{ featuredImage.src |  image_url  }}"
+      >
+      {% if product.images.size > 1 %}
+        {%- assign img_url_2 = product.images[1].src -%}
+        <img
+        class="product-card-media asp3-4"
+        alt="{{ product.title }}"
+        id="{{ product.id }}"
+        loading="lazy"
+        width="{{ featuredImage.width }}"
+        height="{{ featuredImage.height }}"
+        src="{{ img_url_2 | image_url }}"
+        >
+      {% endif %}
+    {% elsif featuredMedia and featuredMedia.media_type == 'video' %}
+      {{
+        featuredMedia
+        | video_tag:
+          controls: false,
+          autoplay: true,
+          loop: true,
+          muted: true,
+          preload: none,
+          class: 'product-card-media asp3-4',
+          id: featuredMedia.id
+      }}
+    {% endif %}
+
+    <a
+      href="{{ product.url | append: '?variant=' | append: firstAvailable.id }}" 
+      class="product-card-media-details d-flex-center"
+    >
+      {% if showTags %}
+        <div class="product-card-tags-wrapper d-flex-center">
+          {% for tag in product.tags %}
+            {% if tag contains '_label' %}
+              {% assign tag_parts = tag | split: '_' %}
+              <p class="product-card-tag">
+                {{ tag_parts[0] }}
+              </p>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if showRemoveWishlistBtn %}
+        <div></div> 
+      {% endif %}
+
+      {% if showQuickViewBtn %}
+
+      {% endif %}
+              <div class="product-card-quickview-btn-wrapper d-flex-center">
+          {% render 'quickview-btn',
+            product: product,
+            variant: firstAvailable,
+            class: 'product-card-quickview-btn d-flex-center'
+          %}
+        </div>
+    </a>
+  </div>
+  <div class="product-card-detail-wrapper d-flex-center">
+    {% assign price = firstAvailable.price %}
+    {% assign comparePrice = firstAvailable.compare_at_price %}
+    <div class="product-card-title-wrapper d-flex-center">
+      {% render 'product-card-title', title: product.title, class: titleClass %}
+    </div>
+
+    <div class="product-card-ratings-wrapper d-flex-center">
+      {% render 'product-card-review', product: product %}
+    </div>
+
+    <div class="product-card-price-wrapper d-flex-center">
+      {% render 'product-card-price',
+        price: price,
+        priceClass: priceClass,
+        comparePrice: comparePrice,
+        comparePriceClass: comparePriceClass,
+        discountClass: discountClass
+      %}
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" defer>
+  // $(document).ready(function productCardReady() {
+
+  //   const $wishlistBtn = $('#wishlist-btn-{{section.id}}-{{index}}');
+  //   console.log($wishlistBtn, '$wishlistBtn')
+  //   $wishlistBtn.on('click', function wishlistProduct (e) {
+  //     event.preventDefault();
+  //     const product = {{ product | json }}
+  //     const selectedFirstAvailable = {{ product.selected_or_first_available_variant | json }}
+
+  //     productToWishlist = {
+  //       id: product.id,
+  //       handle: product.handle,
+  //       title: product.title,
+  //       available: product.available,
+  //       selectedOrFirstVariant: {
+  //         id: selectedFirstAvailable.id,
+  //         name: selectedFirstAvailable.name,
+  //         available: selectedFirstAvailable.available,
+  //       } ,
+  //     }
+
+  //     wishlistScript.handleWishlisting(e, productToWishlist);
+  //   });
+  // });
+</script>

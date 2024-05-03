@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "blocks": {
+        "hiko_social_login_hiko_block_kw3HU9": {
+          "type": "shopify:\/\/apps\/hiko-social-login\/blocks\/hiko-block\/3832d7e1-5bcd-4b72-91da-236b57feef8f",
+          "settings": {
+            "login_type": "login"
+          }
+        }
+      },
+      "block_order": [
+        "hiko_social_login_hiko_block_kw3HU9"
+      ],
+      "settings": {
+        "desktopimage": "shopify:\/\/shop_images\/Rectangle_4320_8243c6d5-10a5-47bd-93a8-8a0e91f68340.png",
+        "mobileimage": "shopify:\/\/shop_images\/Rectangle_4320.png",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

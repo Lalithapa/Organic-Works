@@ -1,0 +1,8 @@
+<img
+  loading="eager"
+  width="{% if width %}{{ width }}{% else %}{{ 28 }}{% endif %}"
+  height="{% if height %}{{ height }}{% else %}{{ 28 }}{% endif %}"
+  style="{% if style %}{{ style }}{% endif %}"
+  class="{% if class %}{{ class }}{% endif %}"
+  src="{{ 'carousel-next-btn.svg' |  asset_url }}"
+>

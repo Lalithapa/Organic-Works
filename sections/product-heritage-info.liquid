@@ -1,0 +1,153 @@
+<div
+  class="{% if section.settings.showfullcontainer %}container{% endif %} clean-beauty-info-wrapper d-flex-center" 
+  style="background:{{ section.settings.sectionBackground }};padding-top:0;"
+>
+  {% if section.settings.aboutImage1 %}
+    {% comment %} <img
+      src="{{ section.settings.aboutImage1 |  image_url }}"
+      width="100%"
+      height="100%"
+      class="our-approach-media d-flex-center"
+      alt="{{ section.settings.aboutImage1 }}"
+    > {% endcomment %}
+    {{
+        section.settings.aboutImage1
+        | video_tag:
+          loop: true,
+          autoplay: true,
+          muted: true,
+          class: 'desktop-screen w-full',
+          alt: section.settings.aboutImage1 
+      }}
+      {{
+        section.settings.aboutImage1-mob
+        | video_tag:
+          loop: true,
+          autoplay: true,
+          muted: true,
+          class: 'mobile-screen',
+          alt: section.settings.aboutImage1-mob
+      }}
+  {% endif %}
+  {% comment %} {% if section.settings.showfullcontainer == false %}py-[30px]{% endif %} {% endcomment %}
+  <div class="clean-beauty-detail d-flex-center py-[48px] px-[5px]">
+    <div class="clean-beauty-title-wrapper d-flex-center"> 
+      <p class="clean-beauty-title home-title-sm">{{- section.settings.title -}}</p>
+    </div>
+
+    <div class="clean-beauty-desctiption-wrapper d-flex-center">
+      <p class="clean-beauty-desctiption home-summary">{{- section.settings.text -}}</p>
+    </div>
+
+    <div class="clean-beauty-icons-wrapper d-flex-center">
+      {% for block in section.blocks %}
+        <div class="clean-beauty-icon d-flex-center">
+          {% assign imageSetting = block.settings.icon %}
+          {% if imageSetting.alt %}
+            {% assign imageAlt = imageSetting.alt %}
+          {% else %}
+            {% assign imageAlt = 'organic works clean beauty' %}
+          {% endif %}
+
+          <img
+            src="{{ imageSetting |  image_url }}"
+            width="100%"
+            height="100%"
+            class="clean-beauty-icon-img d-flex-center"
+            alt="{{ imageAlt }}"
+            id="{{ imageSetting.id }}"
+          >
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% if section.settings.aboutImage2 and section.settings.showfullcontainer == false %}
+    <img
+      src="{{ section.settings.aboutImage2 |  image_url }}"
+      width="100%"
+      height="100%"
+      class="our-approach-media desktop-screen"
+      alt="{{ section.settings.aboutImage2 | escape }}"
+    >
+    <img
+      src="{{ section.settings.aboutImage2-mob |  image_url }}"
+      width="100%"
+      height="100%"
+      class="our-approach-media mobile-screen"
+      alt="{{ section.settings.aboutImage2-mob | escape }}"
+    >
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Heritage",
+  "class": "clean-beauty-info-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "showfullcontainer",
+      "label": "Show Container",
+      "default": true
+    },
+    {
+      "type": "video",
+      "id": "aboutImage1",
+      "label": "Show Video 1"
+    },
+    {
+      "type": "video",
+      "id": "aboutImage1-mob",
+      "label": "Show Video 1 Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "aboutImage2",
+      "label": "Show Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "aboutImage2-mob",
+      "label": "Show Image 2-mob"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "CLEAN BEAUTY, IT'S IN OUR DNA"
+    },
+    {
+      "type": "color",
+      "id": "sectionBackground",
+      "label": "Add Background Color",
+      "default": "#f5f7ff"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "99% of plant-based ingredients derived from organic farming and all products contain a minimum of 98% natural ingredients."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+          "info": "Aspect Square 1:1"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Heritage"
+    }
+  ]
+}
+{% endschema %}

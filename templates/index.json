@@ -1,0 +1,823 @@
+{
+  "sections": {
+    "main_slideshow_73w7QV": {
+      "type": "main-slideshow",
+      "blocks": {
+        "slideshow_WwikE4": {
+          "type": "slideshow",
+          "settings": {
+            "slideshow-block-explore-url": "shopify:\/\/collections\/all-collection",
+            "show-video": true,
+            "mobile-video": "shopify:\/\/files\/videos\/ad70-94b0-4599-8fa5-70299510dab6.mp4",
+            "desktop-video": "shopify:\/\/files\/videos\/3d43-1fb1-4c58-aec6-0deb338e527e.mp4",
+            "use-slide-info": true,
+            "slideshow-block-title": "<p>THE SCIENCE <\/p><p>OF SELF CARE<\/p>",
+            "slideshow-block-sub-title": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS<\/p>",
+            "slideshow-block-explore-url-title": "Explore Now",
+            "slideshow-block-font-color": "#fff"
+          }
+        },
+        "slideshow_iRHCEL": {
+          "type": "slideshow",
+          "settings": {
+            "slideshow-block-explore-url": "shopify:\/\/products\/cleansing-face-wash-with-vitamin-e-300ml",
+            "mobile-image": "shopify:\/\/shop_images\/ow-mobile-banner-01_4190f56f-03c3-439d-ba90-1421e2d48787.png",
+            "desktop-image": "shopify:\/\/shop_images\/ow-banner-desktop-01_27daeee3-ea51-4359-ada1-ab3f587f8306.png",
+            "show-video": false,
+            "use-slide-info": true,
+            "slideshow-block-title": "<p>RESTORE SKIN’s NATURAL BALANCE <\/p>",
+            "slideshow-block-sub-title": "<p>Antioxidant-rich, vitamin e -infused cleanser for radiant & hydrated skin!<\/p>",
+            "slideshow-block-explore-url-title": "Shop Now",
+            "slideshow-block-font-color": "#fff"
+          }
+        },
+        "slideshow_qbjBpf": {
+          "type": "slideshow",
+          "settings": {
+            "slideshow-block-explore-url": "shopify:\/\/products\/liquid-gold-firming-face-mask-with-vitamin-e-50ml",
+            "mobile-image": "shopify:\/\/shop_images\/OW_02.jpg",
+            "desktop-image": "shopify:\/\/shop_images\/ow-banner-desktop-033_4c8e3a4a-9d5e-4927-94bf-bf85767d0c54.png",
+            "show-video": false,
+            "use-slide-info": true,
+            "slideshow-block-title": "<p>Liquid gold firming face mask<\/p>",
+            "slideshow-block-sub-title": "<p>Get lift & firm, glowing skin with Vitamin E & Upcycled Baobab Extract.<\/p>",
+            "slideshow-block-explore-url-title": "Hydrate Now",
+            "slideshow-block-font-color": "#fff"
+          }
+        },
+        "slideshow_xGieah": {
+          "type": "slideshow",
+          "settings": {
+            "slideshow-block-explore-url": "shopify:\/\/products\/liquid-gold-firming-face-mask-with-vitamin-e-50ml",
+            "mobile-image": "shopify:\/\/shop_images\/ow-04.png",
+            "desktop-image": "shopify:\/\/shop_images\/ow-banner-desktop-02_1.png",
+            "show-video": false,
+            "use-slide-info": true,
+            "slideshow-block-title": "<p> Bye Bye Dryness Trio<\/p>",
+            "slideshow-block-sub-title": "<p>Say 'Bye Bye' to dry skin with this top to toe ultra hydration solution!<\/p>",
+            "slideshow-block-explore-url-title": "Hydrate Now",
+            "slideshow-block-font-color": "#151515"
+          }
+        },
+        "slideshow_pGhQNF": {
+          "type": "slideshow",
+          "disabled": true,
+          "settings": {
+            "slideshow-block-explore-url": "shopify:\/\/products\/bye-bye-dry-collection",
+            "mobile-image": "shopify:\/\/shop_images\/ow-mobile-banner-02.png",
+            "desktop-image": "shopify:\/\/shop_images\/ow-banner-desktop-02.png",
+            "show-video": false,
+            "use-slide-info": false,
+            "slideshow-block-title": "",
+            "slideshow-block-sub-title": "",
+            "slideshow-block-explore-url-title": "",
+            "slideshow-block-font-color": "#fff"
+          }
+        }
+      },
+      "block_order": [
+        "slideshow_WwikE4",
+        "slideshow_iRHCEL",
+        "slideshow_qbjBpf",
+        "slideshow_xGieah",
+        "slideshow_pGhQNF"
+      ],
+      "custom_css": [],
+      "settings": {
+        "use-width-limiter": false,
+        "use-common-info": false,
+        "slideshow-title": "<p>THE SCIENCE OF <\/p><p>SELF CARE<\/p>",
+        "slideshow-sub-title": "<p>Restore your skin's Natural Balance<\/p>",
+        "slideshow-explore-url": ""
+      }
+    },
+    "home_header_ULcxam": {
+      "type": "home-header",
+      "settings": {
+        "nav-menu": "temp-menu"
+      }
+    },
+    "our_approach_kDCFJk": {
+      "type": "our-approach",
+      "settings": {
+        "showfullcontainer": false,
+        "title": "<p>CLINICALLY APPROVED,  <\/p><p>CLEAN BEAUTY<\/p>",
+        "minitext": "",
+        "text": "<p>Organic Works is a multi-award-winning beauty brand that promises clean beauty without compromise - Driven by passion for making natural and organic products that are genuinely effective, kind to the skin and manufactured sustainably.<\/p>",
+        "url": "shopify:\/\/pages\/about-us",
+        "url-title": "Learn More",
+        "media-text": "OUR APPROACH",
+        "sectionBackground": "#f3ffec",
+        "show-video": true,
+        "mobile-video": "shopify:\/\/files\/videos\/Clinically-Approve_mobile_.mp4",
+        "desktop-video": "shopify:\/\/files\/videos\/Clinically-Approve_dekstop__84c40f86-a10b-4a13-9349-2a15207fb550.mp4"
+      }
+    },
+    "product_carousel_YNhxQP": {
+      "type": "product-carousel",
+      "settings": {
+        "carousel-title": "Best Sellers",
+        "carousel-collection": "bestsellers",
+        "slides-limit": 7,
+        "num-slides-sm": "1",
+        "num-slides-md": "3",
+        "num-slides-lg": "4",
+        "num-slides-xl": "3",
+        "num-slides-2xl": "3.5"
+      }
+    },
+    "clean_beauty_media_XMq7RD": {
+      "type": "clean-beauty-media",
+      "settings": {
+        "use-container": false,
+        "show-video": true,
+        "mobile-video": "shopify:\/\/files\/videos\/4502-9060-479a-acb2-6f0ae36c9220.mp4",
+        "desktop-video": "shopify:\/\/files\/videos\/6836-a5b5-4e59-950b-7ca496bb9189.mp4"
+      }
+    },
+    "clean_beauty_info_VQB6Rk": {
+      "type": "clean-beauty-info",
+      "blocks": {
+        "icon_k46Ej4": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/trust-badge-1.png"
+          }
+        },
+        "icon_pHz4gX": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/trust-badge-2.png"
+          }
+        },
+        "icon_QpTLhx": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/trust-badge-3.png"
+          }
+        },
+        "icon_CRBri4": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/trust-badge-4.png"
+          }
+        },
+        "icon_YiU7Wd": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/trust-badge-5.png"
+          }
+        },
+        "icon_JqfcUC": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/trust-badge-6.png"
+          }
+        }
+      },
+      "block_order": [
+        "icon_k46Ej4",
+        "icon_pHz4gX",
+        "icon_QpTLhx",
+        "icon_CRBri4",
+        "icon_YiU7Wd",
+        "icon_JqfcUC"
+      ],
+      "custom_css": [
+        ".container.clean-beauty-info-wrapper.d-flex-center.scroll-trigger.animate--slide-in {margin-bottom: 72px;}"
+      ],
+      "settings": {
+        "showfullcontainer": false,
+        "title": "<p>CLEAN BEAUTY. <\/p><p>IT'S IN OUR DNA <em>® <\/em><\/p>",
+        "sectionBackground": "#f5f7ff",
+        "text": "Our entire product portfolio is clean, green, and cruelty-free. At least 99% of plant-based ingredients are derived from organic farming, and all products contain a minimum of 98% natural ingredients. We also test our products for suitability to even the most sensitive skin, so the whole family can feel confident using OW."
+      }
+    },
+    "product_carousel_hyrCC8": {
+      "type": "product-carousel",
+      "settings": {
+        "carousel-title": "SUPER SAVERS",
+        "carousel-collection": "refills",
+        "slides-limit": 5,
+        "num-slides-sm": "1.5",
+        "num-slides-md": "3.5",
+        "num-slides-lg": "3.5",
+        "num-slides-xl": "3",
+        "num-slides-2xl": "3.5"
+      }
+    },
+    "media_group_H7FJFx": {
+      "type": "media-group",
+      "settings": {
+        "image-1": "shopify:\/\/shop_images\/media-group-image-1.jpg",
+        "text-1": "LIQUID GOLD FIRMING FACE MASK",
+        "url-1": "shopify:\/\/products\/liquid-gold-firming-face-mask-with-vitamin-e-50ml",
+        "image-2": "shopify:\/\/shop_images\/media-group-image-2.jpg",
+        "text-2": "DAILY BLISS MOISTURISER",
+        "url-2": "shopify:\/\/products\/daily-bliss-moisturiser"
+      }
+    },
+    "awards_Kj74Xr": {
+      "type": "awards",
+      "blocks": {
+        "award_icon_JKkRwF": {
+          "type": "award-icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/AWARD-5_f289e161-736f-43b7-bfc2-2c941fbb00a6.png"
+          }
+        },
+        "award_icon_LVUM7L": {
+          "type": "award-icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/AWARD-1_d121308f-cced-4981-b9ae-837e1b354018.png"
+          }
+        },
+        "award_icon_jydFJz": {
+          "type": "award-icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/AWARD-7_8468575e-a2dc-476e-bede-fe7b1c4f1ece.png"
+          }
+        },
+        "award_icon_cwwYKB": {
+          "type": "award-icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/AWARD-2_2b068579-0728-48d5-835d-048b6df1447e.png"
+          }
+        },
+        "award_icon_8GNVCF": {
+          "type": "award-icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/AWARD-4_82822878-f855-492e-9136-557a7e4a3c76.png"
+          }
+        },
+        "award_icon_NdiCGK": {
+          "type": "award-icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/AWARD-6.png"
+          }
+        },
+        "award_icon_UCEgeJ": {
+          "type": "award-icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/AWARD-3_70bd622c-dfab-4fc0-9993-39d7d79890cd.png"
+          }
+        }
+      },
+      "block_order": [
+        "award_icon_JKkRwF",
+        "award_icon_LVUM7L",
+        "award_icon_jydFJz",
+        "award_icon_cwwYKB",
+        "award_icon_8GNVCF",
+        "award_icon_NdiCGK",
+        "award_icon_UCEgeJ"
+      ],
+      "settings": {
+        "use-container": false,
+        "image": "shopify:\/\/shop_images\/awards-Desktop.jpg",
+        "title": "AWARD WINNING ORGANIC BEAUTY FROM SCOTLAND",
+        "desc": "Special recognitions and acclaimed awards garnered for our effective natural formulas."
+      }
+    },
+    "indulgence_collection_image_8zwdEN": {
+      "type": "indulgence-collection-image",
+      "settings": {
+        "use-container": false,
+        "mobile-image": "shopify:\/\/shop_images\/coll-image-carousel.jpg",
+        "desktop-image": "shopify:\/\/shop_images\/coll-image-carousel.jpg",
+        "text-on-image": "Experience harmonious blend of time-honored traditions and locally sourced ingredients, chosen for its unique ability to nurture and rejuvenate the skin."
+      }
+    },
+    "induldence_collection_carousel_z6Mqh7": {
+      "type": "induldence-collection-carousel",
+      "blocks": {
+        "image_with_url_Fd7c9h": {
+          "type": "image-with-url",
+          "settings": {
+            "slide-image": "shopify:\/\/shop_images\/Lavender_Shower_Gel_6.1.jpg",
+            "slide-url": "shopify:\/\/collections\/organic-works-lavender-range",
+            "slide-title": "SOOTHE ECZEMA",
+            "slide-summary": "with calming Lavender",
+            "show-video-1": true,
+            "video-1": "shopify:\/\/files\/videos\/Bergamot shower gel YT.mp4",
+            "title-1": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-1": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "image-2": "shopify:\/\/shop_images\/Rectangle_4313_5.png",
+            "show-video-2": false,
+            "title-2": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-2": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "show-video-3": true,
+            "video-3": "shopify:\/\/files\/videos\/53e7-b898-49fa-a042-1b233eaa0790.mp4",
+            "showHeroIngredients": true,
+            "title-3": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-3": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "concern-img-1": "shopify:\/\/shop_images\/Rectangle_4313_18.png",
+            "concern-title-1": "<p>Lavender<\/p>",
+            "concern-summary-1": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief.<\/p>",
+            "concern-img-2": "shopify:\/\/shop_images\/Rectangle_4313_8.png",
+            "concern-title-2": "<p>Lavender<\/p>",
+            "concern-summary-2": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief.<\/p>",
+            "concern-img-3": "shopify:\/\/shop_images\/Rectangle_4313_10.png",
+            "concern-title-3": "<p>Aloe Vera<\/p>",
+            "concern-summary-3": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief.<\/p>",
+            "concern-img-4": "shopify:\/\/shop_images\/Rectangle_4313_4.png",
+            "concern-title-4": "<p>Concern Title 4<\/p>",
+            "concern-summary-4": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief.<\/p>",
+            "quickview-url-title": "Explore Now"
+          }
+        },
+        "image_with_url_MMc4kM": {
+          "type": "image-with-url",
+          "settings": {
+            "slide-image": "shopify:\/\/shop_images\/DeepNourishFaceMask6.jpg",
+            "slide-url": "shopify:\/\/products\/deep-nourish-face-mask",
+            "slide-title": "Combat Dullness",
+            "slide-summary": "With vitamin C & essential oils",
+            "show-video-1": true,
+            "title-1": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-1": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "show-video-2": true,
+            "title-2": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-2": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "show-video-3": true,
+            "showHeroIngredients": false,
+            "title-3": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-3": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "concern-title-1": "<p>Lavender<\/p>",
+            "concern-summary-1": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-2": "<p>Lavender<\/p>",
+            "concern-summary-2": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-3": "<p>Aloe Vera<\/p>",
+            "concern-summary-3": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-4": "<p>Concern Title 4<\/p>",
+            "concern-summary-4": "<p>Concern Summary 4<\/p>",
+            "quickview-url-title": "Explore Now"
+          }
+        },
+        "image_with_url_nWKEYk": {
+          "type": "image-with-url",
+          "settings": {
+            "slide-image": "shopify:\/\/shop_images\/2_fcb0d734-e3ae-4efe-b9a7-93661e155c46.jpg",
+            "slide-url": "shopify:\/\/products\/bergamot-hand-body-lotion-with-vitamin-c-300ml",
+            "slide-title": "COMBAT DRY SKIN",
+            "slide-summary": "with nourishing Vitamins",
+            "show-video-1": true,
+            "title-1": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-1": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "show-video-2": true,
+            "title-2": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-2": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "show-video-3": true,
+            "showHeroIngredients": false,
+            "title-3": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-3": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "concern-title-1": "<p>Lavender<\/p>",
+            "concern-summary-1": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-2": "<p>Lavender<\/p>",
+            "concern-summary-2": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-3": "<p>Aloe Vera<\/p>",
+            "concern-summary-3": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-4": "<p>Concern Title 4<\/p>",
+            "concern-summary-4": "<p>Concern Summary 4<\/p>",
+            "quickview-url-title": "Explore Now"
+          }
+        },
+        "image_with_url_WmDHKW": {
+          "type": "image-with-url",
+          "settings": {
+            "slide-image": "shopify:\/\/shop_images\/Moisture_Boost_Shampoo_665d4ebf-0d83-4389-9a08-537560e5c068.jpg",
+            "slide-url": "shopify:\/\/products\/moisture-boost-shampoo",
+            "slide-title": "Repair Hair Damage",
+            "slide-summary": "with Coconut, Bamboo & Aloe vera",
+            "show-video-1": true,
+            "title-1": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-1": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "show-video-2": true,
+            "title-2": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-2": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "show-video-3": true,
+            "showHeroIngredients": false,
+            "title-3": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-3": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "concern-title-1": "<p>Lavender<\/p>",
+            "concern-summary-1": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-2": "<p>Lavender<\/p>",
+            "concern-summary-2": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-3": "<p>Aloe Vera<\/p>",
+            "concern-summary-3": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-4": "<p>Concern Title 4<\/p>",
+            "concern-summary-4": "<p>Concern Summary 4<\/p>",
+            "quickview-url-title": "Explore Now"
+          }
+        },
+        "image_with_url_6aTdkX": {
+          "type": "image-with-url",
+          "settings": {
+            "slide-image": "shopify:\/\/shop_images\/Refining_Flower_Tonic_77c6adb3-c775-4e3f-acaf-d1d99232b30a.jpg",
+            "slide-url": "shopify:\/\/products\/refining-flower-tonic-with-vitamin-e-100ml",
+            "slide-title": "Refresh & purify",
+            "slide-summary": "with Refining Flower Tonic",
+            "show-video-1": true,
+            "title-1": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-1": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "show-video-2": true,
+            "title-2": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-2": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "show-video-3": true,
+            "showHeroIngredients": false,
+            "title-3": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "summary-3": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "concern-title-1": "<p>Lavender<\/p>",
+            "concern-summary-1": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-2": "<p>Lavender<\/p>",
+            "concern-summary-2": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-3": "<p>Aloe Vera<\/p>",
+            "concern-summary-3": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
+            "concern-title-4": "<p>Concern Title 4<\/p>",
+            "concern-summary-4": "<p>Concern Summary 4<\/p>",
+            "quickview-url-title": "Explore Now"
+          }
+        }
+      },
+      "block_order": [
+        "image_with_url_Fd7c9h",
+        "image_with_url_MMc4kM",
+        "image_with_url_nWKEYk",
+        "image_with_url_WmDHKW",
+        "image_with_url_6aTdkX"
+      ],
+      "settings": {
+        "enable-concern-quickview": false,
+        "title": "nature’s pure indulgence",
+        "num-slides-sm": "2",
+        "num-slides-md": "4",
+        "num-slides-lg": "4.5"
+      }
+    },
+    "reviews_carousel_BUGaP3": {
+      "type": "reviews-carousel",
+      "blocks": {
+        "review_xHQWqc": {
+          "type": "review",
+          "settings": {
+            "review": "Scent heaven. I have been a regular buyer of the Bench Spray for many years, can’t beat the scent - makes cleaning up an a lot more enjoyable experience!",
+            "review-uername": "Tracy R."
+          }
+        },
+        "review_a8kQ8j": {
+          "type": "review",
+          "settings": {
+            "review": "Experience unparalleled relaxation with Organic Works Natural products in your bathroom... Trust the Product and Trust the revitalized, serene New You!",
+            "review-uername": "Amanda Phil Romain (Facebook)"
+          }
+        },
+        "review_9NpYDy": {
+          "type": "review",
+          "settings": {
+            "review": "The most relaxing bathroom experience using Organic Works Natural products... Believe in the Product and Believe in the refreshed relaxed New You!",
+            "review-uername": "Sally Ann Lewis-Wall (Facebook)"
+          }
+        }
+      },
+      "block_order": [
+        "review_xHQWqc",
+        "review_a8kQ8j",
+        "review_9NpYDy"
+      ],
+      "settings": {
+        "title": "WHAT THEY SAY"
+      }
+    },
+    "featured_in_UPUVLn": {
+      "type": "featured-in",
+      "blocks": {
+        "brand_image_6RbwnG": {
+          "type": "brand-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/featured-in-1.png"
+          }
+        },
+        "brand_image_AyQKVj": {
+          "type": "brand-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/featured-in-2.png"
+          }
+        },
+        "brand_image_HtWJVz": {
+          "type": "brand-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/featured-in-3.png"
+          }
+        },
+        "brand_image_nd7mHh": {
+          "type": "brand-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/featured-in-4.png"
+          }
+        },
+        "brand_image_T7wyUH": {
+          "type": "brand-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/featured-in-5.png"
+          }
+        },
+        "brand_image_4CLczc": {
+          "type": "brand-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/featured-in-6.png"
+          }
+        },
+        "brand_image_MgjdPr": {
+          "type": "brand-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/featured-in-7.png"
+          }
+        }
+      },
+      "block_order": [
+        "brand_image_6RbwnG",
+        "brand_image_AyQKVj",
+        "brand_image_HtWJVz",
+        "brand_image_nd7mHh",
+        "brand_image_T7wyUH",
+        "brand_image_4CLczc",
+        "brand_image_MgjdPr"
+      ],
+      "settings": {
+        "title": "FEATURED IN"
+      }
+    },
+    "image_with_text_zQ9xpE": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_9VpNrV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unveiling the symphony of Nature",
+            "heading_size": "h1"
+          }
+        },
+        "text_GGtrq4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Organic Works understands that true beauty should not come at the expense of the environment. Every product is crafted with love and care, minimizing it's carbon footprint. The true source of strength for the brand, is the earth itself, using ingredients sourced from Organic farming. With 99% of it's plant based ingredients derived from sustainable sources, the brand is firmly rooted in Nature's abundance.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_jiMimY": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify:\/\/pages\/about-us",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9VpNrV",
+        "text_GGtrq4",
+        "button_jiMimY"
+      ],
+      "custom_css": [
+        ".grid {padding: 0;}",
+        ".image-with-text__content {padding-left: 0; padding-right: 0;}",
+        ".image-with-text__text-item {background-color: #fef7ee;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/image-text-group.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_YcjXkp": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_HDQdRX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Dive into the world of Organic Works",
+            "heading_size": "h1"
+          }
+        },
+        "text_G3MbHi": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Elevate your senses with the purity of our secret ingredients, lovingly nurtured by the Scottish landscape. Our commitment to authenticity goes beyond the surface – it's a dedication to preserving the very essence of the land, ensuring that each fragrance, feel and texture orchestrated into the Organic works range, is a genuine connection to the heart of Scotland.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_Ui84UX": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify:\/\/pages\/about-us",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_HDQdRX",
+        "text_G3MbHi",
+        "button_Ui84UX"
+      ],
+      "custom_css": [
+        ".image-with-text__content {padding-left: 0; padding-right: 0;}",
+        ".image-with-text__text-item {background-color: #ede8e5;}",
+        ".grid {padding-bottom: 0;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/image-text-group-1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "insta_feed_rXirJi": {
+      "type": "insta-feed",
+      "blocks": {
+        "insta_image_9ekWkp": {
+          "type": "insta-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Insta_1.jpg"
+          }
+        },
+        "insta_image_EqYcif": {
+          "type": "insta-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Insta_2.jpg"
+          }
+        },
+        "insta_image_99xweg": {
+          "type": "insta-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Insta_3.jpg"
+          }
+        },
+        "insta_image_T3wz6U": {
+          "type": "insta-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Insta_4.jpg"
+          }
+        },
+        "insta_image_fKqkmi": {
+          "type": "insta-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Insta_5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "insta_image_9ekWkp",
+        "insta_image_EqYcif",
+        "insta_image_99xweg",
+        "insta_image_T3wz6U",
+        "insta_image_fKqkmi"
+      ],
+      "settings": {
+        "title": "Follow @organic works",
+        "url": "https:\/\/www.instagram.com\/organic.works\/",
+        "num-slides-sm": "1.5",
+        "num-slides-md": "3.5",
+        "num-slides-lg": "4.5"
+      }
+    },
+    "ticker_tape_jyK9CH": {
+      "type": "ticker-tape",
+      "blocks": {
+        "ticker_tape_k6EtH9": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p><strong>100%<\/strong> Vegan<\/p>"
+          }
+        },
+        "ticker_tape_CQhqfT": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p><strong>100%<\/strong> Cruelty Free<\/p>"
+          }
+        },
+        "ticker_tape_XJWC6c": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p>Suitable For <strong>All Skin Types<\/strong><\/p>"
+          }
+        },
+        "ticker_tape_HgiDEG": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p><strong>Organic<\/strong> Ingredients<\/p>"
+          }
+        },
+        "ticker_tape_EqJLrQ": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p><strong>Award <\/strong>Winning<\/p>"
+          }
+        },
+        "ticker_tape_HU4dCD": {
+          "type": "ticker-tape",
+          "settings": {
+            "ticker": "<p><strong>100%<\/strong> Clinically Tested<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "ticker_tape_k6EtH9",
+        "ticker_tape_CQhqfT",
+        "ticker_tape_XJWC6c",
+        "ticker_tape_HgiDEG",
+        "ticker_tape_EqJLrQ",
+        "ticker_tape_HU4dCD"
+      ],
+      "settings": {}
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "quick_view_rXGi9p": {
+      "type": "quick-view",
+      "disabled": true,
+      "settings": {}
+    },
+    "quick_cart_TiGwmV": {
+      "type": "quick-cart",
+      "disabled": true,
+      "settings": {
+        "threshold_shipping_limit_handle": "hand-tlc",
+        "recom-collection-handle": "all-ow-products",
+        "recom-to-show": 10,
+        "gift-collection-handle": "products-collection-for-free-gifts",
+        "gift-to-show": 3
+      }
+    }
+  },
+  "order": [
+    "main_slideshow_73w7QV",
+    "home_header_ULcxam",
+    "our_approach_kDCFJk",
+    "product_carousel_YNhxQP",
+    "clean_beauty_media_XMq7RD",
+    "clean_beauty_info_VQB6Rk",
+    "product_carousel_hyrCC8",
+    "media_group_H7FJFx",
+    "awards_Kj74Xr",
+    "indulgence_collection_image_8zwdEN",
+    "induldence_collection_carousel_z6Mqh7",
+    "reviews_carousel_BUGaP3",
+    "featured_in_UPUVLn",
+    "image_with_text_zQ9xpE",
+    "image_with_text_YcjXkp",
+    "insta_feed_rXirJi",
+    "ticker_tape_jyK9CH",
+    "featured_collection",
+    "quick_view_rXGi9p",
+    "quick_cart_TiGwmV"
+  ]
+}

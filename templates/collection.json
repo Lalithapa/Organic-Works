@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "collection_banner_TMRrGx": {
+      "type": "collectionBanner",
+      "blocks": {
+        "image_MCTMeh": {
+          "type": "Image",
+          "settings": {
+            "coll-desk-banner": "{{ collection.metafields.custom.secondary_banner_desktop_image_1.value }}",
+            "coll-mob-banner": "{{ collection.metafields.custom.secondary_mobile_banner_1.value }}"
+          }
+        },
+        "image_qBpHgn": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "coll-desk-banner": "{{ collection.metafields.custom.secondary_banner_desktop_image_2.value }}",
+            "coll-mob-banner": "{{ collection.metafields.custom.secondary_mobile_banner_2.value }}"
+          }
+        },
+        "image_a9zNLE": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "coll-desk-banner": "{{ collection.metafields.custom.secondary_banner_desktop_image_3.value }}",
+            "coll-mob-banner": "{{ collection.metafields.custom.secondary_mobile_banner_3.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "image_MCTMeh",
+        "image_qBpHgn",
+        "image_a9zNLE"
+      ],
+      "custom_css": [
+        ".slick-dots {display: none;}",
+        ".slick-slide img {border-radius: 8px;}"
+      ],
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    }
+  },
+  "order": [
+    "collection_banner_TMRrGx",
+    "product-grid"
+  ]
+}

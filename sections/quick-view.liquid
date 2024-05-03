@@ -1,0 +1,160 @@
+{% assign firstAvailable = product.selected_or_first_available_variant %}
+
+<div id="quickview-wrapper" class="hide-quickview">
+  <button id="quickview-close-btn" class="d-flex-center">
+    {% render 'close-icon-black' %}
+  </button>
+  <div id="quickview-spinner-wrapper" class="d-flex-center">{% render 'spinner' %}</div>
+  <div class="quickview-overflow">
+    <div id="quickview-content-wrapper" class="d-flex-center">
+      <div class="quickview-carousel-wrapper">
+        <div class="quickview-carousel d-flex-center">
+          {% for image in product.images %}
+            <div class="quickview-media-wrapper">
+              <img
+                class="quickview-media asp3-4"
+                loading="lazy"
+                width="{{image.width}}"
+                height="{{image.height}}"
+                src="{{ image.src | image_url }}"
+                alt="{{ image.alt | escape }}"
+              >
+            </div>
+          {% endfor %}
+        </div>
+        <div class="quickview-wishlist-wrapper d-flex-center">
+          <div class="wishlist-engine" data-product_id="{{  product.id }}" data-variant_id="{{ product.selected_or_first_available_variant.id }}" data-full_button="false" data-css="true"></div>        
+          {% comment %} <button
+            data-product-id="{{ product.id }}"
+            data-variant-id="{{ firstAvailable.id }}"
+            type="button"
+            aria-label="Wishlist product {{ product.title }}"
+            class="wishlist-toggle-btn d-flex-center"
+          >
+            {% render 'wishlist-icon-black', class: 'wishlist-img' %}
+
+            {% render 'wishlist-fill-icon-black', class: 'wishlist-fill-img d-none' %}
+          </button> {% endcomment %}
+        </div>
+      </div>
+      {% comment %} 40px {% endcomment %}
+      <div class="quickview-detail-wrapper d-flex-center">
+        <div class="quickview-detail-essential d-flex-center">
+          <div class="quickview-title-wrapper d-flex-center">
+            <p class="quickview-title">
+              {{- product.title -}}
+            </p>
+          </div>
+          {% comment %} gap: 4px {% endcomment %}
+
+          <div class="quickview-summary-wrapper d-flex-center">
+            <p class="quickview-summary">Vitamin E, Rose Geranium Flower Oil & Aloe Vera 300ml</p>
+
+            {% comment %} 12px {% endcomment %}
+            <div class="product-card-ratings-wrapper d-flex-center" style="justify-content: flex-start;">
+              {% render 'product-card-review', product: product %}
+            </div>
+          </div>
+
+          {% comment %} gap: 4px {% endcomment %}
+          {% assign price = firstAvailable.price %}
+          {% assign comparePrice = firstAvailable.compare_at_price %}
+
+          <div class="quickview-price-details-wrapper d-flex-center">
+            <div class="quickview-price-wrapper d-flex-center">
+              <p class="quickview-price">{{- price | money_with_currency -}}</p>
+
+              {% if comparePrice > price %}
+                {% assign discount = comparePrice | minus: price %}
+                {% assign discountPercentage = discount | times: 100.0 | divided_by: comparePrice %}
+
+                <s class="quickview-compare-price">
+                  {{- comparePrice | money_with_currency -}}
+                </s>
+                <p class="quickview-discount">
+                  {{- discountPercentage | round -}}
+                  %
+                </p>
+              {% endif %}
+            </div>
+            <p class="quickview-price-taxes">Inclusive Of All Taxes</p>
+          </div>
+        </div>
+        {% comment %} 20px {% endcomment %}
+        <div class="quickview-subscription-wrapper"></div>
+        {% comment %} 20px {% endcomment %}
+        <div class="quickview-description-wrapper d-flex-center">
+          <div class="quickview-description">
+            {{- product.description -}}
+          </div>
+        </div>
+      </div>
+      {% comment %} 40px {% endcomment %}
+      {% if product.metafields.custom.hero_ingredients.value %}
+        <div class="quickview-hero-wrapper d-flex-center">
+          <div class="quickview-hero-title-wrapper d-flex-center">
+            <p class="quickview-hero-title">HERO INGREDIENTS -</p>
+          </div>
+          <div style="justify-content: flex-start;" class="quickview-hero-tile-wrapper d-flex-center">
+            {% for metaobject in product.metafields.custom.hero_ingredients.value %}
+              <div class="quickview-hero-tile d-flex-center">
+                {% assign image_data = metaobject.main_image.value | json %}
+                {% assign image_src = image_data | escape | remove: '&quot;' %}
+                <div class="quickview-hero-media-wrapper d-flex-center">
+                  <img
+                    width="100%"
+                    height="100%"
+                    class="quickview-hero-media"
+                    loading="lazy"
+                    src="{{ image_src }}"
+                    alt="Hero Ingredient {{ metaobject.ingredient_name }}"
+                  >
+                </div>
+                <p class="quickview-hero-ingredient-name-wrapper d-flex-center">
+                  <p class="quickview-hero-ingredient-name">{{ metaobject.ingredient_name }}</p>
+                </p>
+                {% comment %} <p>{{ metaobject.summary }}</p> {% endcomment %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% comment %} absolute {% endcomment %}
+      <div class="quickview-add-to-bag-wrapper d-flex-center">
+        <a
+          href="{{ product.url |  append: '?variant=' |  append: product.selected_or_first_available_variant.id }}"
+          class="quickview-get-details-wrapper d-flex-center"
+        >
+          <p class="quickview-details">Dive in For Details</p>
+          <div class="quick-view-details-arrow d-flex-center">
+            {% render 'carousel-next-btn' %}
+          </div>
+        </a>
+        <div class="quickview-add-to-bag-btn-wrapper d-flex-center">
+          {% assign isAvailable = firstAvailable.available %}
+          {% render 'quickcart-add-btn',
+            product: product,
+            variant: firstAvailable,
+            class: 'quickview-add-to-bag-btn',
+            isAvailable: isAvailable,
+            text: 'ADD TO BAG'
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product Quick View",
+  "class": "quickview-section",
+  "tag": "section",
+  "limit": 1,
+  "presets": [
+    {
+      "name": "Product Quick View"
+    }
+  ]
+}
+{% endschema %}
