@@ -1,184 +1,169 @@
 {% if section.settings.aboutUsText != blank %}
-<div class="clean-beauty-title-wrapper home-title-sm d-flex-center pt-[24px]"><p>{{ section.settings.aboutUsText }}</p></div>
-  {% endif %}
-<div
-  class="page-width grid grid-rows-1 md:grid-rows-2 lg:grid-rows-3 grid-flow-col gap-[32px] md:gap-[34px] lg:gap-[64px] place-content-center py-[48px] px-[16px] mb-0"
-  {% if section.settings.makeSlider %} id="about-card-sliders" {% endif %}>
-  {% for block in section.blocks %}
-    {% if block.settings.awd-card != blank and block.settings.awdmain != blank and block.settings.awdsubmain != blank %}
-      <div class="about-card-style-fix !flex justify-center h-full">
-        <div class="lg:w-[360px] bg-white px-[14px] py-[16px] rounded-[8px]"> 
-            {% assign fileType = block.settings.awd-card-video.media_type %}
-          {% if section.settings.dynamic_content and fileType == 'video' %}
-            {{ block.settings["awd-card-video"] | video_tag: loop: true, autoplay: true, muted: true, alt: block.settings["awd-card-video"] , class:"rounded-[8px]" }}
-          {% else %}  
-          <img loading="lazy" class="rounded-[8px]" src="{{ block.settings.awd-card |  image_url }}"
-            alt="{{ block.settings.awd-card | escape }}" width="100%" height="100%" />
-          {% endif %}
-          <div class="pt-[20px] pb-[12px]">
-            <h5 class="card-heading">{{ block.settings.awdmain }}</h5>
-            <h5 class="card-heading">{{ block.settings.awdmain_2 }}</h5>
-            <p class="mb-3 card-subheading">{{ block.settings.awdsubmain }}</p>
+  <div class="clean-beauty-title-wrapper home-title-sm d-flex-center pt-[24px]"><p>{{ section.settings.aboutUsText }}</p></div>
+    {% endif %}
+  <div
+    class="page-width grid grid-rows-1 md:grid-rows-2 lg:grid-rows-3 grid-flow-col gap-[32px] md:gap-[34px] lg:gap-[64px] place-content-center py-[48px] px-[16px] mb-0"
+    {% if section.settings.makeSlider %} id="about-card-sliders" {% endif %}>
+    {% for block in section.blocks %}
+      {% if block.settings.awd-card != blank and block.settings.awdmain != blank and block.settings.awdsubmain != blank %}
+        <div class="about-card-style-fix !flex justify-center h-full">
+          <div class="lg:w-[360px] bg-white px-[14px] py-[16px] rounded-[8px]">
+            <img loading="lazy" class="rounded-[8px]" src="{{ block.settings.awd-card |  image_url }}"
+              alt="{{ block.settings.awd-card | escape }}" width="100%" height="100%" />
+            <div class="pt-[20px] pb-[12px]">
+              <h5 class="card-heading">{{ block.settings.awdmain }}</h5>
+              <h5 class="card-heading">{{ block.settings.awdmain_2 }}</h5>
+              <p class="mb-3 card-subheading">{{ block.settings.awdsubmain }}</p>
+            </div>
           </div>
         </div>
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
-<style>
-  .about-card-style-fix {
-    padding-right: 16px;
-    height:inherit;
-  }
-  .bg-theme {
-    background-color: #f6f6f6;
-  }
-  .card-heading {
-    color: #151515;
-    text-align: center;
-    font-family: Karla;
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 30px;
-    /* 142.857% */
-    text-transform: uppercase;
-  }
-
-  .card-subheading {
-    color: #171717;
-    text-align: center;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
-    font-family: Karla;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-    /* 186.667% */
-    margin-top: 12px;
-  }
-
-  @media only screen and (min-width: 768px) {
+      {% endif %}
+    {% endfor %}
+  </div>
+  <style>
     .about-card-style-fix {
-      padding-right: 0px;
+      padding-right: 16px;
+      height:inherit;
     }
-  }
-  @media screen (max-width:768px) {
+    .bg-theme {
+      background-color: #f6f6f6;
+    }
+    .card-heading {
+      color: #151515;
+      text-align: center;
+      font-family: Karla;
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 30px;
+      /* 142.857% */
+      text-transform: uppercase;
+    }
+  
     .card-subheading {
-      line-height: 24px;
+      color: #171717;
+      text-align: center;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
+      font-family: Karla;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px;
+      /* 186.667% */
+      margin-top: 12px;
     }
-  }
-</style>
-{% if section.settings.makeSlider %}
-<style>
-  .slick-track {
-    display: flex !important;
-  }
-
-  .slick-slide {
-    height: inherit !important;
-  }
-
-  .slick-prev:before {
-    content: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none"%3E%3Cpath d="M17.1886 5.21777L9.40625 13.0001L17.1886 20.7824" stroke="%23151515" stroke-width="2" stroke-linecap="round" /%3E%3C/svg%3E') !important;
-    color: #151515;
-  }
-
-  .slick-next:before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none'%3E%3Cpath d='M8.81144 5.21777L16.5938 13.0001L8.81144 20.7824' stroke='%23151515' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") !important;
-    color: #151515;
-  }
-</style>
-<script defer>
-  $(document).ready(function ready() {
-    const $root = $('#about-card-sliders');
-    $root.slick({
-      mobileFirst: true,
-      slidesToShow: 1.2,
-      slidesToScroll: 1,
-      infinite: false,
-      arrows: true,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1.2,
-            slidesToScroll: 1,
+  
+    @media only screen and (min-width: 768px) {
+      .about-card-style-fix {
+        padding-right: 0px;
+      }
+    }
+    @media screen (max-width:768px) {
+      .card-subheading {
+        line-height: 24px;
+      }
+    }
+  </style>
+  {% if section.settings.makeSlider %}
+  <style>
+    .slick-track {
+      display: flex !important;
+    }
+  
+    .slick-slide {
+      height: inherit !important;
+    }
+  
+    .slick-prev:before {
+      content: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none"%3E%3Cpath d="M17.1886 5.21777L9.40625 13.0001L17.1886 20.7824" stroke="%23151515" stroke-width="2" stroke-linecap="round" /%3E%3C/svg%3E') !important;
+      color: #151515;
+    }
+  
+    .slick-next:before {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none'%3E%3Cpath d='M8.81144 5.21777L16.5938 13.0001L8.81144 20.7824' stroke='%23151515' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+      color: #151515;
+    }
+  </style>
+  <script defer>
+    $(document).ready(function ready() {
+      const $root = $('#about-card-sliders');
+      $root.slick({
+        mobileFirst: true,
+        slidesToShow: 1.2,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1.2,
+              slidesToScroll: 1,
+            },
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 2,
+            },
           },
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 2,
-          },
-        },
-      ],
+        ],
+      });
     });
-  });
-</script>
-{% endif %}
-{% schema %}
-{
-"name": "About Us Cards",
-"class": "bg-theme",
-"settings": [ 
-{
-"type": "text",
-"id": "aboutUsText",
-"label": "Card Main text"
-},
-{
-"type": "checkbox",
-"id": "makeSlider",
-"label": "Show Slider",
-"default": false
-},
-{
-"type": "checkbox",
-"id": "dynamic_content",
-"label": "Show Video or Image",
-"default": false
-}
-],
-"blocks":[
-{
-"type": "image",
-"name": "award Image",
-"settings": [
-{
-"type": "image_picker",
-"id": "awd-card",
-"label": "Image"
-},
-{
-"type": "video",
-"id": "awd-card-video",
-"label": "Video"
-},
-{
-"type": "text",
-"id": "awdmain",
-"label": "Card header",
-"default": "98% Natural ingredients"
-},
-{
-"type": "text",
-"id": "awdmain_2",
-"label": "Card header 2",
-"default": "98% Natural ingredients"
-},
-{
-"type": "text",
-"id": "awdsubmain",
-"label": "Card Sub Text",
-"default": "98% Natural ingredients"
-}
-]
-}
-],
-"presets" : [
-{
-"name": "About Us Cards"
-}
-]
-}
-{% endschema %}
+  </script>
+  {% endif %}
+  {% schema %}
+  {
+  "name": "About Us Cards",
+  "class": "bg-theme",
+  "settings": [ 
+  {
+  "type": "text",
+  "id": "aboutUsText",
+  "label": "Card Main text"
+  },
+  {
+  "type": "checkbox",
+  "id": "makeSlider",
+  "label": "Show Slider",
+  "default": false
+  }
+  ],
+  "blocks":[
+  {
+  "type": "image",
+  "name": "award Image",
+  "settings": [
+  {
+  "type": "image_picker",
+  "id": "awd-card",
+  "label": "Image"
+  },
+  
+  {
+  "type": "text",
+  "id": "awdmain",
+  "label": "Card header",
+  "default": "98% Natural ingredients"
+  },
+  {
+  "type": "text",
+  "id": "awdmain_2",
+  "label": "Card header 2",
+  "default": "98% Natural ingredients"
+  },
+  {
+  "type": "text",
+  "id": "awdsubmain",
+  "label": "Card Sub Text",
+  "default": "98% Natural ingredients"
+  }
+  ]
+  }
+  ],
+  "presets" : [
+  {
+  "name": "About Us Cards"
+  }
+  ]
+  }
+  {% endschema %}
