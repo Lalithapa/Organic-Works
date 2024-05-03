@@ -8,7 +8,7 @@
     {% if block.settings.awd-card != blank and block.settings.awdmain != blank and block.settings.awdsubmain != blank %}
       <div class="about-card-style-fix !flex justify-center h-full">
         <div class="lg:w-[360px] bg-white px-[14px] py-[16px] rounded-[8px]">
-          {{ block.settings.awd-card  }}gdfg
+          {{ block.settings.awd-card  }}
           {% if block.settings.awd-card contains "thumbnail" %}
             {{ block.settings["awd-card"] | video_tag: loop: true, autoplay: true, muted: true, alt: block.settings.awd-card }}
 
