@@ -157,7 +157,8 @@
                           {{ product.vendor }}
                         </div>
                       {%- endif -%}
-                      <p class="predictive-search__item-heading h5">{{ product.title | escape }}</p>
+                      {% assign handleSummarySize = product.metafields.custom.ingredient_subtext_with_size | split: ',' | last %}
+                      <p class="predictive-search__item-heading h5">{{ product.title | escape }}- {{ handleSummarySize }}</p>
                       {%- if settings.predictive_search_show_price -%}
                         {% render 'price', product: product, use_variant: true, show_badges: false %}
                       {%- endif -%}
