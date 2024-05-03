@@ -7,8 +7,8 @@
   {% for block in section.blocks %}
     {% if block.settings.awd-card != blank and block.settings.awdmain != blank and block.settings.awdsubmain != blank %}
       <div class="about-card-style-fix !flex justify-center h-full">
-        <div class="lg:w-[360px] bg-white px-[14px] py-[16px] rounded-[8px]">
-          {% if block.settings.dynamic_content %}
+        <div class="lg:w-[360px] bg-white px-[14px] py-[16px] rounded-[8px]"> 
+          {% if block.settings.dynamic_content == true %}
             {{ block.settings["awd-card-video"] | video_tag: loop: true, autoplay: true, muted: true, alt: block.settings["awd-card-video"] }}
           {% else %}  
           <img loading="lazy" class="rounded-[8px]" d src="{{ block.settings.awd-card |  image_url }}"
