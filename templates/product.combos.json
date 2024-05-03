@@ -266,7 +266,8 @@
       ],
       "settings": {
         "aboutUsText": "MINDFULLY CRAFTED, for everyday CARE",
-        "makeSlider": true
+        "makeSlider": true,
+        "dynamic_content": true
       }
     },
     "reccommended_cztYYG": {
