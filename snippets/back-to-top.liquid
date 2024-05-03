@@ -1,0 +1,158 @@
+{% comment %} <div class="progress-wrap btn-right-side">
+  <div class="back-to-top-wrapper">
+      <svg  class="progress-circle" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102 102">
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 243.526;"></path>
+  </svg>
+
+   <!-- <p class="back-to-top-arrow">&uarr;</p> -->
+  </div>
+</div>
+
+<script defer type="text/javascript">
+  var offset = 100;
+  var duration = 500;
+  
+  $(document).ready(function () {
+    
+    
+    $('#MainContentWrapper').on("scroll", function () {
+      if ($(this).scrollTop() > offset) {
+        $(".progress-wrap").addClass("active-progress");
+      } else {
+        $(".progress-wrap").removeClass("active-progress");
+      }
+    });
+
+	$(".progress-wrap").on("click", function (e) {
+		e.preventDefault();
+		$("#MainContentWrapper")[0].scrollTo({ top: 0, behavior: 'smooth' });;
+		return false;
+	});
+
+	var progressPath = document.querySelector(".progress-wrap path");
+	var pathLength = progressPath.getTotalLength();
+
+     var height = $('#MainContent')[0].scrollHeight ;
+     var bodyheight = $(window).height();
+    
+	progressPath.style.transition = progressPath.style.WebkitTransition = "none";
+	progressPath.style.strokeDasharray = pathLength + " " + pathLength;
+	progressPath.style.strokeDashoffset = pathLength;
+	progressPath.getBoundingClientRect();
+	progressPath.style.transition = progressPath.style.WebkitTransition =
+		"stroke-dashoffset 10ms linear";
+
+	var updateProgress = function () {
+      var scroll = $('#MainContentWrapper').scrollTop();
+      console.log(bodyheight, "bodyheight",height, 'height' , scroll, "scroll" );
+      // console.log(pathLength, 'pathLength');
+      
+      var progress = (pathLength - (scroll * pathLength) / height);
+      
+      console.log(progress, 'progress');
+      progressPath.style.strokeDashoffset = progress;
+    };
+
+	updateProgress();
+
+	$('#MainContentWrapper').scroll(updateProgress);
+  });
+
+</script>
+          
+<style>
+  .back-to-top-wrapper {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+  }
+  
+  .back-to-top-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: #FFFFFF; */
+    /* box-shadow: inset 0 0 0 2px #cccccc; */
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .progress-wrap {
+	bottom: 25px;
+	height: 46px;
+	width: 46px;
+	border-radius: 46px;
+	background-color: rgba(255, 255, 255, 0.85);
+	box-shadow: inset 0 0 0 2px #cccccc;
+	position: fixed;
+	display: block;
+	cursor: pointer;
+	z-index: 10000;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(15px);
+	transition: all 200ms linear;
+
+	&.active-progress {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	&:hover {
+		background-color: #fff;
+		&:after {
+			color: #1f2029;
+		}
+	}
+
+	&:after {
+		width: 46px;
+		height: 46px;
+		color: #1f2029;
+		font-size: 24px;
+		content: "↑";
+		line-height: 46px;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		display: block;
+		text-align: center;
+		position: absolute;
+		cursor: pointer;
+		font-family: "wpxpress";
+		transition: all 200ms linear;
+	}
+
+	svg {
+		path {
+			fill: none;
+		}
+		&.progress-circle path {
+			stroke: #1f2029;
+			stroke-width: 2px;
+			box-sizing: border-box;
+			transition: all 200ms linear;
+		}
+	}
+
+	&.btn-left-side {
+		left: 25px;
+	}
+
+	&.btn-right-side {
+		right: 25px;
+	}
+
+	@media only screen and (max-width: 991px) {
+		display: none;
+	}
+}
+
+</style> {% endcomment %}

@@ -1,5 +1,4 @@
 function debounce(func, wait) {
-  console.log("debounce called");
   let timeout;
   return function executedFunction(...args) {
     const later = () => {

@@ -158,6 +158,14 @@
         "settings": {
           "version": "v3"
         }
+      },
+      "14198427981142892921": {
+        "type": "shopify:\/\/apps\/wishlist-engine\/blocks\/app-embed\/8f7c0857-8e71-463d-a168-8e133094753b",
+        "disabled": false,
+        "settings": {
+          "wishlist_unfill_icon": "",
+          "wishlist_fill_icon": ""
+        }
       }
     },
     "color_schemes": {
@@ -174,7 +182,7 @@
       },
       "scheme-2": {
         "settings": {
-          "background": "#f3f3f3",
+          "background": "#f6f6f6",
           "background_gradient": "",
           "text": "#121212",
           "button": "#121212",

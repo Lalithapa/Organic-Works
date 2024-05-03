@@ -1,21 +1,30 @@
+{% if section.settings.aboutUsText != blank %}
+<div class="clean-beauty-title-wrapper home-title-sm d-flex-center pt-[24px]"><p>{{ section.settings.aboutUsText }}</p></div>
+  {% endif %}
 <div
   class="page-width grid grid-rows-1 md:grid-rows-2 lg:grid-rows-3 grid-flow-col gap-[32px] md:gap-[34px] lg:gap-[64px] place-content-center py-[48px] px-[16px] mb-0"
   {% if section.settings.makeSlider %} id="about-card-sliders" {% endif %}>
   {% for block in section.blocks %}
-  <div class="!flex justify-center h-full">
-    <div class="lg:w-[360px] bg-white px-[14px] py-[16px] rounded-[8px]">
-      <img loading="lazy" class="rounded-[8px]" src="{{ block.settings.awd-card |  image_url }}"
-        alt="{{ block.settings.awd-card | escape }}" width="100%" height="100%" />
-      <div class="pt-[20px] pb-[12px]">
-        <h5 class="card-heading">{{ block.settings.awdmain }}</h5>
-        <h5 class="card-heading">{{ block.settings.awdmain_2 }}</h5>
-        <p class="mb-3 card-subheading">{{ block.settings.awdsubmain }}</p>
+    {% if block.settings.awd-card != blank and block.settings.awdmain != blank and block.settings.awdsubmain != blank %}
+      <div class="about-card-style-fix !flex justify-center h-full">
+        <div class="lg:w-[360px] bg-white px-[14px] py-[16px] rounded-[8px]">
+          <img loading="lazy" class="rounded-[8px]" src="{{ block.settings.awd-card |  image_url }}"
+            alt="{{ block.settings.awd-card | escape }}" width="100%" height="100%" />
+          <div class="pt-[20px] pb-[12px]">
+            <h5 class="card-heading">{{ block.settings.awdmain }}</h5>
+            <h5 class="card-heading">{{ block.settings.awdmain_2 }}</h5>
+            <p class="mb-3 card-subheading">{{ block.settings.awdsubmain }}</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    {% endif %}
   {% endfor %}
 </div>
 <style>
+  .about-card-style-fix {
+    padding-right: 16px;
+    height:inherit;
+  }
   .bg-theme {
     background-color: #f6f6f6;
   }
@@ -44,6 +53,11 @@
     margin-top: 12px;
   }
 
+  @media only screen and (min-width: 768px) {
+    .about-card-style-fix {
+      padding-right: 0px;
+    }
+  }
   @media screen (max-width:768px) {
     .card-subheading {
       line-height: 24px;
@@ -101,7 +115,12 @@
 {
 "name": "About Us Cards",
 "class": "bg-theme",
-"settings": [
+"settings": [ 
+{
+"type": "text",
+"id": "aboutUsText",
+"label": "Card Main text"
+},
 {
 "type": "checkbox",
 "id": "makeSlider",

@@ -16,7 +16,7 @@
     </button>
     {%- if recommendations.performed? and recommendations.products_count > 0 -%} 
     <div class="carousel-inner d-flex-center">
-      <div id="carousel-recommend" class="carousel d-flex-center">
+      <div id="carousel-recommend-{{ section.id }}" class="carousel d-flex-center">
         {% for product in recommendations.products %}
           <div class="carousel-slide">
             {% render 'product-card', product: product, sectionId: section.id, index: forloop.index0, showTags:true , showQuickViewBtn:true , showRemoveWishlistBtn:true %}
@@ -55,56 +55,58 @@
     await fetch(url) 
     .then(response => response.text())
     .then(text => {
-    const html = document.createElement('div');
-    html.innerHTML = text;
-    const recommendations = html.querySelector('#recommended_products');
-    if (recommendations && recommendations.innerHTML.trim().length) {
-    productRecommendationsSection.innerHTML = recommendations.innerHTML;
-    const $root = $('#carousel-recommend');
-    $root.slick({
-      mobileFirst: true,
-      slidesToShow: numSlidesSm,
-      slidesToScroll: 1,
-      infinite: false,
-      arrows: true,
-      prevArrow: $('#prev-recommend'),
-      nextArrow: $('#carousel-next-recommend'), 
-      dots: true,
-      appendDots: $('#product-dots-wrapper-recommend'),
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: numSlidesMd, 
-          },
-        },
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: numSlidesLg,
-          },
-        },
-        {
-          breakpoint: 1280,
-          settings: {
-            slidesToShow: numSlidesXl,
-          },
-        },
-        {
-          breakpoint: 1536,
-          settings: {
-            slidesToShow: numSlides2xl,
-          },
-        },
-      ],
-    });
-  
-    };
+        const html = document.createElement('div');
+        html.innerHTML = text;
+        const recommendations = html.querySelector('#recommended_products');
+    
+        if (recommendations && recommendations.innerHTML.trim().length) {
+          productRecommendationsSection.innerHTML = recommendations.innerHTML;
+         
+          const $root = $('#carousel-recommend-{{ section.id }}');
+      
+          $root.slick({
+            mobileFirst: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: false,
+            arrows: true,
+            prevArrow: $('#prev-recommend'),
+            nextArrow: $('#carousel-next-recommend'), 
+            dots: true,
+            appendDots: $('#carousel-next-recommend'),
+            responsive: [
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: numSlidesMd, 
+                },
+              },
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: numSlidesLg,
+                },
+              },
+              {
+                breakpoint: 1280,
+                settings: {
+                  slidesToShow: numSlidesXl,
+                },
+              },
+              {
+                breakpoint: 1536,
+                settings: {
+                  slidesToShow: numSlides2xl,
+                },
+              },
+            ],
+          });
+      };
     })
-    .catch(e => {
-    console.error(e);
-    });
-    };
+      .catch(e => {
+        console.error(e);
+      });
+  };
     
     const productRecommendationsSection = document.querySelector('#recommended_products');
     const observer = new IntersectionObserver(handleRecIntersection, {rootMargin: '0px 0px 0px 1000px'});

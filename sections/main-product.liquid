@@ -150,7 +150,7 @@
                     use_variant: true,
                     show_badges: false,
                     price_class: 'price--large',
-                    onlyInProductPage: true
+                    onlyInProductPage: true,
                     onProductPage: true
                   -%}
                 </div>
@@ -176,6 +176,15 @@
                     {{ form | payment_terms }}
                   {%- endform -%}
                 </div>
+
+              {% when 'offers' %}
+                {% render 'product-free-gift-carousel',
+                  title: block.settings['free-gift-title'],
+                  info: block.settings['free-gift-info'],
+                  product1: block.settings['free-gift-product-1'],
+                  product2: block.settings['free-gift-product-2'],
+                  product3: block.settings['free-gift-product-3']
+                %}
               {%- when 'inventory' -%}
                 <p
                   class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -996,6 +1005,40 @@
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
       "limit": 1
+    },
+    {
+      "type": "offers",
+      "name": "Free Gift Offers",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "free-gift-title",
+          "label": "Free Gift Title",
+          "default": "UNLOCK NATURE'S RETREAT"
+        },
+        {
+          "type": "textarea",
+          "id": "free-gift-info",
+          "label": "Free Gift Info",
+          "default": "At minimum cart value of £30, £40 & £50"
+        },
+        {
+          "type": "product",
+          "id": "free-gift-product-1",
+          "label": "Product to gift 1"
+        },
+        {
+          "type": "product",
+          "id": "free-gift-product-2",
+          "label": "Product to gift 2"
+        },
+        {
+          "type": "product",
+          "id": "free-gift-product-3",
+          "label": "Product to gift 3"
+        }
+      ]
     },
     {
       "type": "sku",

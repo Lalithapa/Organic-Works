@@ -11,10 +11,28 @@
             "mobile-video": "shopify:\/\/files\/videos\/ad70-94b0-4599-8fa5-70299510dab6.mp4",
             "desktop-video": "shopify:\/\/files\/videos\/3d43-1fb1-4c58-aec6-0deb338e527e.mp4",
             "use-slide-info": true,
-            "slideshow-block-title": "<p>THE SCIENCE <\/p><p>OF SELF CARE<\/p>",
+            "slideshow-block-title": "<p>THE SCIENCE OF <br\/> SELF CARE<\/p>",
+            "slideshow-block-title-mobile": "<p>THE SCIENCE OF <br\/> SELF CARE<\/p>",
             "slideshow-block-sub-title": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS<\/p>",
+            "slideshow-block-sub-title-mobile": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS<\/p>",
             "slideshow-block-explore-url-title": "Explore Now",
             "slideshow-block-font-color": "#fff"
+          }
+        },
+        "slideshow_pGhQNF": {
+          "type": "slideshow",
+          "settings": {
+            "slideshow-block-explore-url": "shopify:\/\/collections\/bestsellers",
+            "mobile-image": "shopify:\/\/shop_images\/Bestsellers_mob_1.jpg",
+            "desktop-image": "shopify:\/\/shop_images\/Bestsellers2.jpg",
+            "show-video": false,
+            "use-slide-info": true,
+            "slideshow-block-title": "<p>Tried and Tested: Dive Into Our Top Picks<\/p>",
+            "slideshow-block-title-mobile": "<p>Dive Into Our Top Picks<\/p>",
+            "slideshow-block-sub-title": "<p>Explore carefully curated elite skincare for your unique needs.<\/p>",
+            "slideshow-block-sub-title-mobile": "<p>Explore carefully curated elite skincare for your unique needs.<\/p>",
+            "slideshow-block-explore-url-title": "Shop Now",
+            "slideshow-block-font-color": "#151515"
           }
         },
         "slideshow_iRHCEL": {
@@ -26,7 +44,9 @@
             "show-video": false,
             "use-slide-info": true,
             "slideshow-block-title": "<p>RESTORE SKIN’s NATURAL BALANCE <\/p>",
+            "slideshow-block-title-mobile": "<p>RESTORE SKIN’s NATURAL BALANCE <\/p>",
             "slideshow-block-sub-title": "<p>Antioxidant-rich, vitamin e -infused cleanser for radiant & hydrated skin!<\/p>",
+            "slideshow-block-sub-title-mobile": "<p>Antioxidant-rich, vitamin e -infused cleanser for radiant & hydrated skin!<\/p>",
             "slideshow-block-explore-url-title": "Shop Now",
             "slideshow-block-font-color": "#fff"
           }
@@ -40,47 +60,37 @@
             "show-video": false,
             "use-slide-info": true,
             "slideshow-block-title": "<p>Liquid gold firming face mask<\/p>",
+            "slideshow-block-title-mobile": "<p>Liquid gold firming face mask<\/p>",
             "slideshow-block-sub-title": "<p>Get lift & firm, glowing skin with Vitamin E & Upcycled Baobab Extract.<\/p>",
+            "slideshow-block-sub-title-mobile": "<p>Get lift & firm, glowing skin with Vitamin E & Upcycled Baobab Extract.<\/p>",
             "slideshow-block-explore-url-title": "Hydrate Now",
             "slideshow-block-font-color": "#fff"
           }
         },
         "slideshow_xGieah": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "slideshow-block-explore-url": "shopify:\/\/products\/liquid-gold-firming-face-mask-with-vitamin-e-50ml",
             "mobile-image": "shopify:\/\/shop_images\/ow-04.png",
             "desktop-image": "shopify:\/\/shop_images\/ow-banner-desktop-02_1.png",
             "show-video": false,
             "use-slide-info": true,
-            "slideshow-block-title": "<p> Bye Bye Dryness Trio<\/p>",
-            "slideshow-block-sub-title": "<p>Say 'Bye Bye' to dry skin with this top to toe ultra hydration solution!<\/p>",
+            "slideshow-block-title": "<p>THE SCIENCE OF <br\/> SELF CARE<\/p>",
+            "slideshow-block-title-mobile": "<p>THE SCIENCE OF <br\/> SELF CARE<\/p>",
+            "slideshow-block-sub-title": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS<\/p>",
+            "slideshow-block-sub-title-mobile": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS<\/p>",
             "slideshow-block-explore-url-title": "Hydrate Now",
             "slideshow-block-font-color": "#151515"
-          }
-        },
-        "slideshow_pGhQNF": {
-          "type": "slideshow",
-          "disabled": true,
-          "settings": {
-            "slideshow-block-explore-url": "shopify:\/\/products\/bye-bye-dry-collection",
-            "mobile-image": "shopify:\/\/shop_images\/ow-mobile-banner-02.png",
-            "desktop-image": "shopify:\/\/shop_images\/ow-banner-desktop-02.png",
-            "show-video": false,
-            "use-slide-info": false,
-            "slideshow-block-title": "",
-            "slideshow-block-sub-title": "",
-            "slideshow-block-explore-url-title": "",
-            "slideshow-block-font-color": "#fff"
           }
         }
       },
       "block_order": [
         "slideshow_WwikE4",
+        "slideshow_pGhQNF",
         "slideshow_iRHCEL",
         "slideshow_qbjBpf",
-        "slideshow_xGieah",
-        "slideshow_pGhQNF"
+        "slideshow_xGieah"
       ],
       "custom_css": [],
       "settings": {
@@ -186,11 +196,12 @@
         "icon_JqfcUC"
       ],
       "custom_css": [
-        ".container.clean-beauty-info-wrapper.d-flex-center.scroll-trigger.animate--slide-in {margin-bottom: 72px;}"
+        ".container.clean-beauty-info-wrapper.d-flex-center.scroll-trigger.animate--slide-in {margin-bottom: 72px;}",
+        ".home-title-sm {text-transform: unset !important;}"
       ],
       "settings": {
         "showfullcontainer": false,
-        "title": "<p>CLEAN BEAUTY. <\/p><p>IT'S IN OUR DNA <em>® <\/em><\/p>",
+        "title": "<p>Clean Beauty. <\/p><p>It's in our DNA<em>® <\/em><\/p>",
         "sectionBackground": "#f5f7ff",
         "text": "Our entire product portfolio is clean, green, and cruelty-free. At least 99% of plant-based ingredients are derived from organic farming, and all products contain a minimum of 98% natural ingredients. We also test our products for suitability to even the most sensitive skin, so the whole family can feel confident using OW."
       }
@@ -277,8 +288,8 @@
       "settings": {
         "use-container": false,
         "image": "shopify:\/\/shop_images\/awards-Desktop.jpg",
-        "title": "AWARD WINNING ORGANIC BEAUTY FROM SCOTLAND",
-        "desc": "Special recognitions and acclaimed awards garnered for our effective natural formulas."
+        "title": "AWARD WINNING ORGANIC BEAUTY",
+        "desc": "Acclaimed for effective natural formulas, our brand has received prestigious awards and special recognitions, highlighting their exceptional performance and outstanding results. A testament to our commitment to excellence in formulating solutions that prioritize efficacy and customer satisfaction."
       }
     },
     "indulgence_collection_image_8zwdEN": {
@@ -296,7 +307,7 @@
         "image_with_url_Fd7c9h": {
           "type": "image-with-url",
           "settings": {
-            "slide-image": "shopify:\/\/shop_images\/Lavender_Shower_Gel_6.1.jpg",
+            "slide-image": "shopify:\/\/shop_images\/Rectangle_394_2867e7a7-1eb1-46b2-89b7-43b3e9603ea5.png",
             "slide-url": "shopify:\/\/collections\/organic-works-lavender-range",
             "slide-title": "SOOTHE ECZEMA",
             "slide-summary": "with calming Lavender",
@@ -331,19 +342,19 @@
         "image_with_url_MMc4kM": {
           "type": "image-with-url",
           "settings": {
-            "slide-image": "shopify:\/\/shop_images\/DeepNourishFaceMask6.jpg",
+            "slide-image": "shopify:\/\/shop_images\/3_1_15ed9813-171d-4742-ac50-e920ba9326bb.jpg",
             "slide-url": "shopify:\/\/products\/deep-nourish-face-mask",
             "slide-title": "Combat Dullness",
-            "slide-summary": "With vitamin C & essential oils",
+            "slide-summary": "with vitamin C & essential oils",
             "show-video-1": true,
-            "title-1": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
-            "summary-1": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "title-1": "<p>DELVING INTO THE CAUSES OF DULL SKIN<\/p>",
+            "summary-1": "<p>Dull, lackluster skin lacks radiance and vitality, often appearing tired and lifeless. Various factors can cause this and stop skin regeneration and repair. As a result, skin may appear lackluster, dehydrated, and prone to signs of aging.<\/p>",
             "show-video-2": true,
-            "title-2": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
-            "summary-2": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
+            "title-2": "<p>BOTANICAL FORMULAS TO COMBAT DULLNESS<\/p>",
+            "summary-2": "<p>Our Deep Nourish Face Mask revitalizes and purifies, targeting dullness and dehydration. Enriched with Vitamin E, Chamomile, and Aloe Vera, it soothes, calms, and rebalances the complexion, leaving skin with a healthy organic glow.<\/p>",
             "show-video-3": true,
             "showHeroIngredients": false,
-            "title-3": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
+            "title-3": "<p>REVIVE, RADIATE &<\/p><p>TARGET DULLNESS<\/p>",
             "summary-3": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
             "concern-title-1": "<p>Lavender<\/p>",
             "concern-summary-1": "<p>Locks in moisture & keeps skin hydrated.<\/p>",
@@ -586,7 +597,7 @@
         ".image-with-text__text-item {background-color: #fef7ee;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/image-text-group.jpg",
+        "image": "shopify:\/\/shop_images\/IMAGE_4.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -638,7 +649,7 @@
         ".grid {padding-bottom: 0;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/image-text-group-1.jpg",
+        "image": "shopify:\/\/shop_images\/IMAGE_5.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",

@@ -38,3 +38,57 @@
     <div class="quickcart-recom-carousel-dots"></div>
   </div>
 </div>
+
+<style>
+  .quickcart-recom-carousel-dots {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+
+    position: relative;
+
+    ul {
+      position: relative;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: auto;
+
+      display: flex;
+      justify-content: flex-start;
+
+      li {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        width: 72px;
+        height: 4px;
+
+        button {
+          display: block;
+          position: relative;
+          top: 0;
+          left: 0;
+
+          width: 100%;
+          height: 100%;
+          border-radius: 4px;
+
+          background-color: rgba(242, 242, 242, 1);
+          color: transparent;
+          font-size: 0;
+
+          * {
+            display: none;
+          }
+        }
+        &.slick-active {
+          button {
+            background-color: rgba(88, 88, 88, 1);
+          }
+        }
+      }
+    }
+  }
+</style>

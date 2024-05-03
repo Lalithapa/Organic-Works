@@ -12,13 +12,15 @@
       "type": "our-approach",
       "custom_css": [
         ".our-approach-wrapper.d-flex-center.scroll-trigger {padding: 0 !important;}",
-        ".our-approach-media {aspect-ratio: unset !important; max-height: 600px;}"
+        ".our-approach-media {aspect-ratio: unset !important; max-height: 600px;}",
+        ".our-approach-title {color: #151515; text-align: center; font-size: 24px !important; font-style: normal; font-weight: 500; line-height: 32px; \/* 133.333% *\/ text-transform: uppercase;}",
+        "@media only screen and (min-width: 768px) {.our-approach-title {text-shadow: 1px 1px 1px rgba(0, 0, 0, 0); font-size: 30px !important; line-height: 44px; }}"
       ],
       "settings": {
         "showfullcontainer": false,
         "title": "<p>INDULGE IN SYMPHONY OF NATURE'S FINEST<\/p>",
         "minitext": "",
-        "text": "<p>It’s important to be mindful of what we put on our bodies. Our formulas exclusively feature beneficial ingredients, avoiding harmful substances such as drying alcohols, parabens, and sulfates. Explore our distinctive plant-based ingredients below.<\/p>",
+        "text": "<p>Mindful of what comes into contact with our skin, our formulas exclusively feature beneficial ingredients, avoiding harmful substances such as drying alcohols, parabens, and sulfates. Immerse yourself in a harmonious blend of time-honored traditions & locally sourced ingredients, chosen for its unique ability to nurture & rejuvenate the skin. <\/p><p><\/p><h2>Explore our distinctive plant-based ingredients below.<\/h2>",
         "url": "",
         "url-title": "",
         "media-text": "",
@@ -213,6 +215,14 @@
         "heading_reiCAF",
         "text_7kjKeP"
       ],
+      "custom_css": [
+        ".image-with-text__text-item {padding: 0 !important;}",
+        ".grid {padding: 0;}",
+        ".image-with-text {padding-top: 40px;}",
+        ".image-with-text__heading {width: 100%; text-align: center; font-size: 24px; font-style: normal; font-weight: 500; line-height: 32px;}",
+        "@media only screen and (min-width: 768px) {.image-with-text__heading {font-size: 30px; line-height: 44px; }}",
+        ".image-with-text__text {width: 100%; text-align: center;}"
+      ],
       "settings": {
         "image": "shopify:\/\/shop_images\/I2_2.png",
         "height": "adapt",
@@ -224,7 +234,7 @@
         "section_color_scheme": "",
         "color_scheme": "",
         "image_behavior": "none",
-        "mobile_content_alignment": "left",
+        "mobile_content_alignment": "center",
         "padding_top": 16,
         "padding_bottom": 0
       }
@@ -251,6 +261,12 @@
         "heading_aC8H3p",
         "text_Bapgg6"
       ],
+      "custom_css": [
+        ".image-with-text__text-item {padding: 0 !important;}",
+        ".image-with-text__heading {width: 100%; text-align: center; font-size: 24px; font-style: normal; font-weight: 500; line-height: 32px;}",
+        "@media only screen and (min-width: 768px) {.image-with-text__heading {font-size: 30px; line-height: 44px; }}",
+        ".image-with-text__text {width: 100%; text-align: center;}"
+      ],
       "settings": {
         "image": "shopify:\/\/shop_images\/I2_3.png",
         "height": "adapt",
@@ -260,7 +276,7 @@
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "section_color_scheme": "",
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 0,
@@ -315,8 +331,7 @@
         "ticker_tape_8pGtW6",
         "ticker_tape_hBnbqT"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "clean_beauty_media_rbRpnB": {
       "type": "clean-beauty-media",

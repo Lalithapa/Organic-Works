@@ -108,9 +108,11 @@
           <p class="text-heading text-[15px] font-normal leading-[16px]">
             {{ line_item.final_line_price | money_without_trailing_zeros }}
           </p>
-          <s class="text-price-cut text-[15px] font-normal leading-[16px]">
+          {% if variant.compare_at_price != blank and variant.compare_at_price > variant.price %}
+            <s class="text-price-cut text-[15px] font-normal leading-[16px]">
             {{- variant.compare_at_price | times: line_item.quantity | money_without_trailing_zeros -}}
           </s>
+          {%  endif %}
         </div>
       </div>
 

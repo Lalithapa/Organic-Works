@@ -136,6 +136,7 @@
         "heading_xiNqa8",
         "text_GWDLUe"
       ],
+      "disabled": true,
       "custom_css": [
         ".grid {padding-bottom: 0 !important;}",
         "img,video {border-radius: 8px;}",
@@ -160,6 +161,7 @@
     },
     "additional_product_data_HMYeBK": {
       "type": "Additional-product-data",
+      "disabled": true,
       "custom_css": [
         "img,video {border-radius: 8px;}",
         "@media screen and (max-width: 768px) {.grid--gapless {padding: 0; } .ingrehero-title {width: calc(100% - 40px); margin: auto; }}",
@@ -207,6 +209,57 @@
         "mobile-image": "{{ product.metafields.custom.a_video_image_3_mobile.value }}",
         "desktop-image": "{{ product.metafields.custom.product_video.value }}",
         "show-video": false
+      }
+    },
+    "about_us_cards_b3c7Ht": {
+      "type": "about-us-cards",
+      "blocks": {
+        "image_W6CTzF": {
+          "type": "image",
+          "settings": {
+            "awd-card": "{{ product.metafields.custom.combo_card_image_1.value }}",
+            "awdmain": "{{ product.metafields.custom.combo_card_header_1.value }}",
+            "awdmain_2": "",
+            "awdsubmain": "{{ product.metafields.custom.combo_card_summary_1.value }}"
+          }
+        },
+        "image_PCnTtM": {
+          "type": "image",
+          "settings": {
+            "awd-card": "{{ product.metafields.custom.combo_card_image_2.value }}",
+            "awdmain": "{{ product.metafields.custom.combo_card_header_2.value }}",
+            "awdmain_2": "",
+            "awdsubmain": "{{ product.metafields.custom.combo_card_summary_2.value }}"
+          }
+        },
+        "image_yAk9mJ": {
+          "type": "image",
+          "settings": {
+            "awd-card": "{{ product.metafields.custom.combo_card_image_3.value }}",
+            "awdmain": "{{ product.metafields.custom.combo_card_header_3.value }}",
+            "awdmain_2": "",
+            "awdsubmain": "{{ product.metafields.custom.combo_card_summary_3.value }}"
+          }
+        },
+        "image_fPhwMh": {
+          "type": "image",
+          "settings": {
+            "awd-card": "{{ product.metafields.custom.combo_card_image_4.value }}",
+            "awdmain": "{{ product.metafields.custom.combo_card_header_4.value }}",
+            "awdmain_2": "",
+            "awdsubmain": "{{ product.metafields.custom.combo_card_summary_4.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "image_W6CTzF",
+        "image_PCnTtM",
+        "image_yAk9mJ",
+        "image_fPhwMh"
+      ],
+      "settings": {
+        "aboutUsText": "MINDFULLY CRAFTED, for everyday CARE",
+        "makeSlider": true
       }
     },
     "reccommended_cztYYG": {
@@ -395,6 +448,7 @@
     "additional_product_data_HMYeBK",
     "clean_beauty_media_zn69pW",
     "clean_beauty_media_49PFmj",
+    "about_us_cards_b3c7Ht",
     "reccommended_cztYYG",
     "product_carousel_c9Gxye",
     "our_approach_K9LmWc",

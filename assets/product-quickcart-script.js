@@ -33,12 +33,7 @@ const quickCartScript = {
     this.recomCarouselId = `#quickcart-recom-carousel-${this.cartSectionName}`;
 
     // cart fill - for slick/unsclick slider
-    this.freeGiftCarouselId = `#quickcart-gift-carousel-${this.cartSectionName}`;
-    // free-gift
-    this.freeGiftBtnId = "#quickcart-free-gift-btn";
-    this.freeGiftPlusIconId = "#quickcart-free-gift-plus-icon";
-    this.freeGiftDropdownId = "#quickcart-free-gift-dropdown";
-
+    
     // line item
     this.lineItemClass = ".quickcart-line-item-wrapper";
     this.closeLineItemClass = ".quickcart-line-item-close";
@@ -102,18 +97,9 @@ const quickCartScript = {
     $body.on("click", this.removeLineItemClass, (e) =>
       this.handleClearLineItem(e.currentTarget),
     );
-
-    $body.on("click", this.freeGiftBtnId, (e) => {
-      const $clickedBtn = $(e.currentTarget);
-
-      const $plus = $clickedBtn.find(this.freeGiftPlusIconId);
-
-      $plus.toggleClass("rotate-plus");
-      $(this.freeGiftDropdownId).toggle();
-    });
   },
 
-  updateQuickcart(html) {
+  async updateQuickcart(html) {
     try {
       const $contentWrapper = $(html).find(this.contentWrapperId);
 
@@ -134,28 +120,30 @@ const quickCartScript = {
         });
       }
 
-      const $freeGiftCarousel = $(this.freeGiftCarouselId);
-      if ($freeGiftCarousel.length) {
-        $freeGiftCarousel.slick({
-          slidesToShow: 1.2,
-          slidesToScroll: 1,
-          speed: 300,
-          arrows: false,
-          dots: true,
-          infinite: false,
-          appendDots: $(".quickcart-gift-carousel-dots"),
-        });
-      }
       wishlistScript.updateAll();
     } catch (error) {
       return {
         status: "error",
         message: "dom-error",
-        error: error,
+        error,
       };
     }
     return { status: "success", message: "success" };
   },
+
+  // async fetchProductPage() {
+  //   try {
+  //     const response = await axios.get(`${location.href}`);
+
+  //     if (response.status !== 200) {
+  //       throw new Error(`HTTP error! status: ${response.status}`);
+  //     }
+
+  //     return { status: "success", productPage: response.data };
+  //   } catch (error) {
+  //     return { status: "error", error };
+  //   }
+  // },
 
   updateQuickcartCount(ui) {
     try {
@@ -163,7 +151,7 @@ const quickCartScript = {
       const count = $(ui).find(this.cartCountId).text();
       counts.text(count);
 
-      $('.cart-count-bubble').css("opacity", 1)
+      $(".cart-count-bubble").css("opacity", 1);
 
       return { status: "success", message: "success" };
     } catch (domError) {
@@ -260,6 +248,7 @@ const quickCartScript = {
 
     try {
       const ui = cart.sections[this.cartSectionName];
+      this.updateQuickcart(ui);
       this.updateQuickcartCount(ui);
       return { status, message: "success", cart };
     } catch (domError) {
