@@ -10,14 +10,14 @@
         <div class="lg:w-[360px] bg-white px-[14px] py-[16px] rounded-[8px]">
           {{ block.settings.awd-card.media_type }}gdfg
           {% if block.settings.awd-card contains "thumbnail" %}
-            {{
+            {% comment %} {{
               block.settings["awd-card"]
                 | video_tag:
                   loop: true,
                   autoplay: true,
                   muted: true,
                   alt: block.settings.awd-card 
-              }}
+              }} {% endcomment %}
           {% else %} 
           <img loading="lazy" class="rounded-[8px]" d src="{{ block.settings.awd-card |  image_url }}"
             alt="{{ block.settings.awd-card | escape }}" width="100%" height="100%" />
