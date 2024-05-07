@@ -6,7 +6,8 @@
         "wishlist_engine_product_page_7MPAQM": {
           "type": "shopify:\/\/apps\/wishlist-engine\/blocks\/Product-Page\/8f7c0857-8e71-463d-a168-8e133094753b",
           "disabled": true,
-          "settings": {}
+          "settings": {
+          }
         },
         "vendor": {
           "type": "text",
@@ -18,15 +19,18 @@
         },
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+          }
         },
         "rating_7QU9qG": {
           "type": "rating",
-          "settings": {}
+          "settings": {
+          }
         },
         "price": {
           "type": "price",
-          "settings": {}
+          "settings": {
+          }
         },
         "offers_PhhQgV": {
           "type": "offers",
@@ -70,15 +74,18 @@
         },
         "description": {
           "type": "description",
-          "settings": {}
+          "settings": {
+          }
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {}
+          "settings": {
+          }
         },
         "testimonials_CVDjUi": {
           "type": "testimonials",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -192,6 +199,7 @@
       ],
       "settings": {
         "use-container": false,
+        "link": "",
         "show-video": true,
         "mobile-video": "{{ product.metafields.custom.a_video_image_3_mobile.value }}",
         "desktop-video": "{{ product.metafields.custom.product_video.value }}",
@@ -207,6 +215,7 @@
       ],
       "settings": {
         "use-container": false,
+        "link": "",
         "mobile-image": "{{ product.metafields.custom.a_video_image_3_mobile.value }}",
         "desktop-image": "{{ product.metafields.custom.product_video.value }}",
         "show-video": false
@@ -267,7 +276,7 @@
       ],
       "custom_css": [
         ".clean-beauty-title-wrapper {margin-top: 30px;}",
-        ".clean-beauty-title-wrapper {display: none; }",
+        ".clean-beauty-title-wrapper {display: none;}",
         "@media only screen and (min-width: 768px) {.about-card-style-fix {padding-right: 64px; } .clean-beauty-title-wrapper {display: flex; }}"
       ],
       "settings": {
@@ -277,9 +286,8 @@
     },
     "reccommended_cztYYG": {
       "type": "reccommended",
-      "disabled": true,
       "settings": {
-        "carousel-title": "PAIRS WELL WITH",
+        "carousel-title": "Recommended FOR YOU",
         "slides-limit": 7,
         "num-slides-sm": "1.5",
         "num-slides-md": "3",
@@ -394,7 +402,8 @@
       "blocks": {
         "product_reviews_reviews_HMffXy": {
           "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "block_order": [

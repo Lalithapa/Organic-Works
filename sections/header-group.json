@@ -112,7 +112,8 @@
     },
     "quick_view_h6MGwA": {
       "type": "quick-view",
-      "settings": {}
+      "settings": {
+      }
     },
     "header": {
       "type": "header",

@@ -821,7 +821,8 @@
         "ticker_tape_EqJLrQ",
         "ticker_tape_HU4dCD"
       ],
-      "settings": {}
+      "settings": {
+      }
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -855,7 +856,8 @@
     "quick_view_rXGi9p": {
       "type": "quick-view",
       "disabled": true,
-      "settings": {}
+      "settings": {
+      }
     },
     "quick_cart_TiGwmV": {
       "type": "quick-cart",
