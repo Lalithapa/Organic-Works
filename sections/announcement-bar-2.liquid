@@ -9,7 +9,10 @@
       </button>
     {% endif %}
 
-    <div id="anouncement-carousel-wrapper-{{}}" class="anouncement-carousel-wrapper swiper h-full grow overflow-hidden">
+    <div
+      id="anouncement-carousel-wrapper-{{ section.id }}"
+      class="anouncement-carousel-wrapper swiper h-full grow overflow-hidden"
+    >
       <div
         {% if section.settings.auto_rotate %}
           data-play-speed="{{ section.settings['change_slides_speed'] }}"
