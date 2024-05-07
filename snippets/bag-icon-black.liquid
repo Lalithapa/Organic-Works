@@ -12,9 +12,11 @@
 
 <svg
   class="icon icon-cart {% if class %}{{class}}{% endif %}"
-  
-  width="20"
-  height="21"
+
+  width="{% if width %}{{ width }}{% else %}20{% endif %}"
+  height="{% if height %}{{ height }}{% else %}21{% endif %}"
+  style="{% if style %}{{style}}{% endif %}"
+
   viewBox="0 0 20 21"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
@@ -31,9 +33,7 @@
 
 <svg
   class="icon icon-cart {% if class %}{{class}}{% endif %}"
-  width="{% if width %}{{ width }}{% else %}20{% endif %}"
-  height="{% if height %}{{ height }}{% else %}21{% endif %}"
-  style="{% if style %}{{style}}{% endif %}"
+
   xmlns="http://www.w3.org/2000/svg"
   width="20"
   height="21"
