@@ -395,7 +395,7 @@
             endif
           -%}
         {% endcomment %}
-        {% render 'icon-cart' %}
+        {% comment %} {% render 'icon-cart' %} {% endcomment %}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         <div class="cart-count-bubble {% if cart == empty %} opacity-0{% endif %}">
           {%- if cart.item_count < 100 -%}
