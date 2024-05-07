@@ -1,14 +1,24 @@
 <div class="{% if section.settings['use-width-limiter'] %}container mx-auto{% endif %} main-slideshow-wrapper">
   {% comment %} {% render 'transparent-header' %} {% endcomment %}
 
-  <div id="main-slideshow-carousel-{{ section.id }}" class="swiper-container main-slideshow-carousel-wrapper d-flex-center">
+  <div
+    id="main-slideshow-carousel-{{ section.id }}"
+    class="swiper-container main-slideshow-carousel-wrapper d-flex-center"
+  >
     {% if section.blocks.size > 1 %}
       <button id="main-slideshow-prev-{{ section.id }}" type="button" class="carousel-btn prev-btn d-flex-center z-[1]">
         {% comment %} {% render 'carousel-prev-btn' %} {% endcomment %}
-        <svg class="rotate-180" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
-        <circle opacity="0.8" cx="22" cy="22" r="22" fill="#F7F7F7" fill-opacity="0.08"/>
-        <path d="M17.8075 14.2178L25.5898 22.0001L17.8075 29.7824" stroke="white" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+        <svg
+          class="rotate-180"
+          xmlns="http://www.w3.org/2000/svg"
+          width="44"
+          height="44"
+          viewBox="0 0 44 44"
+          fill="none"
+        >
+          <circle opacity="0.8" cx="22" cy="22" r="22" fill="#F7F7F7" fill-opacity="0.08"/>
+          <path d="M17.8075 14.2178L25.5898 22.0001L17.8075 29.7824" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
       </button>
     {% endif %}
 
@@ -18,7 +28,8 @@
         <div class="swiper-slide main-slideshow-slide d-flex-center">
           <a
             href="{{ block.settings['slideshow-block-explore-url'] }}"
-            style="width: 100%; height: 100%; position: absolute; z-index: 10;">
+            style="width: 100%; height: 100%; position: absolute; z-index: 10;"
+          >
             <wbr
           ></a>
 
@@ -131,32 +142,56 @@
           {% endif %}
 
           {% if section.settings['use-common-info'] == false and block.settings['use-slide-info'] %}
-          <div class="main-slideshow-detail-wrapper d-flex-center" {% if forloop.index == 2 %}style="bottom:50px;"{% endif %}>
-              <div class="main-slideshow-text d-flex-center">
-                {% if block.settings['slideshow-block-title'] != blank and block.settings['slideshow-block-title-mobile'] != blank %}
-                <div class="main-slideshow-title desktop-screen" style="color: {{ block.settings['slideshow-block-font-color'] }};">
-                  {{ block.settings['slideshow-block-title'] }}
-                </div>
-                <div class="main-slideshow-title mobile-screen" style="color: {{ block.settings['slideshow-block-font-color'] }};">
-                  {{ block.settings['slideshow-block-title-mobile'] }}
-                </div>
-                {% else %}
-                <div class="main-slideshow-title" style="color: {{ block.settings['slideshow-block-font-color'] }};">
-                  {{ block.settings['slideshow-block-title'] }}
-                </div>
-                {% endif %}
-                {% if block.settings['slideshow-block-sub-title'] != blank and block.settings['slideshow-block-sub-title-mobile'] != blank %}
-                 <div class="main-slideshow-subtitle desktop-screen" style="color: {{ block.settings['slideshow-block-font-color'] }};">
-                  {{ block.settings['slideshow-block-sub-title'] }}
-                </div>
-                <div class="main-slideshow-subtitle mobile-screen" style="color: {{ block.settings['slideshow-block-font-color'] }};">
-                  {{ block.settings['slideshow-block-sub-title-mobile'] }}
-                </div>
-                {% else %}
-                <div class="main-slideshow-subtitle" style="color: {{ block.settings['slideshow-block-font-color'] }};">
-                  {{ block.settings['slideshow-block-sub-title'] }}
-                </div>
+            <div
+              class="main-slideshow-detail-wrapper d-flex-center"
+              {% if forloop.index == 2 %}
+                style="bottom:50px;"
               {% endif %}
+            >
+              <div class="main-slideshow-text d-flex-center">
+                {% if block.settings['slideshow-block-title'] != blank
+                  and block.settings['slideshow-block-title-mobile'] != blank
+                %}
+                  <div
+                    class="main-slideshow-title desktop-screen"
+                    style="color: {{ block.settings['slideshow-block-font-color'] }};"
+                  >
+                    {{ block.settings['slideshow-block-title'] }}
+                  </div>
+                  <div
+                    class="main-slideshow-title mobile-screen"
+                    style="color: {{ block.settings['slideshow-block-font-color'] }};"
+                  >
+                    {{ block.settings['slideshow-block-title-mobile'] }}
+                  </div>
+                {% else %}
+                  <div class="main-slideshow-title" style="color: {{ block.settings['slideshow-block-font-color'] }};">
+                    {{ block.settings['slideshow-block-title'] }}
+                  </div>
+                {% endif %}
+                {% if block.settings['slideshow-block-sub-title'] != blank
+                  and block.settings['slideshow-block-sub-title-mobile'] != blank
+                %}
+                  <div
+                    class="main-slideshow-subtitle desktop-screen"
+                    style="color: {{ block.settings['slideshow-block-font-color'] }};"
+                  >
+                    {{ block.settings['slideshow-block-sub-title'] }}
+                  </div>
+                  <div
+                    class="main-slideshow-subtitle mobile-screen"
+                    style="color: {{ block.settings['slideshow-block-font-color'] }};"
+                  >
+                    {{ block.settings['slideshow-block-sub-title-mobile'] }}
+                  </div>
+                {% else %}
+                  <div
+                    class="main-slideshow-subtitle"
+                    style="color: {{ block.settings['slideshow-block-font-color'] }};"
+                  >
+                    {{ block.settings['slideshow-block-sub-title'] }}
+                  </div>
+                {% endif %}
               </div>
               <a
                 href="{{ block.settings['slideshow-block-explore-url'] }}"
@@ -181,7 +216,7 @@
     {% endif %}
 
     {% if section.settings['use-common-info'] %}
-    <div class="main-slideshow-detail-wrapper d-flex-center">
+      <div class="main-slideshow-detail-wrapper d-flex-center">
         <div class="main-slideshow-text d-flex-center">
           <div class="main-slideshow-title">
             {{ section.settings['slideshow-title'] }}
@@ -208,11 +243,12 @@
 
 <style>
   .main-slideshow-pagination {
+    z-index: 2!important;
     justify-content: flex-start;
     padding-left: 5.625vw;
     bottom: 5% !important;
   }
-  
+
   .main-slideshow-pagination
   .swiper-pagination-bullet {
     width: 72px;
@@ -220,7 +256,7 @@
     border-radius: 40px;
     position: relative;
     overflow: hidden;
-    background: rgba(217, 217, 217, 0.6);
+    background: rgba(255, 255, 255, 1);
   }
 
   .main-slideshow-pagination
@@ -232,7 +268,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(217, 217, 217, 0.6);
+    background: rgba(255, 255, 255, 1);
   }
 
   .main-slideshow-pagination
@@ -251,11 +287,11 @@
 
   .main-slideshow-pagination
   .swiper-pagination-bullet-active::before {
-    background-color: #D9D9D9;
+    background-color: #151515;
     -webkit-animation: slide-progress 2s cubic-bezier(0.3, 0, 0.3, 1) forwards;
      animation: slide-progress 5s cubic-bezier(0.3, 0, 0.3, 1) forwards;
   }
-  
+
   .main-slideshow-carousel-wrapper .carousel-btn {
     z-index: 2;
     position: absolute;
@@ -288,14 +324,14 @@
 <script
   defer
 >
-  $(document).ready(function ready () {
+  $(document).ready(function ready() {
     // const $root = $('#main-slideshow-carousel-{{ section.id }}');
     // $root.slick({
     //   mobileFirst: true,
     //   slidesToShow: 1,
     //   slidesToScroll: 1,
     //   speed: 300,
-    //   lazyLoad: 'ondemand', 
+    //   lazyLoad: 'ondemand',
     //   autoplay: true,
     //   autoplaySpeed: 4000,
     //   infinite: true,
@@ -306,29 +342,29 @@
     //   nextArrow: $('#main-slideshow-next-{{ section.id }}')
     // });
 
-  //     	autoplay: {
-  //   delay: 2000,
-		// disableOnInteraction: false
-  // },
-    
-var swiper = new Swiper('#main-slideshow-carousel-{{ section.id }}', {
-	pagination: {
-		el: '.swiper-pagination',
-		clickable: true
-	},
-     autoplay: {
-     delay: 5000,
-   },
-	navigation: {
-		nextEl: '#main-slideshow-next-{{ section.id }}',
-		prevEl: '#main-slideshow-prev-{{ section.id }}'
-	},
-	loop: true,
-	watchSlidesProgress: true
-});
+    //     	autoplay: {
+    //   delay: 2000,
+    // disableOnInteraction: false
+    // },
+
+    var swiper = new Swiper('#main-slideshow-carousel-{{ section.id }}', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: {{5000}},
+      },
+      navigation: {
+        nextEl: '#main-slideshow-next-{{ section.id }}',
+        prevEl: '#main-slideshow-prev-{{ section.id }}',
+      },
+      loop: true,
+      watchSlidesProgress: true,
+    });
   });
 
-  {% comment %} $(document).ready(function ready() {
+  /** $(document).ready(function ready() {
     const settings = {
       root: $('#main-slideshow-carousel-{{ section.id }}'),
       slides: $('#main-slideshow-carousel-{{ section.id }} > .carousel-item'),
@@ -337,7 +373,8 @@ var swiper = new Swiper('#main-slideshow-carousel-{{ section.id }}', {
       autoplay: false,
     };
     const mainSlideshowCrousel = new Carousel(settings);
-  }); {% endcomment %}
+  });
+  */
 </script>
 
 {% schema %}

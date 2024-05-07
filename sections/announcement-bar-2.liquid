@@ -1,4 +1,5 @@
-<div class="announcement-bar container mx-auto w-full h-[38px] bg-[#fbfbfb]">
+{% assign autoplaySpeed = section.settings.change_slides_speed %}
+<div class="announcement-bar {% if section.settings['use-container'] %}container{% endif %} mx-auto w-full h-[38px] bg-[#fbfbfb]">
   <div class="w-full h-full flex justify-center items-center gap-x-[12px]">
     {% if section.settings.show_buttons %}
       <button
@@ -9,15 +10,18 @@
       </button>
     {% endif %}
 
-    <div class="anouncement-carousel-wrapper h-full grow overflow-hidden">
+    <div
+      id="anouncement-carousel-wrapper-{{ section.id }}"
+      class="anouncement-carousel-wrapper swiper h-full grow overflow-hidden"
+    >
       <div
         {% if section.settings.auto_rotate %}
           data-play-speed="{{ section.settings['change_slides_speed'] }}"
         {% endif %}
-        class="announcement-carousel w-full h-full flex flex-nowrap"
+        class="announcement-carousel swiper-wrapper w-full h-full flex flex-nowrap"
       >
         {% for block in section.blocks %}
-          <div class="anouncement-item h-full flex-grow flex-shrink-0 basis-full flex justify-center items-center text-heading text-center text-[12px] md:text-[14px] font-medium leading-[20px]">
+          <div class="anouncement-item swiper-slide h-full flex-grow flex-shrink-0 basis-full !flex justify-center items-center text-heading text-center text-[12px] md:text-[14px] font-medium leading-[20px]">
             {{ block.settings.text }}
           </div>
         {% endfor %}
@@ -41,8 +45,11 @@
   }
 </style>
 
-<script defer> 
+<script
+  defer
+>
   $(document).ready(function () {
+    /** 
     const $anouncementCarousel = $('.announcement-carousel');
     const autoRotateSpeed = $anouncementCarousel.attr('data-play-speed');
 
@@ -79,6 +86,21 @@
         $anouncementCarousel.css('transform', `translateX(-${index * width}px)`);
       }, autoRotateSpeed * 1000);
     }
+    */
+
+    const announcementCarousel = new Swiper('#anouncement-carousel-wrapper-{{ section.id }}', {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: {
+        delay: {{ autoplaySpeed }}*1000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: ture,
+      },
+      navigation: {
+        nextEl: '#anouncement-next-btn-{{ section.id }}',
+        prevEl: '#anouncement-prev-btn-{{ section.id }}',
+      },
+    });
 
     // show hide
     const $announcementBar = $('.announcement-bar');
@@ -123,7 +145,13 @@
       "type": "checkbox",
       "id": "show_buttons",
       "label": "Show Carousel Buttons",
-      "default": true
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "use-container",
+      "label": "Limit container width",
+      "default": false
     }
   ],
   "blocks": [
@@ -150,7 +178,7 @@
       "name": "Announcement bar 2",
       "blocks": [
         {
-          "type": "announcement" 
+          "type": "announcement"
         }
       ]
     }
