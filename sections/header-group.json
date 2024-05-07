@@ -30,7 +30,7 @@
       "settings": {
         "auto_rotate": true,
         "change_slides_speed": 8,
-        "show_buttons": false
+        "show_buttons": true
       }
     },
     "announcement_bar_q8VfiF": {
