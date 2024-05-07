@@ -2777,18 +2777,18 @@ display: none;
   transform: scale(1.07);
 }
 
-.header__icon .icon {
-  height: 2rem;
-  width: 2rem;
-  fill: none;
-  vertical-align: middle;
-}
-
 .header__icon,
 .icon {
   height: 4.4rem;
   width: 4.4rem;
   padding: 0;
+}
+
+.header__icon .icon {
+  height: 2rem;
+  width: 2rem;
+  fill: none;
+  vertical-align: middle;
 }
 
 @media only screen and (min-width: 768px) {
