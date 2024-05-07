@@ -16,7 +16,7 @@
   display: none !important;
 }
 .header__heading-logo-2 {
-  display: block;
+  display: block !important;
 }
 
 /* ***************************************************************** */
