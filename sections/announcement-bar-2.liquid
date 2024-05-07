@@ -46,7 +46,6 @@
 
 <script defer>
   $(document).ready(function () {
-
     /** const $anouncementCarousel = $('.announcement-carousel');
     const autoRotateSpeed = $anouncementCarousel.attr('data-play-speed');
 
@@ -87,7 +86,12 @@
 
     const announcementSwiper = new Swiper('#anouncement-carousel-wrapper-{{ section.id }}', {
       loop: true,
-    })
+      autoplay: {
+        enabled: true,
+        delay: 0,
+        pauseOnMouseEnter: true,
+      },
+    });
 
     // show hide
     const $announcementBar = $('.announcement-bar');
