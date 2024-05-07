@@ -15,7 +15,7 @@
         "announcement_3xHH3g": {
           "type": "announcement",
           "settings": {
-            "text": "Get FREE GIFT on order above £30, £40 & £50",
+            "text": "Get FREE GIFT on order above £35 & £55",
             "link": ""
           }
         }
@@ -112,7 +112,8 @@
     },
     "quick_view_h6MGwA": {
       "type": "quick-view",
-      "settings": {}
+      "settings": {
+      }
     },
     "header": {
       "type": "header",
