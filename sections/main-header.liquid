@@ -180,7 +180,10 @@
         render 'header-drawer'
       endif
 
+      if template == "product"
+       render ''
       
+      endif
 
       if section.settings.logo_position == 'top-center' or section.settings.menu == blank
         render 'header-search', input_id: 'Search-In-Modal-1'
