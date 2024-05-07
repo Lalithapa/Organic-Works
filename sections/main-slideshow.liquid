@@ -324,56 +324,45 @@
   type="text/javascript"
   defer
 >
-    $(document).ready(function ready () {
-      // const $root = $('#main-slideshow-carousel-{{ section.id }}');
-      // $root.slick({
-      //   mobileFirst: true,
-      //   slidesToShow: 1,
-      //   slidesToScroll: 1,
-      //   speed: 300,
-      //   lazyLoad: 'ondemand',
-      //   autoplay: true,
-      //   autoplaySpeed: 4000,
-      //   infinite: true,
-      //   dots: true,
-      //   arrows: true,
-      //   appendDots: $('.main-slideshow-dots-wrapper'),
-      //   prevArrow: $('#main-slideshow-prev-{{ section.id }}'),
-      //   nextArrow: $('#main-slideshow-next-{{ section.id }}')
-      // });
+  $(document).ready(function ready() {
+    // const $root = $('#main-slideshow-carousel-{{ section.id }}');
+    // $root.slick({
+    //   mobileFirst: true,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+    //   speed: 300,
+    //   lazyLoad: 'ondemand',
+    //   autoplay: true,
+    //   autoplaySpeed: 4000,
+    //   infinite: true,
+    //   dots: true,
+    //   arrows: true,
+    //   appendDots: $('.main-slideshow-dots-wrapper'),
+    //   prevArrow: $('#main-slideshow-prev-{{ section.id }}'),
+    //   nextArrow: $('#main-slideshow-next-{{ section.id }}')
+    // });
 
     //     	autoplay: {
     //   delay: 2000,
-  		// disableOnInteraction: false
+    // disableOnInteraction: false
     // },
 
-  var swiper = new Swiper('#main-slideshow-carousel-{{ section.id }}', {
-  	pagination: {
-  		el: '.swiper-pagination',
-  		clickable: true
-  	},
-       autoplay: {
-       delay: 5000,
-     },
-  	navigation: {
-  		nextEl: '#main-slideshow-next-{{ section.id }}',
-  		prevEl: '#main-slideshow-prev-{{ section.id }}'
-  	},
-  	loop: true,
-  	watchSlidesProgress: true
-  });
+    var swiper = new Swiper('#main-slideshow-carousel-{{ section.id }}', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 5000,
+      },
+      navigation: {
+        nextEl: '#main-slideshow-next-{{ section.id }}',
+        prevEl: '#main-slideshow-prev-{{ section.id }}',
+      },
+      loop: true,
+      watchSlidesProgress: true,
     });
-
-    {% comment %} $(document).ready(function ready() {
-      const settings = {
-        root: $('#main-slideshow-carousel-{{ section.id }}'),
-        slides: $('#main-slideshow-carousel-{{ section.id }} > .carousel-item'),
-        arrows: false,
-        mouseDragHandlers: true,
-        autoplay: false,
-      };
-      const mainSlideshowCrousel = new Carousel(settings);
-    }); {% endcomment %}
+  });
 </script>
 
 {% schema %}
