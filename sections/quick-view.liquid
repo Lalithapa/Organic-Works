@@ -23,18 +23,26 @@
           {% endfor %}
         </div>
         <div class="quickview-wishlist-wrapper d-flex-center">
-          <div class="wishlist-engine" data-product_id="{{  product.id }}" data-variant_id="{{ product.selected_or_first_available_variant.id }}" data-full_button="false" data-css="true"></div>        
-          {% comment %} <button
-            data-product-id="{{ product.id }}"
-            data-variant-id="{{ firstAvailable.id }}"
-            type="button"
-            aria-label="Wishlist product {{ product.title }}"
-            class="wishlist-toggle-btn d-flex-center"
-          >
-            {% render 'wishlist-icon-black', class: 'wishlist-img' %}
+          <div
+            class="wishlist-engine"
+            data-product_id="{{  product.id }}"
+            data-variant_id="{{ product.selected_or_first_available_variant.id }}"
+            data-full_button="false"
+            data-css="true"
+          ></div>
+          {% comment %}
+            <button
+              data-product-id="{{ product.id }}"
+              data-variant-id="{{ firstAvailable.id }}"
+              type="button"
+              aria-label="Wishlist product {{ product.title }}"
+              class="wishlist-toggle-btn d-flex-center"
+            >
+              {% render 'wishlist-icon-black', class: 'wishlist-img' %}
 
-            {% render 'wishlist-fill-icon-black', class: 'wishlist-fill-img d-none' %}
-          </button> {% endcomment %}
+              {% render 'wishlist-fill-icon-black', class: 'wishlist-fill-img d-none' %}
+            </button>
+          {% endcomment %}
         </div>
       </div>
       {% comment %} 40px {% endcomment %}
@@ -48,7 +56,7 @@
           {% comment %} gap: 4px {% endcomment %}
 
           <div class="quickview-summary-wrapper d-flex-center">
-            <p class="quickview-summary">Vitamin E, Rose Geranium Flower Oil & Aloe Vera 300ml</p>
+            <p class="quickview-summary">{{ product.metafields.custom.ingredient_subtext_with_size }}</p>
 
             {% comment %} 12px {% endcomment %}
             <div class="product-card-ratings-wrapper d-flex-center" style="justify-content: flex-start;">

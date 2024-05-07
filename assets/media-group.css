@@ -51,13 +51,13 @@
   column-gap: 9px;
   justify-content: flex-start;
   align-items: flex-end;
-  padding: 40px;
+  padding: 16px;
 
-  background: linear-gradient(
+  /* background: linear-gradient(
     0deg,
     rgb(127 127 127 / 90%) 0%,
     rgba(0, 0, 0, 0) 50%
-  );
+  ); */
 }
 
 .group-image-text-wrapper > img {
@@ -81,6 +81,13 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .group-image-text-wrapper {
+    padding: 30px;
+  }
+
+  .group-image-text {
+    font-size: 20px;
+  }
   .media-group-wrapper {
     flex-direction: row;
   }

@@ -5,6 +5,7 @@
       "blocks": {
         "slideshow_WwikE4": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "slideshow-block-explore-url": "shopify:\/\/collections\/all-collection",
             "show-video": true,
@@ -23,10 +24,10 @@
           "type": "slideshow",
           "settings": {
             "slideshow-block-explore-url": "shopify:\/\/collections\/bestsellers",
-            "mobile-image": "shopify:\/\/shop_images\/Bestsellers_mob_1.jpg",
-            "desktop-image": "shopify:\/\/shop_images\/Bestsellers2.jpg",
+            "mobile-image": "shopify:\/\/shop_images\/Bestseller-mob_1.jpg",
+            "desktop-image": "shopify:\/\/shop_images\/Bestsellers1.jpg",
             "show-video": false,
-            "use-slide-info": true,
+            "use-slide-info": false,
             "slideshow-block-title": "<p>Tried and Tested: Dive Into Our Top Picks<\/p>",
             "slideshow-block-title-mobile": "<p>Dive Into Our Top Picks<\/p>",
             "slideshow-block-sub-title": "<p>Explore carefully curated elite skincare for your unique needs.<\/p>",
@@ -37,6 +38,7 @@
         },
         "slideshow_iRHCEL": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "slideshow-block-explore-url": "shopify:\/\/products\/cleansing-face-wash-with-vitamin-e-300ml",
             "mobile-image": "shopify:\/\/shop_images\/ow-mobile-banner-01_4190f56f-03c3-439d-ba90-1421e2d48787.png",
@@ -53,6 +55,7 @@
         },
         "slideshow_qbjBpf": {
           "type": "slideshow",
+          "disabled": true,
           "settings": {
             "slideshow-block-explore-url": "shopify:\/\/products\/liquid-gold-firming-face-mask-with-vitamin-e-50ml",
             "mobile-image": "shopify:\/\/shop_images\/OW_02.jpg",
@@ -83,6 +86,54 @@
             "slideshow-block-explore-url-title": "Hydrate Now",
             "slideshow-block-font-color": "#151515"
           }
+        },
+        "slideshow_rY6da6": {
+          "type": "slideshow",
+          "settings": {
+            "slideshow-block-explore-url": "shopify:\/\/collections\/value-sets",
+            "mobile-image": "shopify:\/\/shop_images\/1-mob_68fd20f4-072d-4be1-b253-ba65969a5cbd.jpg",
+            "desktop-image": "shopify:\/\/shop_images\/1_97e20673-64ae-472c-9da7-6c67f55ffb84.jpg",
+            "show-video": false,
+            "use-slide-info": false,
+            "slideshow-block-title": "",
+            "slideshow-block-title-mobile": "",
+            "slideshow-block-sub-title": "",
+            "slideshow-block-sub-title-mobile": "",
+            "slideshow-block-explore-url-title": "",
+            "slideshow-block-font-color": ""
+          }
+        },
+        "slideshow_9EAPmt": {
+          "type": "slideshow",
+          "settings": {
+            "slideshow-block-explore-url": "shopify:\/\/products\/cleansing-face-wash-with-vitamin-e-300ml",
+            "mobile-image": "shopify:\/\/shop_images\/2-mob_0b0cd068-3f58-40fe-81dd-0ea9aac21efa.jpg",
+            "desktop-image": "shopify:\/\/shop_images\/2_1aa71a0f-22f1-48ec-8d2d-6ad98fcb73f9.jpg",
+            "show-video": false,
+            "use-slide-info": false,
+            "slideshow-block-title": "<p>THE SCIENCE OF <br\/> SELF CARE<\/p>",
+            "slideshow-block-title-mobile": "<p>THE SCIENCE OF <br\/> SELF CARE<\/p>",
+            "slideshow-block-sub-title": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS<\/p>",
+            "slideshow-block-sub-title-mobile": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS<\/p>",
+            "slideshow-block-explore-url-title": "Explore Now",
+            "slideshow-block-font-color": "#fff"
+          }
+        },
+        "slideshow_PGbzYA": {
+          "type": "slideshow",
+          "settings": {
+            "slideshow-block-explore-url": "shopify:\/\/products\/24-hour-hydration",
+            "mobile-image": "shopify:\/\/shop_images\/3-mob.jpg",
+            "desktop-image": "shopify:\/\/shop_images\/3_dc1eeb3a-c851-48d7-9e94-9ac08bbcb318.jpg",
+            "show-video": false,
+            "use-slide-info": false,
+            "slideshow-block-title": "<p>THE SCIENCE OF <br\/> SELF CARE<\/p>",
+            "slideshow-block-title-mobile": "<p>THE SCIENCE OF <br\/> SELF CARE<\/p>",
+            "slideshow-block-sub-title": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS<\/p>",
+            "slideshow-block-sub-title-mobile": "<p>ROOTED IN SCOTTISH SKINCARE SECRETS<\/p>",
+            "slideshow-block-explore-url-title": "Explore Now",
+            "slideshow-block-font-color": "#fff"
+          }
         }
       },
       "block_order": [
@@ -90,10 +141,13 @@
         "slideshow_pGhQNF",
         "slideshow_iRHCEL",
         "slideshow_qbjBpf",
-        "slideshow_xGieah"
+        "slideshow_xGieah",
+        "slideshow_rY6da6",
+        "slideshow_9EAPmt",
+        "slideshow_PGbzYA"
       ],
       "custom_css": [
-
+        "@media screen and (max-width: 768px) {.main-slideshow-carousel-wrapper, .main-slideshow-media {height: 700px; object-fit: fill; } .main-slideshow-detail-wrapper {width: 370px; }}"
       ],
       "settings": {
         "use-width-limiter": false,
@@ -142,9 +196,10 @@
       "type": "clean-beauty-media",
       "settings": {
         "use-container": false,
+        "link": "#",
         "show-video": true,
-        "mobile-video": "shopify:\/\/files\/videos\/4502-9060-479a-acb2-6f0ae36c9220.mp4",
-        "desktop-video": "shopify:\/\/files\/videos\/6836-a5b5-4e59-950b-7ca496bb9189.mp4"
+        "mobile-video": "shopify:\/\/files\/videos\/Regime banner mob (1).mp4",
+        "desktop-video": "shopify:\/\/files\/videos\/Regime banner (1).mp4"
       }
     },
     "clean_beauty_info_VQB6Rk": {
@@ -204,15 +259,15 @@
       "settings": {
         "showfullcontainer": false,
         "title": "<p>Clean Beauty. <\/p><p>It's in our DNA<em>® <\/em><\/p>",
-        "sectionBackground": "#f5f7ff",
+        "sectionBackground": "#fffbf6",
         "text": "Our entire product portfolio is clean, green, and cruelty-free. At least 99% of plant-based ingredients are derived from organic farming, and all products contain a minimum of 98% natural ingredients. We also test our products for suitability to even the most sensitive skin, so the whole family can feel confident using OW."
       }
     },
     "product_carousel_hyrCC8": {
       "type": "product-carousel",
       "settings": {
-        "carousel-title": "SUPER SAVERS",
-        "carousel-collection": "refills",
+        "carousel-title": "DUOS, TRIOS & ROUTINES",
+        "carousel-collection": "value-sets",
         "slides-limit": 5,
         "num-slides-sm": "1.5",
         "num-slides-md": "3.5",
@@ -224,12 +279,12 @@
     "media_group_H7FJFx": {
       "type": "media-group",
       "settings": {
-        "image-1": "shopify:\/\/shop_images\/media-group-image-1.jpg",
-        "text-1": "LIQUID GOLD FIRMING FACE MASK",
-        "url-1": "shopify:\/\/products\/liquid-gold-firming-face-mask-with-vitamin-e-50ml",
-        "image-2": "shopify:\/\/shop_images\/media-group-image-2.jpg",
-        "text-2": "DAILY BLISS MOISTURISER",
-        "url-2": "shopify:\/\/products\/daily-bliss-moisturiser"
+        "image-1": "shopify:\/\/shop_images\/tile02_45e2d47f-f91c-414a-a297-1c02dc256909.png",
+        "text-1": "Shop Bergamot Range",
+        "url-1": "shopify:\/\/collections\/bergamot",
+        "image-2": "shopify:\/\/shop_images\/tile_d1af0c92-69b9-4937-8cc2-6c7d1d0c039b.png",
+        "text-2": "Shop Lavender Range",
+        "url-2": "shopify:\/\/collections\/lavender"
       }
     },
     "awards_Kj74Xr": {
@@ -309,10 +364,10 @@
         "image_with_url_Fd7c9h": {
           "type": "image-with-url",
           "settings": {
-            "slide-image": "shopify:\/\/shop_images\/Rectangle_394_2867e7a7-1eb1-46b2-89b7-43b3e9603ea5.png",
-            "slide-url": "shopify:\/\/collections\/organic-works-lavender-range",
-            "slide-title": "SOOTHE ECZEMA",
-            "slide-summary": "with calming Lavender",
+            "slide-image": "shopify:\/\/shop_images\/Balance_Tile_-_2_RENEWAL_NIGHT_CREAM.jpg",
+            "slide-url": "shopify:\/\/products\/deep-nourish-face-mask",
+            "slide-title": "TARGETS DULLNESS",
+            "slide-summary": "with Chamomile & Aloe Vera",
             "show-video-1": true,
             "video-1": "shopify:\/\/files\/videos\/Bergamot shower gel YT.mp4",
             "title-1": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
@@ -344,10 +399,10 @@
         "image_with_url_MMc4kM": {
           "type": "image-with-url",
           "settings": {
-            "slide-image": "shopify:\/\/shop_images\/3_1_15ed9813-171d-4742-ac50-e920ba9326bb.jpg",
-            "slide-url": "shopify:\/\/products\/deep-nourish-face-mask",
-            "slide-title": "Combat Dullness",
-            "slide-summary": "with vitamin C & essential oils",
+            "slide-image": "shopify:\/\/shop_images\/Balance_Tile_-_4_Night_Cream.jpg",
+            "slide-url": "shopify:\/\/products\/renewal-night-cream",
+            "slide-title": "RESTORES COMPLEXION",
+            "slide-summary": "with Lavender & Shea Butter",
             "show-video-1": true,
             "title-1": "<p>DELVING INTO THE CAUSES OF DULL SKIN<\/p>",
             "summary-1": "<p>Dull, lackluster skin lacks radiance and vitality, often appearing tired and lifeless. Various factors can cause this and stop skin regeneration and repair. As a result, skin may appear lackluster, dehydrated, and prone to signs of aging.<\/p>",
@@ -372,10 +427,10 @@
         "image_with_url_nWKEYk": {
           "type": "image-with-url",
           "settings": {
-            "slide-image": "shopify:\/\/shop_images\/2_fcb0d734-e3ae-4efe-b9a7-93661e155c46.jpg",
-            "slide-url": "shopify:\/\/products\/bergamot-hand-body-lotion-with-vitamin-c-300ml",
-            "slide-title": "COMBAT DRY SKIN",
-            "slide-summary": "with nourishing Vitamins",
+            "slide-image": "shopify:\/\/shop_images\/Balance_Tile_-_5_EYE_CREAM.jpg",
+            "slide-url": "shopify:\/\/products\/hydrating-eye-cream",
+            "slide-title": "REDUCES PUFFINESS",
+            "slide-summary": "with Vitamin b5 & Alfalfa",
             "show-video-1": true,
             "title-1": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
             "summary-1": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
@@ -400,10 +455,10 @@
         "image_with_url_WmDHKW": {
           "type": "image-with-url",
           "settings": {
-            "slide-image": "shopify:\/\/shop_images\/Moisture_Boost_Shampoo_665d4ebf-0d83-4389-9a08-537560e5c068.jpg",
-            "slide-url": "shopify:\/\/products\/moisture-boost-shampoo",
-            "slide-title": "Repair Hair Damage",
-            "slide-summary": "with Coconut, Bamboo & Aloe vera",
+            "slide-image": "shopify:\/\/shop_images\/Balance_Tile_-_3_SHINE_BOOST_DUO.jpg",
+            "slide-url": "shopify:\/\/products\/shine-boost-duo",
+            "slide-title": "DETOXIFIES & STRENGTHENS",
+            "slide-summary": "with Aloe Vera, apple, Shea butter",
             "show-video-1": true,
             "title-1": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
             "summary-1": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
@@ -428,10 +483,10 @@
         "image_with_url_6aTdkX": {
           "type": "image-with-url",
           "settings": {
-            "slide-image": "shopify:\/\/shop_images\/Refining_Flower_Tonic_77c6adb3-c775-4e3f-acaf-d1d99232b30a.jpg",
-            "slide-url": "shopify:\/\/products\/refining-flower-tonic-with-vitamin-e-100ml",
-            "slide-title": "Refresh & purify",
-            "slide-summary": "with Refining Flower Tonic",
+            "slide-image": "shopify:\/\/shop_images\/Balance_Tile_-_1_DAILY_BLISS_MOISTURISER.jpg",
+            "slide-url": "shopify:\/\/products\/daily-bliss-moisturiser",
+            "slide-title": "COMBATS DRYNESS",
+            "slide-summary": "with Salicylic or Amino Acids",
             "show-video-1": true,
             "title-1": "<p>BOTANICAL FORMULAS FOR ECZEMA SKIN<\/p>",
             "summary-1": "<p>Discover the soothing power of nature with lavender, aloe vera, rosemary, and rose geranium for eczema relief. Lavender calms the skin, locks in moisture, & keeps skin hydrated, Aloe Vera moisturizes & reduces inflammation, while rosemary's antioxidants shield against oxidative stress. Rose geranium harmonizes the formulation for all skin types.<\/p>",
@@ -461,10 +516,13 @@
         "image_with_url_WmDHKW",
         "image_with_url_6aTdkX"
       ],
+      "custom_css": [
+        "@media screen and (max-width: 768px) {.home-title-sm {line-height: 24px; font-size: 21px; }}"
+      ],
       "settings": {
         "enable-concern-quickview": false,
-        "title": "nature’s pure indulgence",
-        "num-slides-sm": "2",
+        "title": "YOUR BEST SKIN. ORGANICALLY",
+        "num-slides-sm": "1.5",
         "num-slides-md": "4",
         "num-slides-lg": "4.5"
       }
@@ -763,8 +821,7 @@
         "ticker_tape_EqJLrQ",
         "ticker_tape_HU4dCD"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -798,8 +855,7 @@
     "quick_view_rXGi9p": {
       "type": "quick-view",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "quick_cart_TiGwmV": {
       "type": "quick-cart",

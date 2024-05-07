@@ -19,8 +19,10 @@
       >
 
       <a href="{{section.settings['url-1']}}" class="group-image-text-wrapper d-flex-center">
-        <p class="group-image-text">{{ section.settings['text-1'] }}</p>
-        {% render 'carousel-next-btn-white' %}
+        <div class="d-flex-center">
+          <p class="group-image-text">{{ section.settings['text-1'] }}</p>
+          {% render 'carousel-next-btn-white', width: 20, height: 20 %}
+        </div>
       </a>
     </div>
   </div>
@@ -45,8 +47,10 @@
       >
 
       <a href="{{section.settings['url-2']}}" class="group-image-text-wrapper d-flex-center">
-        <p class="group-image-text">{{ section.settings['text-2'] }}</p>
-        {% render 'carousel-next-btn-white' %}
+        <div class="d-flex-center">
+          <p class="group-image-text">{{ section.settings['text-2'] }}</p>
+          {% render 'carousel-next-btn-white', width: 20, height: 20 %}
+        </div>
       </a>
     </div>
   </div>

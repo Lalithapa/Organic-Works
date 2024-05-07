@@ -13,7 +13,9 @@ document.querySelectorAll('.read-more-btn').forEach(function(btn) {
     if (wrapper.classList.contains('expanded')) {
       this.textContent = 'Read less -';
     } else {
-      this.textContent = 'Read more +';
+      $(this).attr("isCombo") ? this.textContent = 'Full Ingredient List +' :  this.textContent = 'Read more +';
+      
+     
     }
   });
 });

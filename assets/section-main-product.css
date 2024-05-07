@@ -812,12 +812,7 @@ a.product__text {
   opacity: 0;
   z-index: -1;
 }
-
-.product-media-modal[open] {
-  visibility: visible;
-  opacity: 1;
-  z-index: 101;
-}
+/* .product-media-modal[open] {} enable to desktop */
 
 .product-media-modal__dialog {
   display: flex;
@@ -1128,6 +1123,12 @@ a.product__text {
 }
 
 @media screen and (min-width: 750px) {
+  .product-media-modal[open] {
+    visibility: visible;
+    opacity: 1;
+    z-index: 101;
+  }
+
   .product--stacked .thumbnail-list {
     display: none;
   }

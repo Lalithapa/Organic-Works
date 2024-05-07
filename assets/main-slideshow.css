@@ -192,6 +192,11 @@
   height: 20px;
   aspect-ratio: 1;
 }
+@media only screen and (max-width: 767px) {
+  .main-slideshow-media {
+    height:100%;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   .main-slideshow-media {
@@ -472,8 +477,8 @@
 
 .main-slideshow-media {
   width: 100%;
-  /* height: 100%; 
-  aspect-ratio: 9/16 !important;*/
+   /* height: 100%; 
+ aspect-ratio: 9/16 !important;*/
 
   object-fit: cover;
 }

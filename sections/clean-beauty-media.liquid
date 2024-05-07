@@ -67,7 +67,7 @@
         poster: posterImage,
         alt: videoAlt
     }}
-    {% if template == 'product' or template == 'product.combos' %}
+    {% if template contains 'product' and desktopVideoSettings != blank %}
       <script>
         $(document).ready(function(){
           document.querySelectorAll('.clean-beauty-media-wrapper')[1].style.display = 'none';
@@ -75,7 +75,8 @@
       </script>
     {% endif %}
   {% endif %}
-  <a href="javascript:void(0)" class="media-overlay-link"><wbr></a>
+  <a href="{% if section.settings.link != blank %}{{ section.settings.link }}{% else %}
+    javascript:void(0){% endif %}" class="media-overlay-link"><wbr></a>
 </div>
 
 {% schema %}
@@ -89,6 +90,11 @@
       "id": "use-container",
       "default": false,
       "label": "use width container?"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Section Url"
     },
     {
       "type": "image_picker",

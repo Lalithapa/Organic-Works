@@ -2,7 +2,8 @@
   id="accordion-flushs"
   data-accordion="collapse"
   data-active-classes="bg-white text-gray-900"
-  data-inactive-classes="text-gray-500 product__description_text" style="border-top: 1px solid #f2f2f2;"
+  data-inactive-classes="text-gray-500 product__description_text"
+  style="border-top: 1px solid #f2f2f2;"
 >
   {% if product.metafields.custom.benefits != blank %}
     <h2 id="accordion-flush-headings-1">
@@ -14,10 +15,17 @@
         aria-controls="accordion-flush-body-1"
       >
         <span>Benefits</span>
-        <svg data-accordion-icon  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M16 10L12 14L8 10" stroke="#585858" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg
+          data-accordion-icon
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path d="M16 10L12 14L8 10" stroke="#585858" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-
       </button>
     </h2>
     <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-headings-1">
@@ -38,8 +46,16 @@
         aria-controls="accordion-flush-body-2"
       >
         <span>Clean Beauty Credentials</span>
-         <svg data-accordion-icon  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M16 10L12 14L8 10" stroke="#585858" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg
+          data-accordion-icon
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path d="M16 10L12 14L8 10" stroke="#585858" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
     </h2>
@@ -63,8 +79,16 @@
         aria-controls="accordion-flush-body-3"
       >
         <span>Awards</span>
-         <svg data-accordion-icon  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M16 10L12 14L8 10" stroke="#585858" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg
+          data-accordion-icon
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path d="M16 10L12 14L8 10" stroke="#585858" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
     </h2>
@@ -72,11 +96,17 @@
       <div class="innerMetaHandle border-b border-gray-200">
         <p>
           {{ product.metafields.custom.product_awards | capitalize }}
-           <div class="flex flex-row flex-nowrap gap-3 pt-4">
+          <div class="flex flex-row flex-nowrap gap-3 pt-4">
             {% for image in product.metafields.custom.awards.value %}
-              <img class="clean-beauty-icon award_images" src="{{ image | image_url }}" alt="{{ image.alt |  append: 'award-Icon' | escape }}" height="100%" loading="lazy">
+              <img
+                class="clean-beauty-icon award_images"
+                src="{{ image | image_url }}"
+                alt="{{ image.alt |  append: 'award-Icon' | escape }}"
+                height="100%"
+                loading="lazy"
+              >
             {% endfor %}
-            </div>
+          </div>
         </p>
       </div>
     </div>
@@ -90,17 +120,58 @@
         aria-expanded="false"
         aria-controls="accordion-flush-body-4"
       >
-        <span>Ingredients</span>
-         <svg data-accordion-icon  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M16 10L12 14L8 10" stroke="#585858" stroke-linecap="round" stroke-linejoin="round"/>
+        <span>
+          {% if template == 'product.combos' %}Key {% endif %}Ingredients</span
+        >
+        <svg
+          data-accordion-icon
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path d="M16 10L12 14L8 10" stroke="#585858" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
     </h2>
     <div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-headings-4">
       <div class="innerMetaHandle border-b border-gray-200">
-        <p>
-          {{ product.metafields.custom.ingredients }}
-        </p>
+        {% if template == 'product.combos' %}
+          <div class="flex flex-col gap-y-[16px]">
+            <ul>
+              {% for heroMeta in product.metafields.custom.hero_ingredients.value %}
+                <li class="text-[#171717] text-[14px] font-normal leading-[24px]">{{ heroMeta.ingredient_name }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="hero-media-wrapper w-full h-auto flex flex-col justify-center items-start gap-y-[16px] md:gap-y-[20px] mt-[24px]">
+            <div class="w-full h-auto flex justify-center items-center !m-0">
+              <div class="ingrehero-handle-summary read-more-wrapper product__description_text w-full !text-[#171717] !text-start !text-[13px] md:!text-[16px] !font-normal !leading-[20px] !m-0">
+                {{ product.metafields.custom.combos_ingredients | metafield_tag }}
+              </div>
+            </div>
+            <button
+              style="color=#151515;"
+              class="read-more-btn !text-[#151515] !text-center !text-[13px] md:!text-[16px] !font-bold !leading-[20px] !mt-[-10px] underline"
+              isCombo="true"
+            >
+              Full Ingredient List +
+            </button>
+          </div>
+
+          {% comment %}
+            <p class="mt-[24px]">
+              {{ product.metafields.custom.combos_ingredients | metafield_tag }}
+            </p>
+          {% endcomment %}
+        {% else %}
+          <p>
+            {{ product.metafields.custom.ingredients }}
+          </p>
+        {% endif %}
       </div>
     </div>
   {% endif %}
@@ -114,8 +185,16 @@
         aria-controls="accordion-flush-body-5"
       >
         <span>Application</span>
-         <svg data-accordion-icon  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M16 10L12 14L8 10" stroke="#585858" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg
+          data-accordion-icon
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path d="M16 10L12 14L8 10" stroke="#585858" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
     </h2>
@@ -129,7 +208,8 @@
   {% endif %}
 </div>
 <style>
-  #accordion-flushs ol,#accordion-flushs ul {
+  #accordion-flushs ol,
+  #accordion-flushs ul {
     list-style: disc !important;
     padding-left: 20px;
   }

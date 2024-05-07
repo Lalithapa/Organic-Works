@@ -1,3 +1,21 @@
+/* shivam rathi: change for shraddha change header icons to black */
+.header * {
+  color: #151515 !important;
+}
+
+.header .h-wishlist-icon > svg {
+  stroke: #151515 !important;
+}
+
+.header__heading-logo {
+  display: none !important;
+}
+.header__heading-logo-2 {
+  display: block !important;
+}
+
+/* ***************************************************************** */
+
 :root {
   --alpha-button-background: 1;
   --alpha-button-border: 1;
@@ -231,8 +249,8 @@ div[leftFlower]::after {
   padding: 0;
   list-style: none;
 }
-.hidden{
-  display:none !important;
+.hidden {
+  display: none !important;
 }
 .visually-hidden {
   position: absolute !important;
@@ -2499,6 +2517,11 @@ sticky-header {
   width: 100%;
   max-width: 100% !important;
 }
+
+/* .header svg {
+  stroke: #151515 !important;
+} */
+
 /* .header.header-active{
   background-color: #fff !important;
 }
@@ -2539,19 +2562,24 @@ display: none;
 .header.header-active .header__icon:not(.header__icon--summary),
 .header.header-active-scroll .header__icon:not(.header__icon--summary),
 .header.header-active .header__icon span,
-.header.header-active-scroll .header__icon span:not(.quickcart-count,.wishlist-h-count),
+.header.header-active-scroll
+  .header__icon
+  span:not(.quickcart-count, .wishlist-h-count),
 .header.header-active .header__menu-item,
 .header.header-active-scroll .header__menu-item,
 .header.header-active .disclosure__button.localization-form__select,
 .header.header-active-scroll .disclosure__button.localization-form__select {
-  color: #000 !important;
-} 
+  color: #000;
+}
 .header.header-active .header__icon.h-wishlist-icon svg,
 .header.header-active-scroll .header__icon.h-wishlist-icon svg,
 .header.header-active .header__icon.h-wishlist-icon span svg,
-.header.header-active-scroll .header__icon.h-wishlist-icon span:not(.quickcart-count) svg {
+.header.header-active-scroll
+  .header__icon.h-wishlist-icon
+  span:not(.quickcart-count)
+  svg {
   stroke: #000 !important;
-} 
+}
 
 @media screen and (max-width: 749px) {
   .header--has-app {
@@ -2559,20 +2587,20 @@ display: none;
   }
 }
 
-@media screen and (min-width:1921px)  {
-  #handleHeader{
+@media screen and (min-width: 1921px) {
+  #handleHeader {
     padding-right: 200px;
     padding-left: 200px;
   }
 }
-@media screen and (min-width: 1536px) and (max-width:1920px)  {
-  #handleHeader{
+@media screen and (min-width: 1536px) and (max-width: 1920px) {
+  #handleHeader {
     padding-right: 100px;
     padding-left: 100px;
   }
 }
-@media screen and (min-width: 1280px) and (max-width:1535px)  {
-  #handleHeader{
+@media screen and (min-width: 1280px) and (max-width: 1535px) {
+  #handleHeader {
     padding-right: 30px;
     padding-left: 30px;
   }
@@ -2605,7 +2633,7 @@ display: none;
 
   .header--middle-center:not(.drawer-menu) {
     grid-template-areas: "heading navigation icons";
-    grid-template-columns: auto 1fr auto; 
+    grid-template-columns: auto 1fr auto;
     column-gap: 2rem;
   }
 

@@ -1,34 +1,45 @@
-{%  liquid 
-  assign numSlidesSm = section.settings['num-slides-sm'] 
-  assign numSlidesMd = section.settings['num-slides-md'] 
-  assign numSlidesLg = section.settings['num-slides-lg'] 
-  assign numSlidesXl = section.settings['num-slides-xl'] 
-  assign numSlides2xl = section.settings['num-slides-2xl'] 
+{% liquid
+  assign numSlidesSm = section.settings['num-slides-sm']
+  assign numSlidesMd = section.settings['num-slides-md']
+  assign numSlidesLg = section.settings['num-slides-lg']
+  assign numSlidesXl = section.settings['num-slides-xl']
+  assign numSlides2xl = section.settings['num-slides-2xl']
 %}
 
-<div class="container carousel-section-wrapper d-flex-center {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="recommended_products"  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=10&intent=related">
+<div
+  class="container carousel-section-wrapper d-flex-center {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  id="recommended_products"
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=10&intent=related"
+>
   <div class="carousel-section-title-wrapper d-flex-center">
     <p class="carousel-section-title">{{- section.settings['carousel-title'] -}}</p>
   </div>
   <div class="carousel-wrapper-outer d-flex-center">
-    <button id="prev-recommend" type="button"  class="carousel-btn prev-btn d-flex-center">
+    <button id="prev-recommend" type="button" class="carousel-btn prev-btn d-flex-center">
       {% render 'carousel-prev-btn' %}
     </button>
-    {%- if recommendations.performed? and recommendations.products_count > 0 -%} 
-    <div class="carousel-inner d-flex-center">
-      <div id="carousel-recommend-{{ section.id }}" class="carousel d-flex-center">
-        {% for product in recommendations.products %}
-          <div class="carousel-slide">
-            {% render 'product-card', product: product, sectionId: section.id, index: forloop.index0, showTags:true , showQuickViewBtn:true , showRemoveWishlistBtn:true %}
-          </div>
-        {% endfor %}
-      </div>
+    {%- if recommendations.performed? and recommendations.products_count > 0 -%}
+      <div class="carousel-inner d-flex-center">
+        <div id="carousel-recommend-{{ section.id }}" class="carousel d-flex-center">
+          {% for product in recommendations.products %}
+            <div class="carousel-slide">
+              {% render 'product-card',
+                product: product,
+                sectionId: section.id,
+                index: forloop.index0,
+                showTags: true,
+                showQuickViewBtn: true,
+                showRemoveWishlistBtn: true
+              %}
+            </div>
+          {% endfor %}
+        </div>
 
-      <div
-        id="product-dots-wrapper-recommend"
-        class="product-carousel-dots-wrapper"
-      ></div>
-    </div>
+        <div
+          id="product-dots-wrapper-recommend"
+          class="product-carousel-dots-wrapper"
+        ></div>
+      </div>
     {% endif %}
     <button id="carousel-next-recommend" type="button" class="carousel-btn prev-btn d-flex-center">
       {% render 'carousel-next-btn' %}
@@ -42,75 +53,75 @@
     let numSlidesLg = '{{ numSlidesLg }}';
     let numSlidesXl = '{{ numSlidesXl }}';
     let numSlides2xl = '{{ numSlides2xl }}';
-    numSlidesSm = parseFloat(numSlidesSm,10); 
-    numSlidesMd = parseFloat(numSlidesMd,10);
-    numSlidesLg = parseFloat(numSlidesLg,10);
-    numSlidesXl = parseFloat(numSlidesXl,10);
-    numSlides2xl = parseFloat(numSlides2xl,10);
+    numSlidesSm = parseFloat(numSlidesSm, 10);
+    numSlidesMd = parseFloat(numSlidesMd, 10);
+    numSlidesLg = parseFloat(numSlidesLg, 10);
+    numSlidesXl = parseFloat(numSlidesXl, 10);
+    numSlides2xl = parseFloat(numSlides2xl, 10);
 
-    const handleRecIntersection = async(entries, observer) => {
-    if (!entries[0].isIntersecting) return;
-    observer.unobserve(productRecommendationsSection);
-    const url = productRecommendationsSection.dataset.url;
-    await fetch(url) 
-    .then(response => response.text())
-    .then(text => {
-        const html = document.createElement('div');
-        html.innerHTML = text;
-        const recommendations = html.querySelector('#recommended_products');
-    
-        if (recommendations && recommendations.innerHTML.trim().length) {
-          productRecommendationsSection.innerHTML = recommendations.innerHTML;
-         
-          const $root = $('#carousel-recommend-{{ section.id }}');
-      
-          $root.slick({
-            mobileFirst: true,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            infinite: false,
-            arrows: true,
-            prevArrow: $('#prev-recommend'),
-            nextArrow: $('#carousel-next-recommend'), 
-            dots: true,
-            appendDots: $('#carousel-next-recommend'),
-            responsive: [
-              {
-                breakpoint: 768,
-                settings: {
-                  slidesToShow: numSlidesMd, 
+    const handleRecIntersection = async (entries, observer) => {
+      if (!entries[0].isIntersecting) return;
+      observer.unobserve(productRecommendationsSection);
+      const url = productRecommendationsSection.dataset.url;
+      await fetch(url)
+        .then((response) => response.text())
+        .then((text) => {
+          const html = document.createElement('div');
+          html.innerHTML = text;
+          const recommendations = html.querySelector('#recommended_products');
+
+          if (recommendations && recommendations.innerHTML.trim().length) {
+            productRecommendationsSection.innerHTML = recommendations.innerHTML;
+
+            const $root = $('#carousel-recommend-{{ section.id }}');
+
+            $root.slick({
+              mobileFirst: true,
+              slidesToShow: numSlidesSm,
+              slidesToScroll: 1,
+              infinite: false,
+              arrows: true,
+              prevArrow: $('#prev-recommend'),
+              nextArrow: $('#carousel-next-recommend'),
+              dots: true,
+              appendDots: $('#carousel-next-recommend'),
+              responsive: [
+                {
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: numSlidesMd,
+                  },
                 },
-              },
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: numSlidesLg,
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: numSlidesLg,
+                  },
                 },
-              },
-              {
-                breakpoint: 1280,
-                settings: {
-                  slidesToShow: numSlidesXl,
+                {
+                  breakpoint: 1280,
+                  settings: {
+                    slidesToShow: numSlidesXl,
+                  },
                 },
-              },
-              {
-                breakpoint: 1536,
-                settings: {
-                  slidesToShow: numSlides2xl,
+                {
+                  breakpoint: 1536,
+                  settings: {
+                    slidesToShow: numSlides2xl,
+                  },
                 },
-              },
-            ],
-          });
-      };
-    })
-      .catch(e => {
-        console.error(e);
-      });
-  };
-    
+              ],
+            });
+          }
+        })
+        .catch((e) => {
+          console.error(e);
+        });
+    };
+
     const productRecommendationsSection = document.querySelector('#recommended_products');
-    const observer = new IntersectionObserver(handleRecIntersection, {rootMargin: '0px 0px 0px 1000px'});
-    
+    const observer = new IntersectionObserver(handleRecIntersection, { rootMargin: '0px 0px 0px 1000px' });
+
     observer.observe(productRecommendationsSection);
   });
 </script>
@@ -159,7 +170,7 @@
       "id": "num-slides-xl",
       "label": "Num Slides on xl Devices",
       "default": "3",
-      "info": "Rounded to one decimal point. Breakpoint 1280px" 
+      "info": "Rounded to one decimal point. Breakpoint 1280px"
     },
     {
       "type": "text",

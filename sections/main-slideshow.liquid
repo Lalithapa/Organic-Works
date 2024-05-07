@@ -253,7 +253,7 @@
   .swiper-pagination-bullet-active::before {
     background-color: #D9D9D9;
     -webkit-animation: slide-progress 2s cubic-bezier(0.3, 0, 0.3, 1) forwards;
-     animation: slide-progress 2s cubic-bezier(0.3, 0, 0.3, 1) forwards;
+     animation: slide-progress 5s cubic-bezier(0.3, 0, 0.3, 1) forwards;
   }
   
   .main-slideshow-carousel-wrapper .carousel-btn {
@@ -317,13 +317,12 @@ var swiper = new Swiper('#main-slideshow-carousel-{{ section.id }}', {
 		clickable: true
 	},
      autoplay: {
-     delay: 2000,
+     delay: 5000,
    },
 	navigation: {
 		nextEl: '#main-slideshow-next-{{ section.id }}',
 		prevEl: '#main-slideshow-prev-{{ section.id }}'
 	},
-
 	loop: true,
 	watchSlidesProgress: true
 });

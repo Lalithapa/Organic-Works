@@ -1,0 +1,220 @@
+<div class="container w-full h-full flex flex-col gap-y-[24px] mt-[32px] mb-[40px] md:mb-[48px] md:mt-[40px]">
+  <div class="flex justify-center items-center">
+    <div class="w-auto text-heading text-center text-[24px] md:text-[30px] font-medium leading-[32px] md:leading-[44px] uppercase">
+      {{ section.settings['combo-title'] }}
+    </div>
+  </div>
+
+  <div class="w-full h-auto flex flex-col justify-center items-center gap-y-[32px] relative px-[12px]">
+    <div class="flex items-center justify-center w-full h-auto overflow-hidden gap-x-[12px]">
+      <button
+        id="combo-product-slider-prev-{{ section.id }}"
+        type="button"
+        class="carousel-btn prev-btn d-flex-center"
+      >
+        {% render 'carousel-prev-btn' %}
+      </button>
+
+      <div id="combo-product-slider-{{ section.id }}" class="w-full md:w-[calc(100%-108px)]">
+        {% assign num = 0 %}
+        {% for metaobject in product.metafields.custom.combo_product_list_set.value -%}
+          {% assign product = metaobject.product.value %}
+          {% assign stepHandle = metaobject.step_handle.value %}
+          {% assign summary = metaobject.summary.value %}
+
+          {% assign num = num | plus: 1 %}
+
+          <div
+            class="product-combo-slide w-auto h-auto relative"
+            {% if forloop.first %}
+              data-done="true"
+            {% endif %}
+          >
+            <div class="combo-step-pagination-wrapper {% if forloop.first or forloop.last %}w-[70%]{% else %}w-full{% endif %} h-[2px] bg-[#D9D9D9] md:bg-black absolute top-[28px] {% if forloop.first %}right-0{% endif %} {% if forloop.last %}left-0{% endif %} flex justify-center items-center">
+              <div class="combo-step-pagination w-full h-[2px] bg-[#D9D9D9] md:bg-black"><wbr></div>
+              <div class="combo-step-pagination-circle absolute top-1/2 {% if forloop.first %}left-[20%]{% elsif forloop.last %}right-[20%]{% else %}left-[calc(50%-10px)]{% endif %} -translate-x-1/2 -translate-y-1/2 z-[2] w-[12px] h-[12px] rounded-full bg-[#D9D9D9] md:bg-black">
+                <wbr>
+              </div>
+            </div>
+            <div class="content w-full h-full pb-[16px] pr-[20px] md:pr-[40px]">
+              {% render 'combo-product-slide',
+                product: product,
+                stepHandle: stepHandle,
+                summary: summary,
+                index: forloop.index,
+                hideQuickView: section.settings['hide-qv-add-to-cart']
+              %}
+            </div>
+          </div>
+        {%- endfor %}
+      </div>
+
+      <button
+        id="combo-product-slider-next-{{ section.id }}"
+        type="button"
+        class="carousel-btn prev-btn d-flex-center"
+      >
+        {% render 'carousel-next-btn' %}
+      </button>
+    </div>
+
+    <div id="combo-product-slider-pagination" class="swiper-pagination !relative hidden w-auto"></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Combo Product Slide",
+  "class": "combo-product-slider",
+  "tag": "section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "combo-title",
+      "label": "Combo Title",
+      "default": "<p>MAKE IT A RITUAL</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide-qv-add-to-cart",
+      "label": "Hide add to cart in quick view",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "combo-product",
+      "name": "slide",
+      "settings": []
+    }
+  ],
+  "presets": [
+    {
+      "name": "Combo Product Slider"
+    }
+  ]
+}
+{% endschema %}
+
+<script type="text/javascript" defer>
+  $(document).ready(function () {
+    const $comboSlider = $('#combo-product-slider-{{ section.id }}');
+
+    $comboSlider.on('init', function (event, slick) {
+      $(slick.$slides[0]).attr('data-done', true);
+    });
+    $comboSlider.slick({
+      mobileFirst: true,
+      slidesToShow: 1.5,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: true,
+      prevArrow: $('#combo-product-slider-prev-{{ section.id }}'),
+      nextArrow: $('#combo-product-slider-next-{{ section.id }}'),
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
+    $comboSlider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      if (nextSlide < currentSlide) {
+        $(slick.$slides[nextSlide + 1]).removeAttr('data-done');
+      }
+    });
+    $comboSlider.on('afterChange', function (event, slick, currentSlide) {
+      $(slick.$slides[currentSlide]).attr('data-done', true);
+    });
+
+    const prevBtn = $('#combo-product-slider-prev-{{ section.id }}');
+    const nextBtn = $('#combo-product-slider-next-{{ section.id }}');
+
+    if (prevBtn.length && prevBtn.hasClass('slick-hidden') && nextBtn.length && nextBtn.hasClass('slick-hidden')) {
+      prevBtn.css('cssText', 'display: none !important;');
+      nextBtn.css('cssText', 'display: none !important;');
+    }
+  });
+</script>
+
+<style>
+  .product-combo-slide[data-done='true'] .combo-step-pagination {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-combo-slide[data-done='true'] .combo-step-pagination::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transition: width 0.2s; /* Adjust time as needed */
+  }
+
+  .product-combo-slide[data-done='true'] .combo-step-pagination-circle {
+    background-color: black;
+    transition: background-color 0.2s; /* Add transition */
+  }
+
+  .product-combo-slide .combo-step-pagination::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: black;
+    transition: width 0.2s; /* Adjust time as needed */
+  }
+
+  /* .combo-step-pagination::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+    height: 12px;
+    aspect-ratio: 1;
+
+    border-radius: 100%;
+    background-color: #d9d9d9;
+    z-index: 2;
+  } */
+
+  /* .swiper-slide[data-done='true'] .combo-step-pagination::before {
+    background-color: black;
+    animation: fillAnimation 1s forwards;
+  } */
+
+  #combo-product-slider-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 2px;
+  }
+
+  #combo-product-slider-pagination > span {
+    display: block;
+    position: relative;
+    height: 100%;
+    flex: 1;
+    border-radius: 4px !important;
+    background-color: #f2f2f2 !important;
+    color: transparent !important;
+    font-size: 0 !important;
+  }
+
+  #combo-product-slider-pagination > span.swiper-pagination-bullet-active {
+    background-color: #585858 !important;
+  }
+</style>

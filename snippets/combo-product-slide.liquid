@@ -1,0 +1,44 @@
+<div class="w-full h-full flex flex-col justify-start items-center gap-y-[16px] md:gap-y-[24px] relative">
+  <div class="max-w-[40%] h-auto asp3-4 mt-[56px]">
+    <img
+      width="150"
+      height="200"
+      class="w-full h-full asp3-4 object-contain"
+      src="{{ product.featured_image.src |  image_url  }}"
+      alt="{{ product.title }}"
+    >
+  </div>
+
+  <button
+    type="button"
+    class="quickview-trigger-btn w-auto max-w-[calc(90%)] py-[8px] px-[16px] md:px-[18px] border border-solid border-heading rounded-[50px] inline-block"
+    data-product-handle="{{ product.handle }}"
+    data-first-variant-id="{{ product.selected_or_first_available_variant.id }}"
+    aria-label="Open Quickview"
+    data-hide-add-to-cart="{{ hideQuickView }}"
+  >
+    <div
+      style="text-transform: capitalize;" class="h-[20px] md:h-[24px] text-center text-heading text-[14px] md:text-[16px] font-normal leading-[20px] md:leading-[24px] overflow-hidden text-ellipsis whitespace-nowrap"
+    >
+      {{ product.title | capitalize }}
+    </div>
+  </button>
+
+  <div class="combo-product-slider-summary-wrapper w-full flex flex-col justify-center items-center gap-y-[4px] md:gap-y-[12px]">
+    <div class="w-full h-[52px] flex flex-col justify-center items-center text-[#171717] text-center text-[18px] md:text-[20px] font-medium leading-[26px] md:leading-[32px]">
+      <p class="">Step 0{{ index }} :</p>
+      <p>{{ stepHandle }}</p>
+    </div>
+
+    <div class="hero-media-wrapper w-full h-auto flex flex-col justify-center items-center gap-y-[16px] md:gap-y-[20px] !m-0">
+      <div class="w-full h-auto flex justify-center items-center !m-0">
+        <p class="ingrehero-handle-summary read-more-wrapper product__description_text w-full !text-[#585858] !text-center !text-[13px] md:!text-[16px] !font-normal !leading-[24px] !m-0">
+          {{ summary }}
+        </p>
+      </div>
+      <button class="read-more-btn !text-[#585858] !text-center !text-[12px] md:!text-[16px] !font-bold !leading-[20px] !mt-[-10px]">
+        Read more +
+      </button>
+    </div>
+  </div>
+</div>

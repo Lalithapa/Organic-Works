@@ -29,6 +29,8 @@ const quickview = {
 
     // show quickview (product-card-btn)
     this.triggerBtnClass = ".quickview-trigger-btn";
+    // to hide add to cart in qv for combos
+    this.$triggerBtn = undefined;
 
     // if (
     //   !this.$quickViewWrapper.length ||
@@ -51,6 +53,7 @@ const quickview = {
 
     $body.on("click", this.triggerBtnClass, (e) => {
       e.preventDefault();
+      this.$triggerBtn = $(e.currentTarget);
       this.handleQuickViewOpen(e.currentTarget);
     });
 
@@ -112,6 +115,10 @@ const quickview = {
     this.$quickViewWrapper
       .find(this.contentWrapperId)
       .replaceWith($newContentWrapper);
+
+    const hideAddToCart = this.$triggerBtn.attr("data-hide-add-to-cart");
+    if (hideAddToCart)
+      this.$quickViewWrapper.find(".quickview-add-to-bag-btn-wrapper").hide();
   },
 
   showSpinner() {
