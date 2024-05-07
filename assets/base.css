@@ -1,5 +1,5 @@
 /* shivam rathi: change for shraddha change header icons to black */
-
+@media only screen and (min-width: 768pc)
 .header * {
   color: #151515 !important;
 }
