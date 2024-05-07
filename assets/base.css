@@ -2791,6 +2791,8 @@ display: none;
   padding: 0;
 }
 
+@media
+
 .header__icon--cart {
   position: relative;
   margin-right: -1.2rem;
