@@ -85,7 +85,9 @@
     } 
     */
 
-    const announcementSwiper = new Swiper('.')
+    const announcementSwiper = new Swiper('#anouncement-carousel-wrapper-{{ section.id }}', {
+      
+    })
 
     // show hide
     const $announcementBar = $('.announcement-bar');
