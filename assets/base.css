@@ -15,8 +15,8 @@
 .header__heading-logo {
   display: none !important;
 }
-.header__heading-logo-2 {
-  display: block !important;
+.header__heading-logo-2.is-product {
+  display: none !important;
 }
 
 
