@@ -206,11 +206,45 @@
       </div>
     </div>
   {% endif %}
+  {% if product.metafields.custom.application_combos != blank %}
+    <h2 id="accordion-flush-headings-6">
+      <button
+        type="button"
+        class="flex items-center justify-between info-accordion w-full py-[16px] font-medium rtl:text-right text-gray-500 border-b border-gray-200 product__description_text gap-3"
+        data-accordion-target="#accordion-flush-body-6"
+        aria-expanded="false"
+        aria-controls="accordion-flush-body-6"
+      >
+        <span>Application</span>
+        <svg
+          data-accordion-icon
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path d="M16 10L12 14L8 10" stroke="#585858" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </h2>
+    <div id="accordion-flush-body-6" class="hidden" aria-labelledby="accordion-flush-headings-6">
+      <div class="innerMetaHandle border-b border-gray-200">
+        <p>
+          {{ product.metafields.custom.application_combos | metafield_tag }}
+        </p>
+      </div>
+    </div>
+  {% endif %}
 </div>
 <style>
   #accordion-flushs ol,
   #accordion-flushs ul {
-    list-style: disc !important;
+    list-style: disc;
     padding-left: 20px;
+  }
+  #accordion-flush-body-6 ol{
+    list-style: decimal;
   }
 </style>
