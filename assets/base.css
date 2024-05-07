@@ -2791,7 +2791,7 @@ display: none;
   padding: 0;
 }
 
-@media
+@media only screen and (min-width: 768)
 
 .header__icon--cart {
   position: relative;
