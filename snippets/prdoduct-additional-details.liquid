@@ -110,8 +110,8 @@
         </p>
       </div>
     </div>
-  {% endif %}
-  {% if product.metafields.custom.ingredients != blank %}
+  {% endif %} 
+  {% if product.metafields.custom.ingredients != blank or product.metafields.custom.combos_ingredients != blank %}
     <h2 id="accordion-flush-headings-4">
       <button
         type="button"
