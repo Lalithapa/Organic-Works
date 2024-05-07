@@ -398,7 +398,7 @@
         {% endcomment %}
         {% comment %} {% render 'icon-cart' %} {% endcomment %}
 
-        {% render 'icon-cart', color: 'black', class="w-[20px] h-[20px] flex justify-center " %}
+        {% render 'icon-cart', color: 'black', class="w-[20px] h-[20px] flex justify-center items-center" %}
 
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         <div class="cart-count-bubble {% if cart == empty %} opacity-0{% endif %}">
