@@ -19,10 +19,11 @@
   display: none !important;
 }
 
-@media only screen and(min-wi) {
-  
+@media only screen and(min-width: 768px) {
+  .header__heading-logo-2.is-product {
+    display: block !important;
+  }
 }
-
 
 /* ***************************************************************** */
 
