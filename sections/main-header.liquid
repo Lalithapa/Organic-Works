@@ -255,15 +255,14 @@
                 sizes: sizes,
                 preload: true
             }}
-            
-              <img
-                src="https://cdn.shopify.com/s/files/1/0355/3217/7453/files/black-logo.png?v=1668494171"
-                class="{% if template == 'product' -%}is{%- endif %}header__heading-logo-2"
-                alt="{{ logo_alt }}N-Black"
-                height="{{ logo_height }}"
-                width="{{ settings.logo_width }}"
-              >
-            
+
+            <img
+              src="https://cdn.shopify.com/s/files/1/0355/3217/7453/files/black-logo.png?v=1668494171"
+              class="{% if template == 'product' -%}is-product{%- endif %} header__heading-logo-2"
+              alt="{{ logo_alt }}N-Black"
+              height="{{ logo_height }}"
+              width="{{ settings.logo_width }}"
+            >
           </div>
         {%- else -%}
           <span class="h2">{{ shop.name }}</span>
