@@ -9,12 +9,12 @@
       </button>
     {% endif %}
 
-    <div class="anouncement-carousel-wrapper h-full grow overflow-hidden">
+    <div class="anouncement-carousel-wrapper swiper h-full grow overflow-hidden">
       <div
         {% if section.settings.auto_rotate %}
           data-play-speed="{{ section.settings['change_slides_speed'] }}"
         {% endif %}
-        class="announcement-carousel w-full h-full flex flex-nowrap"
+        class="announcement-carousel swiper-wrapper w-full h-full flex flex-nowrap"
       >
         {% for block in section.blocks %}
           <div class="anouncement-item swiper-slide h-full flex-grow flex-shrink-0 basis-full flex justify-center items-center text-heading text-center text-[12px] md:text-[14px] font-medium leading-[20px]">
