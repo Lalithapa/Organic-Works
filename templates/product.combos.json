@@ -288,7 +288,7 @@
       "type": "reccommended",
       "settings": {
         "carousel-title": "Recommended FOR YOU",
-        "slides-limit": 7,
+        "slides-limit": 10,
         "num-slides-sm": "1.5",
         "num-slides-md": "3",
         "num-slides-lg": "4",
