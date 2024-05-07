@@ -1595,6 +1595,10 @@ input:checked + .toggle-bg {
   height: 22px;
 }
 
+.\!h-\[20px\] {
+  height: 20px !important;
+}
+
 .max-h-\[95\%\] {
   max-height: 95%;
 }
