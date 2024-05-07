@@ -2793,8 +2793,8 @@ display: none;
 
 @media only screen and (min-width: 768px) {
   .header__icon .icon {
-    height: 3rem;
-    width: 3rem;
+    height: 2.5rem;
+    width: 2.5rem;
   }
 }
 
