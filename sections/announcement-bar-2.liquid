@@ -1,5 +1,5 @@
 {% assign playSpeed = section.settings.change_slides_speed %}
-<div class="announcement-bar {} mx-auto w-full h-[38px] bg-[#fbfbfb]">
+<div class="announcement-bar {% if section.settings['use-container'] == true %}container{% endif %} mx-auto w-full h-[38px] bg-[#fbfbfb]">
   <div class="w-full h-full flex justify-center items-center gap-x-[12px]">
     {% if section.settings.show_buttons %}
       <button
