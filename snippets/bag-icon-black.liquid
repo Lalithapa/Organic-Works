@@ -1,12 +1,14 @@
-<img
-  alt="Open Cart"
-  class="icon icon-cart {% if class %}{{class}}{% endif %}"
-  style="{% if style %}{{style}}{% endif %}"
-  width="{% if width %}{{width}}{% else %}20{% endif %}"
-  height="{% if height %}{{height}}{% else %}20{% endif %}"
-  loading="eager"
-  src="{{ 'bag-icon-black.svg' |  asset_url }}"
->
+{% comment %}
+  <img
+    alt="Open Cart"
+    class="icon icon-cart {% if class %}{{class}}{% endif %}"
+    style="{% if style %}{{style}}{% endif %}"
+    width="{% if width %}{{width}}{% else %}20{% endif %}"
+    height="{% if height %}{{height}}{% else %}20{% endif %}"
+    loading="eager"
+    src="{{ 'bag-icon-black.svg' |  asset_url }}"
+  >
+{% endcomment %}
 
 <svg
   class="icon icon-cart {% if class %}{{class}}{% endif %}"
@@ -14,8 +16,6 @@
   xmlns="http://www.w3.org/2000/svg"
   width="{% if width %}{{width}}{% else %}18{% endif %}"
   height="{% if height %}{{height}}{% else %}18{% endif %}"
-  width="18"
-  height="18"
   viewBox="0 0 18 18"
   fill="none"
 >
