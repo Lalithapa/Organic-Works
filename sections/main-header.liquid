@@ -352,9 +352,10 @@
       </div>
       {% render 'header-search', input_id: 'Search-In-Modal' %}
       <a href="/apps/wishlist" class="header__icon h-wishlist-icon wishlist-page-widget small-hide">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none" stroke="#fff">
+        {% comment %} <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none" stroke="#fff">
           <path d="M2.99264 9.12111L9.41085 15.4217L9.41087 15.4217C9.63458 15.6413 9.74644 15.7511 9.87784 15.7842C9.95803 15.8044 10.042 15.8044 10.1222 15.7842C10.2536 15.7511 10.3654 15.6413 10.5891 15.4217L10.5891 15.4217L17.0074 9.12111C18.7227 7.43726 18.933 4.74618 17.5001 2.81628L17.112 2.29353C15.3454 -0.085927 11.674 0.301411 10.4428 2.99714C10.2695 3.37656 9.73049 3.37656 9.5572 2.99714C8.326 0.30141 4.65462 -0.0859265 2.88799 2.29353L2.49988 2.81628C1.06702 4.74618 1.27735 7.43727 2.99264 9.12111Z" stroke-width="1"/>
-        </svg>
+        </svg> {% endcomment %}
+        
         <span class="wishlist-h-count wishlist-total-count !text-white" data-total="0">0</span></a
       >
       {%- if shop.customer_accounts_enabled -%}
