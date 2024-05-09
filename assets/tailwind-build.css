@@ -2421,6 +2421,10 @@ input:checked + .toggle-bg {
        column-gap: 30px;
 }
 
+.gap-y-\[9px\] {
+  row-gap: 9px;
+}
+
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
