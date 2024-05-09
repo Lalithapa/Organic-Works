@@ -2394,6 +2394,16 @@ input:checked + .toggle-bg {
   row-gap: 8px;
 }
 
+.gap-x-\[\] {
+  -moz-column-gap: ;
+       column-gap: ;
+}
+
+.gap-x-\[26px\] {
+  -moz-column-gap: 26px;
+       column-gap: 26px;
+}
+
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
