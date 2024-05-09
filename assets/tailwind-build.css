@@ -2404,6 +2404,10 @@ input:checked + .toggle-bg {
        column-gap: 26px;
 }
 
+.gap-y-\[26px\] {
+  row-gap: 26px;
+}
+
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -3793,6 +3797,11 @@ input:checked + .toggle-bg {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[\#151515\] {
+  --tw-text-opacity: 1;
+  color: rgb(21 21 21 / var(--tw-text-opacity));
 }
 
 .underline {
