@@ -105,8 +105,7 @@
           <div class="flex flex-col justify-center items-start gal-y-[8px]">
             {% for obj in product.metafields.custom.quick_view_bars.value -%}
               {% for text in obj -%}
-                {{ text | json }}
-                {{ forloop.index }} aaa
+                <div ></div>
               {%- endfor %}
             {% endfor %}
           </div>
