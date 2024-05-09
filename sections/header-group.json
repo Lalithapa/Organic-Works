@@ -29,8 +29,9 @@
       ],
       "settings": {
         "auto_rotate": true,
-        "change_slides_speed": 8,
-        "show_buttons": false
+        "change_slides_speed": 3,
+        "show_buttons": false,
+        "use-container": false
       }
     },
     "announcement_bar_q8VfiF": {
