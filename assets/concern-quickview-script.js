@@ -5,7 +5,8 @@ const concernQuickView = {
     this.quickviewWrapperClass = ".concern-quickview-wrapper";
     this.$concernShin = $("#concern-quickview-shin");
 
-    this.progressBarWrapperClass = ""
+    this.progressBarWrapperClass = ".progress-bar-wrapper";
+    this.
 
     this.bindEventListeners();
   },
@@ -16,7 +17,7 @@ const concernQuickView = {
 
     $body.on("click", this.closeBtnId, () => this.hideQuickview());
     $body.on("click", this.quickviewTriggerClass, (e) =>
-      this.showQuickview(e.currentTarget),
+      this.showQuickview(e.currentTarget)
     );
   },
 
@@ -27,7 +28,7 @@ const concernQuickView = {
     const concernIndex = $btn.attr("data-concern-index");
 
     const $quickviewWrapper = $(
-      `${this.quickviewWrapperClass}[data-concern-index=${concernIndex}]`,
+      `${this.quickviewWrapperClass}[data-concern-index=${concernIndex}]`
     );
     // $quickviewWrapper.show();
     $quickviewWrapper.removeClass("hide-concern-quickview");
