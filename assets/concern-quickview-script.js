@@ -5,6 +5,8 @@ const concernQuickView = {
     this.quickviewWrapperClass = ".concern-quickview-wrapper";
     this.$concernShin = $("#concern-quickview-shin");
 
+    this.progressBarWrapperClass = ""
+
     this.bindEventListeners();
   },
   bindEventListeners() {
