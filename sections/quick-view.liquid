@@ -193,7 +193,6 @@
         if (entry.isIntersecting) {
           var progressBar = $(entry.target).find('.progress-bar');
           var progress = progressBar.attr('data-progress');
-
           progressBar.css('animation-play-state', 'running');
           progressBar.css('animation-duration', progress * 20 + 'ms');
           observer.unobserve(entry.target);
@@ -204,7 +203,6 @@
     $('.progress-bar-wrapper').each(function () {
       observer.observe(this);
     });
-    console.log($('.progress-bar-wrapper'), 'sssssssssss');
   });
 </script>
 
