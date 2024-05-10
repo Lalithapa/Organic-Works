@@ -32,6 +32,9 @@ const quickview = {
     // to hide add to cart in qv for combos
     this.$triggerBtn = undefined;
 
+    this.progressBarWrapperClass = ".progress-bar-wrapper";
+    this.progressBarClass = ".progress-bar";
+
     // if (
     //   !this.$quickViewWrapper.length ||
     //   !this.$triggerBtns.length ||
@@ -73,7 +76,7 @@ const quickview = {
         status: "error",
         message: "product handle & variant id not found on trigger button",
         error: new Error(
-          "product handle & variant id not found on trigger button",
+          "product handle & variant id not found on trigger button"
         ),
       };
 
@@ -88,7 +91,7 @@ const quickview = {
         status: "error",
         message: "Error while fetching product for quickview",
         error: new Error(
-          `Error while fetching product for quickview ${error.message}`,
+          `Error while fetching product for quickview ${error.message}`
         ),
       };
     } finally {
