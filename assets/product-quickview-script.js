@@ -119,6 +119,8 @@ const quickview = {
       .find(this.contentWrapperId)
       .replaceWith($newContentWrapper);
 
+    
+
     const hideAddToCart = this.$triggerBtn.attr("data-hide-add-to-cart");
     if (hideAddToCart)
       this.$quickViewWrapper.find(".quickview-add-to-bag-btn-wrapper").hide();
