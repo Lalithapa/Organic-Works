@@ -111,12 +111,16 @@
                   <p class="text-[#171717] text-[13px] font-normal leading-[20px] uppercase">{{ splitText[0] }}</p>
                   <div class="w-full h-[24px] flex justify-between items-center gap-x-[30px]">
                     <div class="progress-bar-wrapper grow h-[9px] rounded-full overflow-hidden">
-                      <div class="progress-bar h-full w-0" data-progress="{{ splitText[1] }}" style="background-color: {{}};">
+                      <div
+                        class="progress-bar h-full w-[96px]"
+                        data-progress="{{ splitText[2] }}"
+                        style="background-color: {{ splitText[1] }};"
+                      >
                         <wbr>
                       </div>
                     </div>
                     <div class="shrink">
-                      <p class="text-[#171717] text-[14px] font-medium leading-[24px]">{{ splitText[1] }}%</p>
+                      <p class="text-[#171717] text-[14px] font-medium leading-[24px]">{{ splitText[2] }}%</p>
                     </div>
                   </div>
                 </div>
