@@ -109,7 +109,7 @@
                 <div class="w-full flex flex-col justify-center items-start gap-y-[9px]">
                   <p class="text-[#171717] text-[13px] font-normal leading-[20px] uppercase">{{ splitText[0] }}</p>
                   <div class="w-full h-[24px] flex justify-between items-center gap-x-[30px]">
-                    <div class="progress-wrapper">
+                    <div class="progress-bar-wrapper grow h-[9px] rounded-full overflow-hidden">
                       <div
                         class="progress-bar h-full w-0"
                         data-progress="{{ splitText[2] }}"
@@ -185,6 +185,31 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript" defer>
+  $(document).ready(function () {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          console.log('running.........');
+          var progressBar = $(entry.target).find('.progress-bar');
+          var progress = progressBar.attr('data-progress');
+          console.log(progressBar, 'progressBar');
+          console.log(progress, 'progress');
+
+          progressBar.css('animation-play-state', 'running');
+          progressBar.css('animation-duration', progress * 20 + 'ms');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    $('.progress-bar-wrapper').each(function () {
+      observer.observe(this);
+    });
+    console.log($('.progress-bar-wrapper'), 'sssssssssss');
+  });
+</script>
 
 <style>
   .progress-bar {
