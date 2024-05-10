@@ -187,23 +187,23 @@
 </div>
 
 <script type="text/javascript" defer>
-  $(document).ready(function () {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var progressBar = $(entry.target).find('.progress-bar');
-          var progress = progressBar.attr('data-progress');
-          progressBar.css('animation-play-state', 'running');
-          progressBar.css('animation-duration', progress * 20 + 'ms');
-          observer.unobserve(entry.target);
-        }
-      });
-    });
+  // $(document).ready(function () {
+  //   var observer = new IntersectionObserver(function (entries) {
+  //     entries.forEach(function (entry) {
+  //       if (entry.isIntersecting) {
+  //         var progressBar = $(entry.target).find('.progress-bar');
+  //         var progress = progressBar.attr('data-progress');
+  //         progressBar.css('animation-play-state', 'running');
+  //         progressBar.css('animation-duration', progress * 20 + 'ms');
+  //         observer.unobserve(entry.target);
+  //       }
+  //     });
+  //   });
 
-    $('.progress-bar-wrapper').each(function () {
-      observer.observe(this);
-    });
-  });
+  //   $('.progress-bar-wrapper').each(function () {
+  //     observer.observe(this);
+  //   });
+  // });
 </script>
 
 <style>
