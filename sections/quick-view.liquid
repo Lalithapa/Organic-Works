@@ -96,43 +96,10 @@
             {{- product.description -}}
           </div>
         </div>
- {}
-        <div class="w-full mt-[12px] flex flex-col gap-y-[26px]">
-          <div class="flex justify-start items-center">
-            <p class="text-[#151515] text-[16px] md:text-[20px] font-medium leading-[24px]">
-              Tailored Benefits for You:
-            </p>
-          </div>
+        {% if product.metafields.custom.quick_view_bars.value != blank %}
+        
+        {% endif %}
 
-          <div class="w-full flex flex-col justify-center items-start gap-y-[8px]">
-            {% for obj in product.metafields.custom.quick_view_bars.value -%}
-              {% assign splitText = obj | split: ',' %}
-              {% for text in obj %}
-                <div class="w-full flex flex-col justify-center items-start gap-y-[9px]">
-                  <p class="text-[#171717] text-[13px] md:text-[16px] font-normal leading-[20px] md:leading-[24px] uppercase">
-                    {{ splitText[0] }}
-                  </p>
-                  <div class="w-full h-[24px] flex justify-between items-center gap-x-[30px]">
-                    <div class="progress-bar-wrapper grow h-[9px] rounded-full overflow-hidden">
-                      <div
-                        class="progress-bar h-full w-0"
-                        data-progress="{{ splitText[2] }}"
-                        style="background-color: {{ splitText[1] }};"
-                      >
-                        <wbr>
-                      </div>
-                    </div>
-                    <div class="shrink">
-                      <p class="text-[#171717] text-[14px] md:text-[15px] font-medium leading-[24px]">
-                        {{ splitText[2] }}%
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              {% endfor %}
-            {% endfor %}
-          </div>
-        </div>
       </div>
 
       {% comment %} 40px {% endcomment %}
