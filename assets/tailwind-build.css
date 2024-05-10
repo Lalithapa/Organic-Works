@@ -1360,6 +1360,10 @@ input:checked + .toggle-bg {
   margin-top: 10px;
 }
 
+.mt-\[12px\] {
+  margin-top: 12px;
+}
+
 .mt-\[16px\] {
   margin-top: 16px;
 }
@@ -1390,14 +1394,6 @@ input:checked + .toggle-bg {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-12 {
-  margin-top: 3rem;
-}
-
-.mt-\[12px\] {
-  margin-top: 12px;
 }
 
 .box-border {
@@ -1543,6 +1539,10 @@ input:checked + .toggle-bg {
   height: 20px;
 }
 
+.h-\[24px\] {
+  height: 24px;
+}
+
 .h-\[28px\] {
   height: 28px;
 }
@@ -1587,24 +1587,16 @@ input:checked + .toggle-bg {
   height: 70px;
 }
 
+.h-\[9px\] {
+  height: 9px;
+}
+
 .h-auto {
   height: auto;
 }
 
 .h-full {
   height: 100%;
-}
-
-.h-\[10px\] {
-  height: 10px;
-}
-
-.h-\[9px\] {
-  height: 9px;
-}
-
-.h-\[24px\] {
-  height: 24px;
 }
 
 .max-h-\[95\%\] {
@@ -1701,6 +1693,10 @@ input:checked + .toggle-bg {
 
 .w-full {
   width: 100%;
+}
+
+.w-0 {
+  width: 0px;
 }
 
 .max-w-\[40\%\] {
@@ -2360,6 +2356,11 @@ input:checked + .toggle-bg {
        column-gap: 12px;
 }
 
+.gap-x-\[30px\] {
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+
 .gap-x-\[4px\] {
   -moz-column-gap: 4px;
        column-gap: 4px;
@@ -2390,6 +2391,10 @@ input:checked + .toggle-bg {
   row-gap: 24px;
 }
 
+.gap-y-\[26px\] {
+  row-gap: 26px;
+}
+
 .gap-y-\[32px\] {
   row-gap: 32px;
 }
@@ -2404,29 +2409,6 @@ input:checked + .toggle-bg {
 
 .gap-y-\[8px\] {
   row-gap: 8px;
-}
-
-.gap-x-\[\] {
-  -moz-column-gap: ;
-       column-gap: ;
-}
-
-.gap-x-\[26px\] {
-  -moz-column-gap: 26px;
-       column-gap: 26px;
-}
-
-.gap-y-\[26px\] {
-  row-gap: 26px;
-}
-
-.gap-y-\[30px\] {
-  row-gap: 30px;
-}
-
-.gap-x-\[30px\] {
-  -moz-column-gap: 30px;
-       column-gap: 30px;
 }
 
 .gap-y-\[9px\] {
@@ -3047,6 +3029,11 @@ input:checked + .toggle-bg {
   background-color: rgb(21 21 21 / var(--tw-bg-opacity));
 }
 
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 82 82 / var(--tw-bg-opacity));
+}
+
 .bg-surface {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -3064,11 +3051,6 @@ input:checked + .toggle-bg {
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 82 82 / var(--tw-bg-opacity));
 }
 
 .decoration-slice {
@@ -3765,6 +3747,11 @@ input:checked + .toggle-bg {
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
+.text-\[\#151515\] {
+  --tw-text-opacity: 1;
+  color: rgb(21 21 21 / var(--tw-text-opacity));
+}
+
 .text-\[\#171717\] {
   --tw-text-opacity: 1;
   color: rgb(23 23 23 / var(--tw-text-opacity));
@@ -3827,11 +3814,6 @@ input:checked + .toggle-bg {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-\[\#151515\] {
-  --tw-text-opacity: 1;
-  color: rgb(21 21 21 / var(--tw-text-opacity));
 }
 
 .underline {
