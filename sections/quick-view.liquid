@@ -191,14 +191,14 @@
 </script>
 
 <style>
-  .progress-bar {
-    height: 100%;
-    background-color: #4caf50;
-    transform-origin: left;
-    animation: progressAnimation 1s forwards;
-  }
+.progress-bar {
+  transform-origin: left center;
+  animation-name: grow;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
 
-  /* Define the keyframe animation */
   @keyframes progressAnimation {
     0% {
       transform: scaleX(0);
