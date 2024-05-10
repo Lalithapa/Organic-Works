@@ -131,6 +131,7 @@ const quickview = {
       });
     });
 
+    console.log(this.progressBarWrapperClass, "sssssss");
     $(this.progressBarWrapperClass).each(function () {
       observer.observe(this);
     });
