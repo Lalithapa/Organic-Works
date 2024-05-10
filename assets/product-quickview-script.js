@@ -119,21 +119,21 @@ const quickview = {
       .find(this.contentWrapperId)
       .replaceWith($newContentWrapper);
 
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            var progressBar = $(entry.target).find('.progress-bar');
-            var progress = progressBar.attr('data-progress');
-            progressBar.css('animation-play-state', 'running');
-            progressBar.css('animation-duration', progress * 20 + 'ms');
-            observer.unobserve(entry.target);
-          }
-        });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var progressBar = $(entry.target).find(".progress-bar");
+          var progress = progressBar.attr("data-progress");
+          progressBar.css("animation-play-state", "running");
+          progressBar.css("animation-duration", progress * 20 + "ms");
+          observer.unobserve(entry.target);
+        }
       });
-  
-      $('.progress-bar-wrapper').each(function () {
-        observer.observe(this);
-      });
+    });
+
+    $(this.progressBarWrapperClass).each(function () {
+      observer.observe(this);
+    });
 
     const hideAddToCart = this.$triggerBtn.attr("data-hide-add-to-cart");
     if (hideAddToCart)
