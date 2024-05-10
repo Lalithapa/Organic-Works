@@ -180,6 +180,32 @@
     </div>
   </div>
 </div>
+
+<style>
+  /* Define the keyframe animation */
+  @keyframes progressAnimation {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  /* Apply styles to the progress bar */
+  .progress-bar-wrapper {
+    width: 100%;
+    height: 9px; /* Adjust height as needed */
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50; /* Change color as needed */
+  }
+</style>
+
 {% schema %}
 {
   "name": "Product Quick View",
