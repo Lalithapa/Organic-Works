@@ -125,7 +125,9 @@ const quickview = {
           var progressBar = $(entry.target).find(".progress-bar");
           var progress = progressBar.attr("data-progress");
 
-          console.log("ready !!!");
+          console.log(progressBar, "ready !!!");
+          console.log(progress, "ready !!!");
+
           progressBar.css("animation-play-state", "running");
           progressBar.css("animation-duration", progress * 20 + "ms");
           observer.unobserve(entry.target);
