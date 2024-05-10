@@ -194,7 +194,9 @@
           console.log('running.........');
           var progressBar = $(entry.target).find('.progress-bar');
           var progress = progressBar.attr('data-progress');
-          console.log(progressBar, '')
+          console.log(progressBar, 'progressBar');
+          console.log(progress, 'progressBar');
+
           progressBar.css('animation-play-state', 'running');
           progressBar.css('animation-duration', progress * 20 + 'ms');
           observer.unobserve(entry.target);
