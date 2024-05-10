@@ -122,9 +122,10 @@ const quickview = {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          console.log("ready !!!");
           var progressBar = $(entry.target).find(".progress-bar");
           var progress = progressBar.attr("data-progress");
+
+          console.log("ready !!!");
           progressBar.css("animation-play-state", "running");
           progressBar.css("animation-duration", progress * 20 + "ms");
           observer.unobserve(entry.target);
