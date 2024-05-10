@@ -108,7 +108,7 @@
               {{ splitText | json }}
               {% for text in obj %}
                 <div class="w-full flex flex-col justify-center items-start gap-y-[9px]">
-                  <p class="text-[#171717] text-[13px] font-normal leading-[20px] uppercase">Cleansing</p>
+                  <p class="text-[#171717] text-[13px] font-normal leading-[20px] uppercase">{{ splitText[0] }}</p>
                   <div class="w-full h-[24px] flex justify-between items-center gap-x-[30px]">
                     <div class="progress-bar-wrapper grow h-[9px] rounded-full overflow-hidden">
                       <div class="progress-bar h-full w-0 bg-red-500" data-progress="96">
