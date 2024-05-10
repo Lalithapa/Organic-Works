@@ -1699,6 +1699,10 @@ input:checked + .toggle-bg {
   width: 0px;
 }
 
+.w-\[96px\] {
+  width: 96px;
+}
+
 .max-w-\[40\%\] {
   max-width: 40%;
 }
