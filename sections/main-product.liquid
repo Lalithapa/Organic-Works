@@ -109,8 +109,8 @@
                       {{ handleSummarySize | upcase }}
                     </p>
 
-                    {% if product.metafields.custom.ingredient_subtext_with_size.value != blank %}
-                      <div>{{ product.metafields.custom.ingredient_subtext_with_size.value }}</div>
+                    {% if product.metafields.custom.concern_summary.value != blank %}
+                      <div>{{ product.metafields.custom.concern_summary.value }}</div>
                     {% endif %}
                   {% endif %}
                   <a href="{{ product.url }}" class="product__title">
