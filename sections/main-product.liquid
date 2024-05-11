@@ -110,7 +110,7 @@
                     </p>
 
                     {% if product.metafields.custom.ingredient_subtext_with_size.value != blank %}
-                      <div>gcsdjhvbcjhsdbvjhscbjhsdb</div>
+                      <div>{{ product.metafields.custom.ingredient_subtext_with_size.value }}</div>
                     {% endif %}
                   {% endif %}
                   <a href="{{ product.url }}" class="product__title">
