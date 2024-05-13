@@ -97,20 +97,25 @@
                   <h1 class="mainTitle">{{ product.title | escape }}</h1>
                   {% if product.metafields.custom.ingredient_subtext_with_size != blank %}
                     {% assign handleSummarySize = product.metafields.custom.ingredient_subtext_with_size
-                        | split: ','
-                        | last
-                      %}
-                      {% assign handleSummary = product.metafields.custom.ingredient_subtext_with_size
-                        | remove_last: ','
-                      %}
+                      | split: ','
+                      | last
+                    %}
+                    {% assign handleSummary = product.metafields.custom.ingredient_subtext_with_size
+                      | remove_last: ','
+                    %}
                     <p class="product__summary pt-2">
-                      
                       {{ handleSummary | remove_last: handleSummarySize | capitalize }}
+                    </p>
 
+                    <p>
+                      <br>
+                      {{ handleSummarySize | upcase }}
                     </p>
 
                     {% if product.metafields.custom.concern_summary.value != blank %}
-                      <div class="text-[#585858] text-[14px] font-normal leading-[20px] tracking-[-0.14px]">{{ product.metafields.custom.concern_summary | metafield_tag }}</div>
+                      <div class="text-[#585858] text-[14px] font-normal leading-[20px] tracking-[-0.14px]">
+                        {{ product.metafields.custom.concern_summary | metafield_tag }}
+                      </div>
                     {% endif %}
                   {% endif %}
                   <a href="{{ product.url }}" class="product__title">
