@@ -1396,6 +1396,14 @@ input:checked + .toggle-bg {
   margin-top: auto;
 }
 
+.mt-\[\] {
+  margin-top: ;
+}
+
+.mt-\[7px\] {
+  margin-top: 7px;
+}
+
 .box-border {
   box-sizing: border-box;
 }
