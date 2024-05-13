@@ -107,15 +107,15 @@
                       {{ handleSummary | remove_last: handleSummarySize | capitalize }}
                     </p>
 
-                    <p class="text-[#151515] text-[15px] font-medium leading-[24px] tracking-[-0.15px]">
-                      {{ handleSummarySize | upcase }}
-                    </p>
-
                     {% if product.metafields.custom.concern_summary.value != blank %}
                       <div class="text-[#585858] text-[14px] font-normal leading-[20px] tracking-[-0.14px]">
                         {{ product.metafields.custom.concern_summary | metafield_tag }}
                       </div>
                     {% endif %}
+
+                    <p class="text-[#151515] text-[15px] font-medium leading-[24px] tracking-[-0.15px]">
+                      {{ handleSummarySize | upcase }}
+                    </p>
                   {% endif %}
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
