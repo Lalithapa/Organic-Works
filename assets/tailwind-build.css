@@ -3811,6 +3811,19 @@ input:checked + .toggle-bg {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-\[\] {
+  color: ;
+}
+
+.text-\[\#\] {
+  color: #;
+}
+
+.text-\[\#585858\] {
+  --tw-text-opacity: 1;
+  color: rgb(88 88 88 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
