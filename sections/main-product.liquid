@@ -110,7 +110,7 @@
                     </p>
 
                     {% if product.metafields.custom.concern_summary.value != blank %}
-                      <div>{{ product.metafields.custom.concern_summary | metafield_tag }}</div>
+                      <div class="text-[#]">{{ product.metafields.custom.concern_summary | metafield_tag }}</div>
                     {% endif %}
                   {% endif %}
                   <a href="{{ product.url }}" class="product__title">
