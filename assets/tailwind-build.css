@@ -1304,6 +1304,18 @@ input:checked + .toggle-bg {
   margin-top: -10px !important;
 }
 
+.\!mt-\[16px\] {
+  margin-top: 16px !important;
+}
+
+.\!mt-\[2px\] {
+  margin-top: 2px !important;
+}
+
+.\!mt-\[7px\] {
+  margin-top: 7px !important;
+}
+
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -1396,28 +1408,8 @@ input:checked + .toggle-bg {
   margin-top: auto;
 }
 
-.mt-\[\] {
-  margin-top: ;
-}
-
-.mt-\[7px\] {
-  margin-top: 7px;
-}
-
-.mt-\[2px\] {
-  margin-top: 2px;
-}
-
-.\!mt-\[16px\] {
-  margin-top: 16px !important;
-}
-
-.\!mt-\[2px\] {
-  margin-top: 2px !important;
-}
-
-.\!mt-\[7px\] {
-  margin-top: 7px !important;
+.\!mt-\[4px\] {
+  margin-top: 4px !important;
 }
 
 .box-border {
@@ -3730,6 +3722,10 @@ input:checked + .toggle-bg {
   letter-spacing: -0.13px;
 }
 
+.tracking-\[-0\.14px\] {
+  letter-spacing: -0.14px;
+}
+
 .tracking-\[-0\.15px\] {
   letter-spacing: -0.15px;
 }
@@ -3744,30 +3740,6 @@ input:checked + .toggle-bg {
 
 .tracking-\[0\.375px\] {
   letter-spacing: 0.375px;
-}
-
-.tracking-\[\] {
-  letter-spacing: ;
-}
-
-.tracking-\[-0\.\] {
-  letter-spacing: -0.;
-}
-
-.tracking-\[-0\.14\] {
-  letter-spacing: -0.14;
-}
-
-.tracking-\[-0\.14px\] {
-  letter-spacing: -0.14px;
-}
-
-.tracking-\[-\] {
-  letter-spacing: -;
-}
-
-.tracking-\[-0\.16px\] {
-  letter-spacing: -0.16px;
 }
 
 .\!text-\[\#151515\] {
@@ -3807,6 +3779,11 @@ input:checked + .toggle-bg {
 .text-\[\#393939\] {
   --tw-text-opacity: 1;
   color: rgb(57 57 57 / var(--tw-text-opacity));
+}
+
+.text-\[\#585858\] {
+  --tw-text-opacity: 1;
+  color: rgb(88 88 88 / var(--tw-text-opacity));
 }
 
 .text-\[\#587A40\] {
@@ -3857,23 +3834,6 @@ input:checked + .toggle-bg {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-\[\] {
-  color: ;
-}
-
-.text-\[\#\] {
-  color: #;
-}
-
-.text-\[\#585858\] {
-  --tw-text-opacity: 1;
-  color: rgb(88 88 88 / var(--tw-text-opacity));
-}
-
-.text-\[15\] {
-  color: 15;
 }
 
 .underline {
@@ -4565,6 +4525,10 @@ input:checked + .toggle-bg {
     margin-top: 40px;
   }
 
+  .md\:\!mt-\[4px\] {
+    margin-top: 4px !important;
+  }
+
   .md\:hidden {
     display: none;
   }
@@ -4778,10 +4742,6 @@ input:checked + .toggle-bg {
 
   .md\:tracking-\[-0\.26px\] {
     letter-spacing: -0.26px;
-  }
-
-  .md\:tracking-\[-0\.15px\] {
-    letter-spacing: -0.15px;
   }
 }
 
