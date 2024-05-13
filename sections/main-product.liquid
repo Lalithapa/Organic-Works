@@ -110,7 +110,7 @@
                     </p>
 
                     {% if product.metafields.custom.concern_summary.value != blank %}
-                      <div>{{ product.metafields.custom.concern_summary.value }}</div>
+                      <div>{{ product.metafields.custom.concern_summary.value | json }}</div>
                     {% endif %}
                   {% endif %}
                   <a href="{{ product.url }}" class="product__title">
