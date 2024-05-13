@@ -4775,6 +4775,10 @@ input:checked + .toggle-bg {
   .md\:tracking-\[-0\.26px\] {
     letter-spacing: -0.26px;
   }
+
+  .md\:tracking-\[-0\.15px\] {
+    letter-spacing: -0.15px;
+  }
 }
 
 @media (min-width: 1024px) {
