@@ -3730,6 +3730,14 @@ input:checked + .toggle-bg {
   letter-spacing: -0.;
 }
 
+.tracking-\[-0\.14\] {
+  letter-spacing: -0.14;
+}
+
+.tracking-\[-0\.14px\] {
+  letter-spacing: -0.14px;
+}
+
 .\!text-\[\#151515\] {
   --tw-text-opacity: 1 !important;
   color: rgb(21 21 21 / var(--tw-text-opacity)) !important;
