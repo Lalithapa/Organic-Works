@@ -96,17 +96,17 @@
                 <div class="product__title" {{ block.shopify_attributes }}>
                   <h1 class="mainTitle">{{ product.title | escape }}</h1>
                   {% if product.metafields.custom.ingredient_subtext_with_size != blank %}
-                    <p class="product__summary pt-2">
-                      {% assign handleSummarySize = product.metafields.custom.ingredient_subtext_with_size
+                    {% assign handleSummarySize = product.metafields.custom.ingredient_subtext_with_size
                         | split: ','
                         | last
                       %}
                       {% assign handleSummary = product.metafields.custom.ingredient_subtext_with_size
                         | remove_last: ','
                       %}
+                    <p class="product__summary pt-2">
+                      
                       {{ handleSummary | remove_last: handleSummarySize | capitalize }}
-                      <br>
-                      {{ handleSummarySize | upcase }}
+
                     </p>
 
                     {% if product.metafields.custom.concern_summary.value != blank %}
