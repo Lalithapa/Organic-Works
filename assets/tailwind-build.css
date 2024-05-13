@@ -3840,6 +3840,10 @@ input:checked + .toggle-bg {
   color: rgb(88 88 88 / var(--tw-text-opacity));
 }
 
+.text-\[15\] {
+  color: 15;
+}
+
 .underline {
   text-decoration-line: underline;
 }
