@@ -104,17 +104,17 @@
                       | remove_last: ','
                     %}
 
-                    <p class="text-[#151515] text-[15px] font-medium leading-[24px] tracking-[-0.15px] mt-[7px]">
+                    <p class="text-[#151515] text-[15px] font-medium leading-[24px] tracking-[-0.15px] !mt-[7px]">
                       {{ handleSummary | remove_last: handleSummarySize | capitalize }}
                     </p>
 
                     {% if product.metafields.custom.concern_summary.value != blank %}
-                      <div class="text-[#585858] text-[14px] font-normal leading-[20px] tracking-[-0.14px] mt-[2px]">
+                      <div class="text-[#585858] text-[14px] font-normal leading-[20px] tracking-[-0.14px] !mt-[2px]">
                         {{ product.metafields.custom.concern_summary | metafield_tag }}
                       </div>
                     {% endif %}
 
-                    <p class="text-[#151515] text-[15px] font-medium leading-[20px] tracking-[-0.15px] mt-[16px]">
+                    <p class="text-[#151515] text-[15px] font-medium leading-[20px] tracking-[-0.15px] !mt-[16px]">
                       {{ handleSummarySize | upcase }}
                     </p>
                   {% endif %}
