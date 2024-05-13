@@ -3766,6 +3766,10 @@ input:checked + .toggle-bg {
   letter-spacing: -;
 }
 
+.tracking-\[-0\.16px\] {
+  letter-spacing: -0.16px;
+}
+
 .\!text-\[\#151515\] {
   --tw-text-opacity: 1 !important;
   color: rgb(21 21 21 / var(--tw-text-opacity)) !important;
