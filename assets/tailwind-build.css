@@ -1404,6 +1404,10 @@ input:checked + .toggle-bg {
   margin-top: 7px;
 }
 
+.mt-\[2px\] {
+  margin-top: 2px;
+}
+
 .box-border {
   box-sizing: border-box;
 }
