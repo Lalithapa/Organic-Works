@@ -4529,6 +4529,14 @@ input:checked + .toggle-bg {
     margin-top: 4px !important;
   }
 
+  .md\:\!mt-\[16px\] {
+    margin-top: 16px !important;
+  }
+
+  .md\:\!mt-\[18px\] {
+    margin-top: 18px !important;
+  }
+
   .md\:hidden {
     display: none;
   }
